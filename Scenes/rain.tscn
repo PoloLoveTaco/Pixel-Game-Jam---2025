@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq8x5j46f8q5u"]
+
+[ext_resource type="Texture2D" uid="uid://7773in4vi1d3" path="res://Assets/rain.png" id="1_l8yrx"]
+
+[sub_resource type="Curve" id="Curve_l8yrx"]
+_data = [Vector2(0.00996678, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.553235), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Rain" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 600
+texture = ExtResource("1_l8yrx")
+emission_shape = 3
+emission_rect_extents = Vector2(350, 1)
+gravity = Vector2(150, 980)
+scale_amount_curve = SubResource("Curve_l8yrx")
