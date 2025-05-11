@@ -34,3 +34,7 @@ tile_set = SubResource("TileSet_f1m2m")
 [node name="Player" parent="." instance=ExtResource("2_qutkg")]
 position = Vector2(480, 267)
 speed = 200
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+physics_interpolation_mode = 1
+process_callback = 0
