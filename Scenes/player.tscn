@@ -66,6 +66,7 @@ shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
+zoom = Vector2(2, 2)
 process_callback = 0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
@@ -79,6 +80,7 @@ scale = Vector2(0.998294, 1)
 script = ExtResource("4_x3wgy")
 follow_mode = 5
 follow_target = NodePath("..")
+zoom = Vector2(2, 2)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_fkybt")
 follow_damping = true
