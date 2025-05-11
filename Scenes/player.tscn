@@ -46,6 +46,10 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+process_callback = 0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0iea")
 hframes = 3
