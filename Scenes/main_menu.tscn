@@ -62,4 +62,7 @@ text = "Option"
 layout_mode = 2
 text = "Quit"
 
+[connection signal="pressed" from="AllButtons/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="AllButtons/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="AllButtons/OptionButton" to="." method="_on_option_button_pressed"]
 [connection signal="pressed" from="AllButtons/QuitButton" to="." method="_on_quit_button_pressed"]

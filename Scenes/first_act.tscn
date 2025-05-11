@@ -37,4 +37,5 @@ speed = 200
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 physics_interpolation_mode = 1
+zoom = Vector2(2, 2)
 process_callback = 0
