@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bco6if1i34koa"]
+[gd_scene load_steps=9 format=4 uid="uid://bco6if1i34koa"]
 
 [ext_resource type="Texture2D" uid="uid://d2dmynm0aj56s" path="res://Assets/road.png" id="1_lj6j0"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tilseset_001.png" id="2_f1m2m"]
 [ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="2_qutkg"]
+[ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="4_klxn6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxn6"]
 texture = ExtResource("2_f1m2m")
@@ -65,3 +66,7 @@ tile_set = SubResource("TileSet_f1m2m")
 [node name="Player" parent="." instance=ExtResource("2_qutkg")]
 position = Vector2(286, 529)
 speed = 200
+
+[node name="Rain" parent="." instance=ExtResource("4_klxn6")]
+position = Vector2(423, 81)
+scale = Vector2(1.59, 500)

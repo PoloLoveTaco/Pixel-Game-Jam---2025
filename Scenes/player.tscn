@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca01vvk4fhu28"]
+[gd_scene load_steps=11 format=3 uid="uid://ca01vvk4fhu28"]
 
 [ext_resource type="Script" uid="uid://i2hthtil41ex" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://busuwk2ptd28t" path="res://Assets/UniversalCharacter.png" id="1_v0iea"]
-[ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="2_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(20, 11)
@@ -38,10 +37,78 @@ tracks/0/keys = {
 "values": [0, 1, 2, 1]
 }
 
+[sub_resource type="Animation" id="Animation_cvnsp"]
+resource_name = "walk_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 4]
+}
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "walk_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 7]
+}
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+resource_name = "walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 10]
+}
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 4, 7, 10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
 _data = {
 &"RESET": SubResource("Animation_x3wgy"),
-&"walk_down": SubResource("Animation_fkybt")
+&"idle": SubResource("Animation_3smsa"),
+&"walk_down": SubResource("Animation_fkybt"),
+&"walk_left": SubResource("Animation_vgqql"),
+&"walk_right": SubResource("Animation_6t5aa"),
+&"walk_up": SubResource("Animation_cvnsp")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -51,15 +118,13 @@ script = ExtResource("1_cvnsp")
 physics_interpolation_mode = 1
 process_callback = 0
 
-[node name="Rain" parent="Camera2D" instance=ExtResource("2_6t5aa")]
-position = Vector2(0, -190)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0iea")
 hframes = 3
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.5)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -15,10 +15,16 @@ func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 	
-	#if velocity.y > 0:
-		#animation_player.play("walk_down")
-	#elif velocity.x == 0:
-		#animation_player.stop()
+	if velocity.x > 0:
+		animation_player.play("walk_right")
+	elif velocity.x < 0:
+		animation_player.play("walk_left")
+	elif velocity.y > 0:
+		animation_player.play("walk_down")
+	elif velocity.y < 0:
+		animation_player.play("walk_up")
+	elif velocity.x == 0 and velocity.y == 0:
+		animation_player.play("idle")
 
 func _physics_process(delta):
 	get_input()
