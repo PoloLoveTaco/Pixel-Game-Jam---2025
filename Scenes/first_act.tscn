@@ -65,7 +65,6 @@ tile_set = SubResource("TileSet_f1m2m")
 
 [node name="Player" parent="." instance=ExtResource("2_qutkg")]
 position = Vector2(319, 279)
-speed = 200
 
 [node name="HumanSpawner" type="Node2D" parent="."]
 script = ExtResource("6_d3hep")

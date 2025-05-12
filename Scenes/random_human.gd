@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 140
 @export var dodge_speed = 350
 @export var dodge_time = 0.25
 
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		dodge_timer -= delta
 		if dodge_timer <= 0.0:
 			dir   = Vector2(0, -1)
-			speed = 200
+			speed = 140
 			is_dodging = false
 			if player_in_area:
 				start_dodge()
@@ -52,10 +52,10 @@ func side_is_clear(dir: Vector2, length: float = 32.0) -> bool:
 	var from   = global_position
 	var to     = from + dir.normalized() * length
 	var query  = PhysicsRayQueryParameters2D.create(from, to)
-	query.exclude        = [self.get_rid(), player.get_rid()]   # ignore perso & joueur
+	query.exclude        = [self.get_rid(), player.get_rid()]
 	query.collide_with_areas  = false
 	query.collide_with_bodies = true
-	return space.intersect_ray(query).is_empty()                 # ← libre si pas de hit
+	return space.intersect_ray(query).is_empty()
 
 
 func start_dodge():
