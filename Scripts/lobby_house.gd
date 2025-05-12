@@ -6,4 +6,4 @@ func _ready() -> void:
 	book_1.interact = Callable(self, "_to_world_1")
 
 func _to_world_1():
-	print("wahouuuuuu")
+	get_tree().change_scene_to_file("res://Scenes/level_kitchen.tscn")
