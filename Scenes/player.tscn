@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ca01vvk4fhu28"]
+[gd_scene load_steps=12 format=3 uid="uid://ca01vvk4fhu28"]
 
 [ext_resource type="Script" uid="uid://i2hthtil41ex" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://busuwk2ptd28t" path="res://Assets/UniversalCharacter.png" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://bqy7rjs3ds87a" path="res://Scenes/stats_canva.tscn" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(20, 11)
@@ -134,3 +135,5 @@ root_node = NodePath("../Sprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_3smsa")
 }
+
+[node name="StatsCanva" parent="." instance=ExtResource("3_6t5aa")]

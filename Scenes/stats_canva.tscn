@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqy7rjs3ds87a"]
+[gd_scene load_steps=6 format=3 uid="uid://bqy7rjs3ds87a"]
 
 [ext_resource type="Texture2D" uid="uid://br0ex6m8phvmx" path="res://Assets/InventoryFrame.png" id="1_ik0xy"]
+[ext_resource type="Script" uid="uid://di2u8rpsogikj" path="res://Scripts/stats_canva.gd" id="1_n45ab"]
 
 [sub_resource type="Animation" id="Animation_ik0xy"]
 resource_name = "RESET"
@@ -89,6 +90,7 @@ _data = {
 }
 
 [node name="StatsCanva" type="CanvasLayer"]
+script = ExtResource("1_n45ab")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -102,7 +104,7 @@ offset_right = 207.0
 offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.099986, 0.099986, 0.099986, 1)
+color = Color(0.215902, 0.215902, 0.215902, 1)
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
