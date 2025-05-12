@@ -30,7 +30,6 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	
-	
 func set_camera_limits():
 	var used = tilemap.get_used_rect()
 	var size = tilemap.tile_set.tile_size
