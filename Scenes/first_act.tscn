@@ -1,5 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bco6if1i34koa"]
+[gd_scene load_steps=11 format=4 uid="uid://bco6if1i34koa"]
 
+[ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scenes/first_act.gd" id="1_d3hep"]
+[ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="1_ked5w"]
 [ext_resource type="Texture2D" uid="uid://d2dmynm0aj56s" path="res://Assets/road.png" id="1_lj6j0"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tilseset_001.png" id="2_f1m2m"]
 [ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="2_qutkg"]
@@ -52,6 +54,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qutkg")
 
 [node name="FirstAct" type="Node2D"]
+script = ExtResource("1_d3hep")
 
 [node name="Layers" type="Node2D" parent="."]
 
@@ -78,5 +81,7 @@ position = Vector2(244, 2715)
 
 [node name="SpawnMax" type="Node2D" parent="HumanSpawner"]
 position = Vector2(614, 2715)
+
+[node name="Rain" parent="." instance=ExtResource("1_ked5w")]
 
 [connection signal="timeout" from="HumanSpawner/Timer" to="HumanSpawner" method="_on_timer_timeout"]
