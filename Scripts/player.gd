@@ -16,6 +16,10 @@ func _ready() -> void:
 	world = get_parent();
 	tilemap = world.get_node("Layers/CameraLockLayer")
 	set_camera_limits();
+	
+func get_half_viewport() -> Vector2:
+	var px_size = get_viewport().get_visible_rect().size
+	return px_size * 0.5 * cam.zoom
 
 func get_input():
 	if Input.is_action_just_pressed("display stats"):
@@ -26,6 +30,10 @@ func get_input():
 	
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
+	
+	var half = get_half_viewport()
+	global_position.x = clamp(global_position.x, cam.limit_left, cam.limit_right)
+	global_position.y = clamp(global_position.y, cam.limit_top, cam.limit_bottom)
 	
 	if velocity.x > 0:
 		animation_player.play("walk_right")
