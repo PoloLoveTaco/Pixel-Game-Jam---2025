@@ -13,6 +13,9 @@ config_version=5
 config/name="Pixel Game Jam - 2025"
 run/main_scene="uid://bockfjime8a0c"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.0659327, 0.0657942, 0.189881, 1)
+boot_splash/show_image=false
+boot_splash/image="uid://dn5ylyqgj4t6h"
 config/icon="res://icon.svg"
 
 [autoload]
