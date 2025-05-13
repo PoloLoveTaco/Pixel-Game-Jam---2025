@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 
 func _on_continue_button_pressed() -> void:
 	audio_stream_player.stop()
-	SceneTransition.change_scene_dissolve("res://Scenes/intro_first_act.tscn")
+	SaveManager.load_game()
 
 
 func _on_new_game_button_pressed() -> void:

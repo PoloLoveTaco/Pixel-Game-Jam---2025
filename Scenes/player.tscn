@@ -116,7 +116,7 @@ _data = {
 &"walk_up": SubResource("Animation_cvnsp")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["Persist", "player"]]
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_cvnsp")

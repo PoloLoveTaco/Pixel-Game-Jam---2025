@@ -51,3 +51,14 @@ func set_camera_limits():
 	cam.limit_top = used.position.y * size.y
 	cam.limit_right = used.end.x * size.x
 	cam.limit_bottom = used.end.y * size.y
+
+
+func save():
+	var save_dict = {
+		"in_wich_scene" : get_tree().current_scene.scene_file_path,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+	}
+	return save_dict

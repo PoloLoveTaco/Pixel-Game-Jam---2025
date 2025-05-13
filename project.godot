@@ -25,6 +25,7 @@ InteractionManager="*res://Scenes/interaction_manager.tscn"
 SceneTransition="*res://Scenes/scene_transition.tscn"
 GlobalVariables="*res://Scripts/global_variables.gd"
 Dialog="*res://Scripts/dialog.gd"
+SaveManager="*res://Scripts/save_manager.gd"
 
 [display]
 
@@ -41,6 +42,7 @@ enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 [global_group]
 
 player=""
+Persist=""
 
 [input]
 

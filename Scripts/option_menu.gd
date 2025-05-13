@@ -44,3 +44,8 @@ func _on_music_volume_value_changed(value: float) -> void:
 
 func _on_sfx_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index_3, linear_to_db(value))
+
+
+func _on_go_to_main_button_pressed() -> void:
+	SaveManager.save_game()
+	SceneTransition.change_scene_dissolve("res://Scenes/Menus/main_menu.tscn")
