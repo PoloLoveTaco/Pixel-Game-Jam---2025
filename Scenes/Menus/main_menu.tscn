@@ -1,42 +1,147 @@
-[gd_scene load_steps=6 format=3 uid="uid://bockfjime8a0c"]
+[gd_scene load_steps=9 format=3 uid="uid://bockfjime8a0c"]
 
-[ext_resource type="Texture2D" uid="uid://c2boxp5nxi4d4" path="res://Assets/MainMenuBackground.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://bmvuqsdlg5426" path="res://Scripts/main_menu.gd" id="1_48xlc"]
-[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://bwh3pyc0kyy0y" path="res://Assets/heart.png" id="2_pha2q"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ce3w2"]
-shader = ExtResource("2_1ehe0")
+[sub_resource type="Animation" id="Animation_penys"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(200, 60), Vector2(200, 35), Vector2(200, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Heart:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(260, 120), Vector2(260, 95), Vector2(260, 120)]
+}
 
-[sub_resource type="LabelSettings" id="LabelSettings_28flt"]
-font_size = 76
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="Animation" id="Animation_aur2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Heart:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(260, 120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wi6m"]
+_data = {
+&"RESET": SubResource("Animation_aur2u"),
+&"idle": SubResource("Animation_penys")
+}
+
+[sub_resource type="Animation" id="Animation_chkef"]
+resource_name = "idle"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.243137), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_neey8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.364706)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fgt5"]
+_data = {
+&"RESET": SubResource("Animation_neey8"),
+&"idle": SubResource("Animation_chkef")
+}
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_48xlc")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_ce3w2")
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_28flt")
-expand_mode = 1
+color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 5
+[node name="Heart" type="TextureRect" parent="."]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -283.0
-offset_top = 24.36
-offset_right = 283.0
-offset_bottom = 142.36
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
-text = "A game of life"
-label_settings = SubResource("LabelSettings_28flt")
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
+texture = ExtResource("2_pha2q")
+
+[node name="Heart2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.364706)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pha2q")
 
 [node name="AllButtons" type="HBoxContainer" parent="."]
 anchors_preset = 8
@@ -67,6 +172,16 @@ text = "Option"
 [node name="QuitButton" type="Button" parent="AllButtons"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5wi6m")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4fgt5")
+}
 
 [connection signal="pressed" from="AllButtons/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="AllButtons/NewGameButton" to="." method="_on_new_game_button_pressed"]

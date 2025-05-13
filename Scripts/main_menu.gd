@@ -1,7 +1,12 @@
 extends CanvasLayer
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+
+
 func _ready() -> void:
-	#return
+	animation_player.play("idle")
+	animation_player_2.play("idle")
 	GlobalVariables.bw_amount = 1.0
 
 func _on_quit_button_pressed() -> void:
