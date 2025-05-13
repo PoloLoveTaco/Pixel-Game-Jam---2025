@@ -1,7 +1,7 @@
 extends Area2D
 class_name InteractionArea
 
-@export_enum("interact") var action_name: String = "interact"
+@export_enum("interact", "enter") var action_name: String = "interact"
 
 
 var interact: Callable = func():
