@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq8x5j46f8q5u"]
+[gd_scene load_steps=5 format=3 uid="uid://cq8x5j46f8q5u"]
 
 [ext_resource type="Texture2D" uid="uid://7773in4vi1d3" path="res://Assets/rain.png" id="1_l8yrx"]
+[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="1_ypaoi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7n2r"]
+shader = ExtResource("1_ypaoi")
 
 [sub_resource type="Curve" id="Curve_l8yrx"]
 _data = [Vector2(0.00996678, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.553235), 0.0, 0.0, 0, 0]
@@ -9,6 +13,7 @@ point_count = 2
 [node name="Rain" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_t7n2r")
 position = Vector2(305, 0)
 amount = 600
 texture = ExtResource("1_l8yrx")

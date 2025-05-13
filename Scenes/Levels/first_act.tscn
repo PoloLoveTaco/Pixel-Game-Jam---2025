@@ -503,6 +503,7 @@ sources/0 = SubResource("TileSetAtlasSource_gh0hb")
 size = Vector2(44, 20)
 
 [node name="FirstAct" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_cacwc")
 
 [node name="Layers" type="Node2D" parent="."]
