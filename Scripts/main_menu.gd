@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _ready() -> void:
-	return
+	#return
 	GlobalVariables.bw_amount = 1.0
 
 func _on_quit_button_pressed() -> void:
