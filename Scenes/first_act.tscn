@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bco6if1i34koa"]
+[gd_scene load_steps=20 format=4 uid="uid://bco6if1i34koa"]
 
 [ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scripts/first_act.gd" id="1_d3hep"]
 [ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="1_ked5w"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="2_qutkg"]
 [ext_resource type="Texture2D" uid="uid://dqym0p0wt40hs" path="res://Assets/buildings.png" id="5_3tt5v"]
 [ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="6_d3hep"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="9_gh0hb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3tt5v"]
 
@@ -498,6 +499,9 @@ texture = ExtResource("5_3tt5v")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gh0hb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52ec1"]
+size = Vector2(44, 20)
+
 [node name="FirstAct" type="Node2D"]
 script = ExtResource("1_d3hep")
 
@@ -535,5 +539,11 @@ position = Vector2(614, 2715)
 position = Vector2(866, 365)
 
 [node name="Rain" parent="." instance=ExtResource("1_ked5w")]
+
+[node name="OfficeDoor" parent="." instance=ExtResource("9_gh0hb")]
+position = Vector2(1056, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeDoor"]
+shape = SubResource("RectangleShape2D_52ec1")
 
 [connection signal="timeout" from="HumanSpawner/Timer" to="HumanSpawner" method="_on_timer_timeout"]

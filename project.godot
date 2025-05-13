@@ -24,6 +24,7 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 InteractionManager="*res://Scenes/interaction_manager.tscn"
 SceneTransition="*res://Scenes/scene_transition.tscn"
 GlobalVariables="*res://Scripts/global_variables.gd"
+Dialog="*res://Scripts/dialog.gd"
 
 [display]
 
