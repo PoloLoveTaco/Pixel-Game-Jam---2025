@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://1e86om8caein"]
+[gd_scene load_steps=22 format=4 uid="uid://1e86om8caein"]
 
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="1_81w7o"]
 [ext_resource type="Script" uid="uid://bfwdgjpl1djpm" path="res://Scripts/lobby_house.gd" id="1_ldafp"]
@@ -181,6 +181,22 @@ texture_region_size = Vector2i(32, 32)
 3:5/0 = 0
 9:8/0 = 0
 9:9/0 = 0
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -12, 0, 12, 0, 12, -16)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 16, -12, 13, 12, 13, 12, 16)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -16, -16, -16, 16)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 0, 16, 0, 16, -16)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 0, -16, 0, -16, -16)
 
 [sub_resource type="TileSet" id="TileSet_0n7vw"]
 tile_size = Vector2i(32, 32)
@@ -245,6 +261,42 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_tq2i7")
 sources/1 = SubResource("TileSetAtlasSource_7ph5o")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvmi6"]
+texture = ExtResource("3_6otqr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+9:8/0 = 0
+9:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p5ugh"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_vvmi6")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldafp"]
 size = Vector2(46, 46)
 
@@ -266,12 +318,15 @@ tile_map_data = PackedByteArray("AAAIAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAJAAIAAQAAAAA
 tile_set = SubResource("TileSet_tq2i7")
 
 [node name="GroundObject" type="TileMapLayer" parent="Layers"]
-tile_map_data = PackedByteArray("AAAHAAEAAAAGAAMAAAAPAAQAAQABAAMAAAASAAQAAQADAAMAAAAQAAQAAQACAAMAAAARAAQAAQACAAMAAAAPAAcAAQABAAUAAAAPAAUAAQABAAQAAAAPAAYAAQABAAQAAAAQAAcAAQACAAUAAAARAAcAAQACAAUAAAASAAUAAQADAAQAAAASAAYAAQADAAQAAAAQAAUAAQACAAQAAAARAAUAAQACAAQAAAARAAYAAQACAAQAAAAQAAYAAQACAAQAAAASAAcAAQADAAUAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAAAGAAMAAAAUAAEAAQABAAcAAAAUAAIAAQABAAgAAAAVAAEAAQACAAcAAAAVAAIAAQACAAgAAAAWAAEAAQADAAcAAAAWAAIAAQADAAgAAAAUAAQAAQABAAQAAAAUAAUAAQABAAQAAAAUAAYAAQABAAUAAAAVAAQAAQACAAQAAAAVAAUAAQACAAQAAAAVAAYAAQACAAUAAAAWAAQAAQACAAQAAAAWAAUAAQACAAQAAAAWAAYAAQACAAUAAAAUAAMAAQABAAMAAAAVAAMAAQACAAMAAAAWAAMAAQACAAMAAAAXAAMAAQADAAMAAAAXAAQAAQADAAQAAAAXAAUAAQADAAQAAAAXAAYAAQADAAUAAAAXAAEAAQAEAAcAAAAXAAIAAQAEAAgAAAA=")
 tile_set = SubResource("TileSet_0n7vw")
 
 [node name="Decoration" type="TileMapLayer" parent="Layers"]
 tile_map_data = PackedByteArray("AAAHAAEAAAAHAAMAAAAHAP//AQAJAAgAAAAHAAAAAQAJAAkAAAA=")
 tile_set = SubResource("TileSet_7ph5o")
+
+[node name="OnSky" type="TileMapLayer" parent="Layers"]
+tile_set = SubResource("TileSet_p5ugh")
 
 [node name="Player" parent="." instance=ExtResource("2_ldgqf")]
 position = Vector2(183, 316)
