@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bockfjime8a0c"]
+[gd_scene load_steps=6 format=3 uid="uid://bockfjime8a0c"]
 
 [ext_resource type="Texture2D" uid="uid://c2boxp5nxi4d4" path="res://Assets/MainMenuBackground.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://bmvuqsdlg5426" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_1ehe0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ce3w2"]
+shader = ExtResource("2_1ehe0")
+shader_parameter/grayscale_strength = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_28flt"]
 font_size = 76
@@ -11,6 +16,7 @@ font_color = Color(0, 0, 0, 1)
 script = ExtResource("1_48xlc")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ce3w2")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
