@@ -6,4 +6,4 @@ func _ready() -> void:
 	book_1.interact = Callable(self, "_to_world_1")
 
 func _to_world_1():
-	SceneTransition.change_scene_dissolve("res://Scenes/level_kitchen.tscn")
+	SceneTransition.change_scene_slide("res://Scenes/level_kitchen.tscn")
