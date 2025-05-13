@@ -2,14 +2,21 @@ extends Node2D
 
 @onready var random_human_scene: PackedScene = preload("res://Scenes/random_human.tscn")
 
-@onready var cam: Camera2D = $"../Player/Camera2D"
+@onready var cam: Camera2D
 
 func _ready() -> void:
+	while not get_parent().has_node("Player"):
+		await get_tree().process_frame
+
+	cam = get_parent().get_node("Player").get_node("Camera2D")
 	set_spawners_position()
-	
+
+
 func _process(delta: float) -> void:
-	if (get_bottom_y() > $SpawnMin.global_position.y):
-		set_spawners_position()
+	if get_parent().has_node("Player"):
+		if (get_bottom_y() > $SpawnMin.global_position.y):
+			set_spawners_position()
+
 
 func set_spawners_position():
 	$SpawnMin.global_position = Vector2($SpawnMin.global_position.x, get_bottom_y())

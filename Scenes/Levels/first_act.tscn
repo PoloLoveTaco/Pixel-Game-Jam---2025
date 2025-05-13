@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bco6if1i34koa"]
+[gd_scene load_steps=21 format=4 uid="uid://bco6if1i34koa"]
 
 [ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scripts/first_act.gd" id="1_cacwc"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_m64e0"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dqym0p0wt40hs" path="res://Assets/buildings.png" id="5_wbeqj"]
 [ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="6_37h6t"]
 [ext_resource type="Texture2D" uid="uid://dx6y4pjvhf6c" path="res://Assets/Tileset_003.png" id="6_m64e0"]
-[ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="7_gcpds"]
 [ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="8_qnpau"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="9_ygyml"]
 
@@ -313,9 +312,6 @@ position = Vector2(244, 2715)
 [node name="SpawnMax" type="Node2D" parent="HumanSpawner"]
 position = Vector2(458, 2715)
 
-[node name="Player" parent="." instance=ExtResource("7_gcpds")]
-position = Vector2(866, 365)
-
 [node name="Rain" parent="." instance=ExtResource("8_qnpau")]
 
 [node name="OfficeDoor" parent="." instance=ExtResource("9_ygyml")]
@@ -332,5 +328,8 @@ action_name = "enter"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_52ec1")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(866, 365)
 
 [connection signal="timeout" from="HumanSpawner/Timer" to="HumanSpawner" method="_on_timer_timeout"]

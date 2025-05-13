@@ -48,8 +48,9 @@ func type_line_async() -> void:
 			skip = false
 			return
 		text_label.visible_characters = i
+		
 		if blip_every > 0 and i % blip_every == 0 and i > 0:
-			# $"../Blip".play()
+			$Bop.play()
 			pass
 		await get_tree().create_timer(char_speed).timeout
 	is_typing = false  
