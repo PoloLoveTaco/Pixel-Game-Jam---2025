@@ -181,10 +181,6 @@ texture_region_size = Vector2i(32, 32)
 3:5/0 = 0
 9:8/0 = 0
 9:9/0 = 0
-4:8/0 = 0
-4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -16, -12, 0, 12, 0, 12, -16)
-4:7/0 = 0
-4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 16, -12, 13, 12, 13, 12, 16)
 1:7/0 = 0
 1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -16, -16, -16, 16)
 1:8/0 = 0
@@ -197,6 +193,8 @@ texture_region_size = Vector2i(32, 32)
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
 3:8/0 = 0
 3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 0, -16, 0, -16, -16)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -14, -12, 5, 12, 5, 12, -14)
 
 [sub_resource type="TileSet" id="TileSet_0n7vw"]
 tile_size = Vector2i(32, 32)
@@ -255,6 +253,14 @@ texture_region_size = Vector2i(32, 32)
 1:5/0 = 0
 9:8/0 = 0
 9:9/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+3:7/0 = 0
+1:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7ph5o"]
 tile_size = Vector2i(32, 32)
@@ -318,11 +324,11 @@ tile_map_data = PackedByteArray("AAAIAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAJAAIAAQAAAAA
 tile_set = SubResource("TileSet_tq2i7")
 
 [node name="GroundObject" type="TileMapLayer" parent="Layers"]
-tile_map_data = PackedByteArray("AAAHAAEAAAAGAAMAAAAUAAEAAQABAAcAAAAUAAIAAQABAAgAAAAVAAEAAQACAAcAAAAVAAIAAQACAAgAAAAWAAEAAQADAAcAAAAWAAIAAQADAAgAAAAUAAQAAQABAAQAAAAUAAUAAQABAAQAAAAUAAYAAQABAAUAAAAVAAQAAQACAAQAAAAVAAUAAQACAAQAAAAVAAYAAQACAAUAAAAWAAQAAQACAAQAAAAWAAUAAQACAAQAAAAWAAYAAQACAAUAAAAUAAMAAQABAAMAAAAVAAMAAQACAAMAAAAWAAMAAQACAAMAAAAXAAMAAQADAAMAAAAXAAQAAQADAAQAAAAXAAUAAQADAAQAAAAXAAYAAQADAAUAAAAXAAEAAQAEAAcAAAAXAAIAAQAEAAgAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAAAGAAMAAAAUAAEAAQABAAcAAAAUAAIAAQABAAgAAAAVAAEAAQACAAcAAAAVAAIAAQACAAgAAAAWAAEAAQADAAcAAAAWAAIAAQADAAgAAAAUAAQAAQABAAQAAAAUAAUAAQABAAQAAAAUAAYAAQABAAUAAAAVAAQAAQACAAQAAAAVAAUAAQACAAQAAAAVAAYAAQACAAUAAAAWAAQAAQACAAQAAAAWAAUAAQACAAQAAAAWAAYAAQACAAUAAAAUAAMAAQABAAMAAAAVAAMAAQACAAMAAAAWAAMAAQACAAMAAAAXAAMAAQADAAMAAAAXAAQAAQADAAQAAAAXAAUAAQADAAQAAAAXAAYAAQADAAUAAAAXAAIAAQAFAAcAAAA=")
 tile_set = SubResource("TileSet_0n7vw")
 
 [node name="Decoration" type="TileMapLayer" parent="Layers"]
-tile_map_data = PackedByteArray("AAAHAAEAAAAHAAMAAAAHAP//AQAJAAgAAAAHAAAAAQAJAAkAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAAAHAAMAAAAHAP//AQAJAAgAAAAHAAAAAQAJAAkAAAAXAAIAAQAGAAcAAAA=")
 tile_set = SubResource("TileSet_7ph5o")
 
 [node name="OnSky" type="TileMapLayer" parent="Layers"]
