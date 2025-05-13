@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnjpcffe25say"]
+
+[ext_resource type="Script" uid="uid://fnamh1pyo5pr" path="res://Scenes/intro_first_act.gd" id="1_opcgx"]
+[ext_resource type="FontFile" uid="uid://cq3htwpamoe45" path="res://Assets/Fonts/DePixelKlein.ttf" id="2_qqoxw"]
+
+[node name="IntroFirstAct" type="CanvasLayer"]
+script = ExtResource("1_opcgx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 652.0
+offset_bottom = 370.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.0
+offset_top = -20.0
+offset_right = 277.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("2_qqoxw")
+theme_override_fonts/mono_font = ExtResource("2_qqoxw")
+theme_override_fonts/italics_font = ExtResource("2_qqoxw")
+theme_override_fonts/bold_italics_font = ExtResource("2_qqoxw")
+theme_override_fonts/bold_font = ExtResource("2_qqoxw")
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "Je Suis un test pour léditeur"
+fit_content = true
+vertical_alignment = 1
+text_direction = 1
