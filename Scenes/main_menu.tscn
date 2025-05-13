@@ -6,7 +6,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ce3w2"]
 shader = ExtResource("2_1ehe0")
-shader_parameter/grayscale_strength = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_28flt"]
 font_size = 76

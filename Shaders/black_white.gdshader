@@ -1,14 +1,13 @@
-shader_type canvas_item;   // Pour Sprite, TextureRect, etc.
+shader_type canvas_item;
 
-uniform float grayscale_strength : hint_range(0.0, 1.0) = 0.0; // 0 = couleur, 1 = N&B
+/* Variable partagée — DOIT exister dans Project Settings → Rendering → Global Variables */
+global uniform float bw_amount_global : hint_range(0.0, 1.0) = 0.0;
 
 void fragment() {
-    vec4 c = texture(TEXTURE, UV);               // Couleur d’origine
+    vec4 tex  = texture(TEXTURE, UV);
 
-    // Calcul de la luminance (pondérations NTSC)
-    float luma = dot(c.rgb, vec3(0.299, 0.587, 0.114));
-    vec3 grey  = vec3(luma);                     // Couleur gris pur
+    float luma = dot(tex.rgb, vec3(0.299, 0.587, 0.114));
+    vec3 grey  = vec3(luma);
 
-    // On mélange la couleur d’origine avec le gris selon la force voulue
-    COLOR = vec4(mix(c.rgb, grey, grayscale_strength), c.a); // Conserve l’alpha
+    COLOR = vec4(mix(tex.rgb, grey, bw_amount_global), tex.a);
 }
