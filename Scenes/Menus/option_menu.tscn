@@ -1,0 +1,135 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4b541h6jucfu"]
+
+[ext_resource type="Script" uid="uid://dkn3tqlwh2on2" path="res://Scripts/option_menu.gd" id="1_p2rt5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pha2q"]
+font_size = 20
+
+[node name="Option Menu" type="CanvasLayer"]
+script = ExtResource("1_p2rt5")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -128.0
+offset_right = 181.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 37.81
+offset_right = 44.0
+offset_bottom = 65.81
+grow_horizontal = 2
+text = "options"
+label_settings = SubResource("LabelSettings_pha2q")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CheckButton" type="CheckButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -102.25
+offset_right = 66.0
+offset_bottom = -71.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Full Screen"
+
+[node name="Label Global Volume" type="Label" parent="."]
+offset_left = 263.5
+offset_top = 137.0
+offset_right = 376.5
+offset_bottom = 160.0
+text = "Global Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Global Volume" type="HSlider" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -18.0
+offset_right = 100.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label Music Volume" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = 12.0
+offset_right = 54.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Volume" type="HSlider" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 37.0
+offset_right = 100.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label SFX Volume" type="Label" parent="."]
+offset_left = 239.5
+offset_top = 247.0
+offset_right = 400.5
+offset_bottom = 270.0
+text = "Sound Effect Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX Volume" type="HSlider" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 92.0
+offset_right = 100.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="Global Volume" to="." method="_on_global_volume_value_changed"]
+[connection signal="value_changed" from="Music Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="SFX Volume" to="." method="_on_sfx_volume_value_changed"]

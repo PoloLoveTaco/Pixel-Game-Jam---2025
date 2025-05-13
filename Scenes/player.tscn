@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://i2hthtil41ex" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://busuwk2ptd28t" path="res://Assets/UniversalCharacter.png" id="1_v0iea"]
 [ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_vgqql"]
-[ext_resource type="PackedScene" uid="uid://bqy7rjs3ds87a" path="res://Scenes/stats_canva.tscn" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://d4b541h6jucfu" path="res://Scenes/Menus/option_menu.tscn" id="5_fkybt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkybt"]
 shader = ExtResource("2_vgqql")
@@ -135,11 +135,10 @@ vframes = 4
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_cvnsp")
 
-[node name="StatsCanva" parent="." instance=ExtResource("3_6t5aa")]
-visible = false
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_3smsa")
 }
+
+[node name="Option Menu" parent="." instance=ExtResource("5_fkybt")]
