@@ -1,19 +1,19 @@
 [gd_scene load_steps=20 format=4 uid="uid://bco6if1i34koa"]
 
-[ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scripts/first_act.gd" id="1_d3hep"]
-[ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="1_ked5w"]
-[ext_resource type="Texture2D" uid="uid://d2dmynm0aj56s" path="res://Assets/road.png" id="1_lj6j0"]
-[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_ag42w"]
-[ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_f1m2m"]
-[ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="2_qutkg"]
-[ext_resource type="Texture2D" uid="uid://dqym0p0wt40hs" path="res://Assets/buildings.png" id="5_3tt5v"]
-[ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="6_d3hep"]
-[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="9_gh0hb"]
+[ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scripts/first_act.gd" id="1_cacwc"]
+[ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_m64e0"]
+[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="3_gai07"]
+[ext_resource type="Texture2D" uid="uid://d2dmynm0aj56s" path="res://Assets/road.png" id="4_ms1xf"]
+[ext_resource type="Texture2D" uid="uid://dqym0p0wt40hs" path="res://Assets/buildings.png" id="5_wbeqj"]
+[ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="6_37h6t"]
+[ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="7_gcpds"]
+[ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="8_qnpau"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="9_ygyml"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3tt5v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxn6"]
-texture = ExtResource("2_f1m2m")
+texture = ExtResource("2_m64e0")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -39,10 +39,10 @@ physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_klxn6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ag42w"]
-shader = ExtResource("2_ag42w")
+shader = ExtResource("3_gai07")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qutkg"]
-texture = ExtResource("1_lj6j0")
+texture = ExtResource("4_ms1xf")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -110,10 +110,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qutkg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gh0hb"]
-shader = ExtResource("2_ag42w")
+shader = ExtResource("3_gai07")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gh0hb"]
-texture = ExtResource("5_3tt5v")
+texture = ExtResource("5_wbeqj")
 3:2/0 = 0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.719435, -0.359716, 8, -8, 8, 8, -8, 8)
 4:2/0 = 0
@@ -503,7 +503,7 @@ sources/0 = SubResource("TileSetAtlasSource_gh0hb")
 size = Vector2(44, 20)
 
 [node name="FirstAct" type="Node2D"]
-script = ExtResource("1_d3hep")
+script = ExtResource("1_cacwc")
 
 [node name="Layers" type="Node2D" parent="."]
 
@@ -523,7 +523,7 @@ tile_map_data = PackedByteArray("AAA7AAkAAAACAAMAAAA7AAoAAAACAAQAAAA7AAsAAAACAAU
 tile_set = SubResource("TileSet_52ec1")
 
 [node name="HumanSpawner" type="Node2D" parent="."]
-script = ExtResource("6_d3hep")
+script = ExtResource("6_37h6t")
 
 [node name="Timer" type="Timer" parent="HumanSpawner"]
 wait_time = 0.05
@@ -535,12 +535,12 @@ position = Vector2(244, 2715)
 [node name="SpawnMax" type="Node2D" parent="HumanSpawner"]
 position = Vector2(614, 2715)
 
-[node name="Player" parent="." instance=ExtResource("2_qutkg")]
+[node name="Player" parent="." instance=ExtResource("7_gcpds")]
 position = Vector2(866, 365)
 
-[node name="Rain" parent="." instance=ExtResource("1_ked5w")]
+[node name="Rain" parent="." instance=ExtResource("8_qnpau")]
 
-[node name="OfficeDoor" parent="." instance=ExtResource("9_gh0hb")]
+[node name="OfficeDoor" parent="." instance=ExtResource("9_ygyml")]
 position = Vector2(1056, 319)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeDoor"]
