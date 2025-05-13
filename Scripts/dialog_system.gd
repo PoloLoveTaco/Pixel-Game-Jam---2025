@@ -22,6 +22,7 @@ func set_text(tab) -> void:
 func start() -> void:
 	speaker_label = $Background/SpeakerLabel
 	text_label = $Background/TextLabel
+	GlobalVariables.is_speaking = true
 	start_line()
 	
 func start_line() -> void:
@@ -64,4 +65,5 @@ func _input(event: InputEvent) -> void:
 			if story_index < story.size():
 				start_line()
 			else:
+				GlobalVariables.is_speaking = false
 				queue_free()

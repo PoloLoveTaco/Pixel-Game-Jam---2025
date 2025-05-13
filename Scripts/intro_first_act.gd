@@ -74,4 +74,4 @@ func _input(event: InputEvent) -> void:
 			if story_index < story.size():
 				start_line()
 			else:
-				get_tree().change_scene_to_file("res://Scenes/first_act.tscn")
+				get_tree().change_scene_to_file("res://Scenes/Levels/first_act.tscn")
