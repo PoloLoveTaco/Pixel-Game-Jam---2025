@@ -1,7 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dedo8kbgoe1vr"]
+[gd_scene load_steps=14 format=3 uid="uid://dedo8kbgoe1vr"]
 
 [ext_resource type="Script" uid="uid://clhk52aj24qjy" path="res://Scripts/random_human.gd" id="1_rb5ka"]
+[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_410pc"]
 [ext_resource type="Texture2D" uid="uid://busuwk2ptd28t" path="res://Assets/UniversalCharacter.png" id="2_qewhn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dpsi"]
+shader = ExtResource("2_410pc")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qewhn"]
 radius = 6.50481
@@ -121,6 +125,7 @@ script = ExtResource("1_rb5ka")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_5dpsi")
 texture = ExtResource("2_qewhn")
 hframes = 3
 vframes = 4
