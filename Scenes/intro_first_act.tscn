@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnjpcffe25say"]
 
-[ext_resource type="Script" uid="uid://fnamh1pyo5pr" path="res://Scenes/intro_first_act.gd" id="1_opcgx"]
+[ext_resource type="Script" uid="uid://fnamh1pyo5pr" path="res://Scripts/intro_first_act.gd" id="1_opcgx"]
 [ext_resource type="FontFile" uid="uid://cq3htwpamoe45" path="res://Assets/Fonts/DePixelKlein.ttf" id="2_qqoxw"]
 
 [node name="IntroFirstAct" type="CanvasLayer"]
