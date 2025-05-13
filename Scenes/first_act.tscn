@@ -1,16 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://bco6if1i34koa"]
+[gd_scene load_steps=12 format=4 uid="uid://bco6if1i34koa"]
 
 [ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scripts/first_act.gd" id="1_d3hep"]
 [ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="1_ked5w"]
 [ext_resource type="Texture2D" uid="uid://d2dmynm0aj56s" path="res://Assets/road.png" id="1_lj6j0"]
-[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_ag42w"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_f1m2m"]
 [ext_resource type="PackedScene" uid="uid://ca01vvk4fhu28" path="res://Scenes/player.tscn" id="2_qutkg"]
 [ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="6_d3hep"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3tt5v"]
-shader = ExtResource("2_ag42w")
-shader_parameter/grayscale_strength = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxn6"]
 texture = ExtResource("2_f1m2m")

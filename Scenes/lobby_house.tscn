@@ -33,7 +33,7 @@ sources/0 = SubResource("TileSetAtlasSource_ldafp")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3eh2x"]
 shader = ExtResource("2_3eh2x")
-shader_parameter/grayscale_strength = 1.0
+shader_parameter/grayscale_strength = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6otqr"]
 texture = ExtResource("1_81w7o")
@@ -61,7 +61,7 @@ sources/0 = SubResource("TileSetAtlasSource_6otqr")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sybwh"]
 shader = ExtResource("2_3eh2x")
-shader_parameter/grayscale_strength = 1.0
+shader_parameter/grayscale_strength = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sybwh"]
 texture = ExtResource("1_81w7o")
@@ -140,7 +140,7 @@ sources/1 = SubResource("TileSetAtlasSource_0n7vw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tq2i7"]
 shader = ExtResource("2_3eh2x")
-shader_parameter/grayscale_strength = 1.0
+shader_parameter/grayscale_strength = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3eh2x"]
 texture = ExtResource("1_81w7o")
@@ -217,7 +217,7 @@ sources/1 = SubResource("TileSetAtlasSource_bfbr5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0n7vw"]
 shader = ExtResource("2_3eh2x")
-shader_parameter/grayscale_strength = 1.0
+shader_parameter/grayscale_strength = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tq2i7"]
 texture = ExtResource("1_81w7o")
@@ -286,7 +286,7 @@ sources/1 = SubResource("TileSetAtlasSource_7ph5o")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ph5o"]
 shader = ExtResource("2_3eh2x")
-shader_parameter/grayscale_strength = 1.0
+shader_parameter/grayscale_strength = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvmi6"]
 texture = ExtResource("3_6otqr")

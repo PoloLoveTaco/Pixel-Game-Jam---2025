@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 InteractionManager="*res://Scenes/interaction_manager.tscn"
 SceneTransition="*res://Scenes/scene_transition.tscn"
+GlobalVariables="*res://Scripts/global_variables.gd"
 
 [display]
 
