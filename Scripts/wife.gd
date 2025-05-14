@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Wife
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var interaction: InteractionArea = $"Interaction Area"
@@ -6,7 +7,8 @@ extends CharacterBody2D
 enum {
 	START,
 	SEARCH_SHELL,
-	HAVE_SHELL
+	HAVE_SHELL,
+	TMP
 }
 
 var quest_status = START
@@ -25,4 +27,9 @@ func beach_quest():
 		quest_status = SEARCH_SHELL
 	elif quest_status == SEARCH_SHELL:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_NO_SHELL)
+	elif quest_status == HAVE_SHELL:
+		Dialog.launch_dialog(Dialog.BEACH_WIFE_HAVE_SHELL)
+		quest_status = TMP
+	elif quest_status == TMP:
+		Dialog.launch_dialog(Dialog.WORK_IN_PROGRESS)
 	

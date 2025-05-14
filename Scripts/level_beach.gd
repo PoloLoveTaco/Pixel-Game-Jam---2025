@@ -1,12 +1,21 @@
 extends Node2D
 
 @onready var spawn_point: Node2D = $SpawnPoint
+@onready var shell: InteractionArea = $"Shell/Interaction Area"
+@onready var wife: Wife = $Wife
 
 const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
+		
+	shell.interact = Callable(self, "take_shell")
+	
 	if GlobalVariables.is_new_game or GlobalVariables.saved_scene_name != get_tree().current_scene.scene_file_path:
 		var player_instance = PLAYER.instantiate()
 		player_instance.position.x = spawn_point.position.x
 		player_instance.position.y = spawn_point.position.y
 		add_child(player_instance)
+
+func take_shell():
+	wife.quest_status = Wife.HAVE_SHELL
+	$Shell.queue_free()

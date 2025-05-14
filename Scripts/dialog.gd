@@ -3,11 +3,13 @@ extends Node
 @onready var dialog_system_scene: PackedScene = load("res://Scenes/dialog_system.tscn")
 
 enum {
+	WORK_IN_PROGRESS = 10000,
 	INTRO = 0,
 	FIRST_ACT_OFFICE = 1,
 	CANT_LEAVE_HOUSE = 2,
 	BEACH_WIFE_BEFORE_SHELL = 3,
 	BEACH_WIFE_NO_SHELL = 4,
+	BEACH_WIFE_HAVE_SHELL = 5
 }
 
 # dialog template
@@ -19,6 +21,44 @@ enum {
 	#"end_sfx" : "res://Assets/Music/Path",
 
 var dialogs = {
+	WORK_IN_PROGRESS : [
+		{
+			"speaker": "SYSTEM",
+			"color": "green",
+			"text": "Work in progress . . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker": "SYSTEM",
+			"color": "green",
+			"text": "Francois le petit coquain",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker": "SYSTEM",
+			"color": "green",
+			"text": "Ehhhh",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker": "SYSTEM",
+			"color": "green",
+			"text": "Tu me fais rougir",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker": "SYSTEM",
+			"color": "green",
+			"text": "MOUUUAH !",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker": "SYSTEM",
+			"color": "green",
+			"text": "[KISS] sur le bou",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		}
+	],
 	INTRO : [
 		{
 			"speaker": "Cell phone",
@@ -158,6 +198,26 @@ var dialogs = {
 			"speaker" : "Wife",
 			"color" : "pink",
 			"text" : "Oh noo . . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		}
+	],
+	BEACH_WIFE_HAVE_SHELL : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Oh my love !",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "It's so beautifull!",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Thank you !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	]
