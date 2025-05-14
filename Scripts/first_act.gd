@@ -36,4 +36,4 @@ func launch_dialog_1():
 
 
 func go_home():
-	get_tree().change_scene_to_file("res://Scenes/Levels/lobby_house.tscn")
+	SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house.tscn")
