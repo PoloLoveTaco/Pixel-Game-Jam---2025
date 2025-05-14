@@ -55,7 +55,7 @@ func load_game():
 
 		# Si la scène de jeu n'est pas chargée, on la charge
 		SceneTransition.change_scene_slide_only_exit(node_data["in_wich_scene"])
-		while not get_tree().current_scene or get_tree().current_scene.name != "LobbyHouse":
+		while not get_tree().current_scene:
 			await get_tree().process_frame
 		
 		# On instancie le nouvel objet
