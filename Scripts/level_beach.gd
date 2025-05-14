@@ -17,5 +17,8 @@ func _ready() -> void:
 		add_child(player_instance)
 
 func take_shell():
-	wife.quest_status = Wife.HAVE_SHELL
-	$Shell.queue_free()
+	if wife.quest_status == Wife.SEARCH_SHELL:
+		wife.quest_status = Wife.HAVE_SHELL
+		$Shell.queue_free()
+	else:
+		Dialog.launch_dialog(Dialog.BEAUTIFULL_SHELL)

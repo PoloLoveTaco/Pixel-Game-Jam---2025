@@ -9,7 +9,8 @@ enum {
 	CANT_LEAVE_HOUSE = 2,
 	BEACH_WIFE_BEFORE_SHELL = 3,
 	BEACH_WIFE_NO_SHELL = 4,
-	BEACH_WIFE_HAVE_SHELL = 5
+	BEACH_WIFE_HAVE_SHELL = 5,
+	BEAUTIFULL_SHELL = 6
 }
 
 # dialog template
@@ -219,6 +220,26 @@ var dialogs = {
 			"color" : "pink",
 			"text" : "Thank you !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		}
+	],
+	BEAUTIFULL_SHELL : [
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "It's beautifull",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "That's remain me something",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : ". . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	]
 }
