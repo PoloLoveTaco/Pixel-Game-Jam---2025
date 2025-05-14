@@ -54,7 +54,7 @@ func load_game():
 		var node_data = json.data
 
 		# Si la scène de jeu n'est pas chargée, on la charge
-		get_tree().change_scene_to_file(node_data["in_wich_scene"])
+		SceneTransition.change_scene_slide_only_exit(node_data["in_wich_scene"])
 		while not get_tree().current_scene or get_tree().current_scene.name != "LobbyHouse":
 			await get_tree().process_frame
 		

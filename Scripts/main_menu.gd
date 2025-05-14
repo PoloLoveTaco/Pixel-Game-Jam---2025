@@ -29,7 +29,7 @@ func _on_continue_button_pressed() -> void:
 func _on_new_game_button_pressed() -> void:
 	audio_stream_player.stop()
 	GlobalVariables.is_new_game = true
-	SceneTransition.change_scene_dissolve("res://Scenes/intro_first_act.tscn")
+	SceneTransition.change_scene_very_low_fade_in("res://Scenes/intro_first_act.tscn")
 
 
 func _on_option_button_pressed() -> void:
