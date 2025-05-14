@@ -50,6 +50,12 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
+			"speaker": "Player",
+			"color": "gray",
+			"text": ". . . I'm tired, so . . ., maybe next time . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
 			"speaker": "Adrien",
 			"color": "gray",
 			"text": "Come on man . . .",
@@ -58,7 +64,7 @@ var dialogs = {
 		{
 			"speaker": "Player",
 			"color": "gray",
-			"text": ". . . I'm tired, so . . ., maybe next time . . .",
+			"text": "Maybe next week.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
