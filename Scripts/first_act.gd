@@ -8,21 +8,26 @@ extends Node2D
 const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
-	var player_instance = PLAYER.instantiate()
 	if GlobalVariables.is_new_game:
+		# Create the player when new game
+		var player_instance = PLAYER.instantiate()
 		player_instance.position.x = spawn_point.position.x
 		player_instance.position.y = spawn_point.position.y
-	add_child(player_instance)
-
-	cam = player_instance.get_node("Camera2D")
+		add_child(player_instance)
+	
+	while not get_parent().has_node("Player"):
+		await get_tree().process_frame
+	
+	cam = get_parent().get_node("Player").get_node("Camera2D")
 	
 	office_door.interact = Callable(self, "launch_dialog_1")
 	house_door.interact = Callable(self, "go_home")
 
 
 func _process(delta: float) -> void:
-	rain.global_position = cam.get_canvas_transform().affine_inverse() * Vector2.ZERO
-	rain.global_position.y -= 32;
+	if get_parent().has_node("Player"):
+		rain.global_position = cam.get_canvas_transform().affine_inverse() * Vector2.ZERO
+		rain.global_position.y -= 32;
 
 
 func launch_dialog_1():
