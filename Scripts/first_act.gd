@@ -8,6 +8,7 @@ extends Node2D
 const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
+	
 	if GlobalVariables.is_new_game:
 		# Create the player when new game
 		var player_instance = PLAYER.instantiate()

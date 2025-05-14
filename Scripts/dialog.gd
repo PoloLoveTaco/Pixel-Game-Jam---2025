@@ -3,7 +3,8 @@ extends Node
 @onready var dialog_system_scene: PackedScene = load("res://Scenes/dialog_system.tscn")
 
 enum {
-	FIRST_ACT_OFFICE = 0
+	FIRST_ACT_OFFICE = 0,
+	CANT_LEAVE_HOUSE = 1,
 }
 
 var dialogs = {
@@ -12,17 +13,34 @@ var dialogs = {
 		"speaker" : "Player",
 		"color" : "gray",
 		"text" : "The office is close."
-	},
-	{
+		},
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "I have to go home..."
+		},
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "Alone..."
+		}
+	],
+	CANT_LEAVE_HOUSE : [
+		{
 		"speaker" : "Player",
 		"color" : "gray",
-		"text" : "I have to go home..."
-	},
-	{
-		"speaker" : "Player",
-		"color" : "gray",
-		"text" : "Alone..."
-	}
+		"text" : "Mmmhhhh..."
+		},
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "I prefer stay here"
+		},
+		{
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "....."
+		}
 	]
 }
 

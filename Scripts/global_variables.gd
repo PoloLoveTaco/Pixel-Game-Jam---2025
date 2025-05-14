@@ -8,4 +8,6 @@ var bw_amount := 0.0 :
 		
 var is_speaking = false
 
+var saved_scene_name : String
+
 var is_new_game = false

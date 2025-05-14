@@ -53,6 +53,8 @@ func load_game():
 
 		var node_data = json.data
 
+		GlobalVariables.saved_scene_name = node_data["in_wich_scene"]
+
 		# Si la scène de jeu n'est pas chargée, on la charge
 		SceneTransition.change_scene_slide_only_exit(node_data["in_wich_scene"])
 		while not get_tree().current_scene:
