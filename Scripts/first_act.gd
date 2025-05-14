@@ -15,17 +15,17 @@ func _ready() -> void:
 		player_instance.position.y = spawn_point.position.y
 		add_child(player_instance)
 	
-	while not get_parent().has_node("Player"):
+	while not has_node("Player"):
 		await get_tree().process_frame
 	
-	cam = get_parent().get_node("Player").get_node("Camera2D")
+	cam = get_node("Player").get_node("Camera2D")
 	
 	office_door.interact = Callable(self, "launch_dialog_1")
 	house_door.interact = Callable(self, "go_home")
 
 
 func _process(delta: float) -> void:
-	if get_parent().has_node("Player"):
+	if has_node("Player"):
 		rain.global_position = cam.get_canvas_transform().affine_inverse() * Vector2.ZERO
 		rain.global_position.y -= 32;
 
