@@ -28,7 +28,25 @@ var dialogs = {
 		{
 			"speaker": "Adrien",
 			"color": "gray",
-			"text": "Hey bro, come a the bar close to the office, I am with Jules and Marie, we are goin to take a coffe before the weekend, come to join us !",
+			"text": "Hey bro !",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		{
+			"speaker": "Adrien",
+			"color": "gray",
+			"text": "Come a the bar close to the office.",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		{
+			"speaker": "Adrien",
+			"color": "gray",
+			"text": "I am with Jules and Marie, we are goin to take a coffe before the weekend.",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		{
+			"speaker": "Adrien",
+			"color": "gray",
+			"text": "Come to join us !",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
