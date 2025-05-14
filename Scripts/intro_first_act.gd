@@ -11,28 +11,7 @@ var blip_count = 0
 var story_index = 0
 var skip = false
 
-var story = [
-	{
-		"speaker": "Cell phone",
-		"color": "gray",
-		"text": "[DRIiiIIiiNG]",
-	},
-	{
-		"speaker": "Adrien",
-		"color": "gray",
-		"text": "Hey bro, come a the bar close to the office, I am with Jules and Marie, we are goind to take a coffe before the weekend, come to join us !",
-	},
-	{
-		"speaker": "Player",
-		"color": "gray",
-		"text": ". . . I'm tired, so . . ., maybe next time . . .",
-	},
-	{
-		"speaker": "Cell phone",
-		"color": "gray",
-		"text": "[BIP].",
-	},
-]
+var story = Dialog.dialogs[Dialog.INTRO]
 
 func _ready():
 	rtl.bbcode_enabled = true

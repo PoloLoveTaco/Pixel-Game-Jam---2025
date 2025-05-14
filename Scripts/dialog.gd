@@ -3,43 +3,85 @@ extends Node
 @onready var dialog_system_scene: PackedScene = load("res://Scenes/dialog_system.tscn")
 
 enum {
-	FIRST_ACT_OFFICE = 0,
-	CANT_LEAVE_HOUSE = 1,
+	INTRO = 0,
+	FIRST_ACT_OFFICE = 1,
+	CANT_LEAVE_HOUSE = 2,
+	
 }
 
+# dialog template
+	#"speaker" : "Speaker Name",
+	#"color" : "gray",
+	#"text" : "Text text text text",
+	#"voice_path" : "res://Assets/Music/Path",
+	#"start_sfx" : "res://Assets/Music/Path",
+	#"end_sfx" : "res://Assets/Music/Path",
+
 var dialogs = {
+	INTRO : [
+		{
+			"speaker": "Cell phone",
+			"color": "gray",
+			"text": "[DRIiiIIiiNG].",
+			"voice_path" : "res://Assets/Music/bop.wav"
+		},
+		{
+			"speaker": "Adrien",
+			"color": "gray",
+			"text": "Hey bro, come a the bar close to the office, I am with Jules and Marie, we are goin to take a coffe before the weekend, come to join us !",
+			"voice_path" : "res://Assets/Music/bop.wav"
+		},
+		{
+			"speaker": "Player",
+			"color": "gray",
+			"text": ". . . I'm tired, so . . ., maybe next time . . .",
+			"voice_path" : "res://Assets/Music/bop.wav"
+		},
+		{
+			"speaker": "Cell phone",
+			"color": "gray",
+			"text": "[BIP].",
+			"voice_path" : "res://Assets/Music/bop.wav"
+		},
+	],
 	FIRST_ACT_OFFICE : [
 		{
-		"speaker" : "Player",
-		"color" : "gray",
-		"text" : "The office is close."
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "The office is close.",
+			"voice_path" : "res://Assets/Music/bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "I have to go home . . ."
+			"text" : "I have to go home . . .",
+			"voice_path" : "res://Assets/Music/bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "Alone . . ."
+			"text" : "Alone . . .",
+			"voice_path" : "res://Assets/Music/bop.wav"
 		}
 	],
 	CANT_LEAVE_HOUSE : [
 		{
 		"speaker" : "Player",
 		"color" : "gray",
-		"text" : "Mmmhhhh . . ."
+		"text" : "Mmmhhhh . . .",
+		"voice_path" : "res://Assets/Music/bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "I prefer stay here"
+			"text" : "I prefer stay here",
+			"voice_path" : "res://Assets/Music/bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : ". . ."
+			"text" : ". . .",
+			"voice_path" : "res://Assets/Music/bop.wav"
 		}
 	]
 }

@@ -8,6 +8,7 @@ var speaker_label : RichTextLabel
 var text_label : RichTextLabel
 @onready var bk: ColorRect = $Background
 
+@onready var voice: AudioStreamPlayer = $Voice
 
 var blip_count = 0
 var story_index = 0
@@ -30,6 +31,10 @@ func start_line() -> void:
 	var bb_speaker = "[b][color=%s]%s[/color][/b]" % [line.color, line.speaker]
 	var bb_text = "%s" % [line.text]
 	
+	if line["voice_path"]:
+		var sfx : AudioStream = load(line["voice_path"])
+		voice.stream = sfx
+	
 	speaker_label.bbcode_text = bb_speaker
 	text_label.bbcode_text = bb_text
 	speaker_label.visible_characters = -1
@@ -50,7 +55,7 @@ func type_line_async() -> void:
 		text_label.visible_characters = i
 		
 		if blip_every > 0 and i % blip_every == 0 and i > 0:
-			$Bop.play()
+			$Voice.play()
 			pass
 		await get_tree().create_timer(char_speed).timeout
 	is_typing = false  
