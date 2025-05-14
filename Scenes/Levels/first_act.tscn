@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bco6if1i34koa"]
+[gd_scene load_steps=27 format=4 uid="uid://bco6if1i34koa"]
 
 [ext_resource type="Script" uid="uid://crper4i07a3y6" path="res://Scripts/first_act.gd" id="1_cacwc"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_m64e0"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dx6y4pjvhf6c" path="res://Assets/Tileset_003.png" id="6_m64e0"]
 [ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="8_qnpau"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="9_ygyml"]
+[ext_resource type="AudioStream" uid="uid://iqkbohle0cpw" path="res://Assets/Music/SE_thunder.wav" id="10_ms1xf"]
+[ext_resource type="AudioStream" uid="uid://bl460ax1x76uh" path="res://Assets/Music/SE_rain.wav" id="11_wbeqj"]
+[ext_resource type="AudioStream" uid="uid://d16ikfl2l0baq" path="res://Assets/Music/SE_street.wav" id="12_37h6t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3tt5v"]
 
@@ -278,6 +281,164 @@ sources/3 = SubResource("TileSetAtlasSource_ms1xf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ec1"]
 size = Vector2(25, 20)
 
+[sub_resource type="Animation" id="Animation_ms1xf"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFX/Thunder:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Rain:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Street:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Rain:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/Street:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+
+[sub_resource type="Animation" id="Animation_wbeqj"]
+resource_name = "intro"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFX/Thunder:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Rain:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Street:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Rain:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/Street:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -15.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37h6t"]
+_data = {
+&"RESET": SubResource("Animation_ms1xf"),
+&"intro": SubResource("Animation_wbeqj")
+}
+
 [node name="FirstAct" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_cacwc")
@@ -331,5 +492,37 @@ shape = SubResource("RectangleShape2D_52ec1")
 
 [node name="SpawnPoint" type="Node2D" parent="."]
 position = Vector2(911, 343)
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Thunder" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_ms1xf")
+bus = &"Sound Effect"
+
+[node name="Rain" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_wbeqj")
+volume_db = -80.0
+bus = &"Sound Effect"
+
+[node name="Street" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_37h6t")
+volume_db = -80.0
+bus = &"Sound Effect"
+
+[node name="Animation" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Animation"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_37h6t")
+}
 
 [connection signal="timeout" from="HumanSpawner/Timer" to="HumanSpawner" method="_on_timer_timeout"]

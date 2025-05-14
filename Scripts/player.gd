@@ -39,7 +39,7 @@ func get_input():
 		animation_player.play("idle")
 
 func _physics_process(delta):
-	if (GlobalVariables.is_speaking): return
+	if (GlobalVariables.is_speaking or GlobalVariables.is_in_cinematic): return
 	get_input()
 	move_and_slide()
 	

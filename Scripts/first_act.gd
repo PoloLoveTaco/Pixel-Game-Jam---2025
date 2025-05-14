@@ -5,6 +5,7 @@ extends Node2D
 @onready var office_door: InteractionArea = $OfficeDoor
 @onready var house_door: InteractionArea = $HouseDoor
 @onready var spawn_point: Node2D = $SpawnPoint
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
@@ -23,6 +24,13 @@ func _ready() -> void:
 	
 	office_door.interact = Callable(self, "launch_dialog_1")
 	house_door.interact = Callable(self, "go_home")
+	
+	if GlobalVariables.is_new_game:
+		GlobalVariables.is_in_cinematic = true
+		animation_player.play("intro")
+		await animation_player.animation_finished
+		GlobalVariables.is_in_cinematic = false
+	
 
 
 func _process(delta: float) -> void:

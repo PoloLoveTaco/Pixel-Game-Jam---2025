@@ -12,7 +12,7 @@ func _ready() -> void:
 	self.hide()
 	bus_index_1 = AudioServer.get_bus_index("Master")
 	bus_index_2 = AudioServer.get_bus_index("Music")
-	bus_index_3 = AudioServer.get_bus_index("VFX")
+	bus_index_3 = AudioServer.get_bus_index("Sound Effect")
 	
 	global_volume.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index_1))
 	music_volume.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index_2))

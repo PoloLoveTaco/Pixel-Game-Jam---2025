@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name DialogSystem
 
-@export var char_speed = 0.05
+@export var char_speed = 0.03
 @export var blip_every = 2
 
 var speaker_label : RichTextLabel
