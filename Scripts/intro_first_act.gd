@@ -1,9 +1,10 @@
 extends CanvasLayer
 
-@export var char_speed = 0.05
+@export var char_speed = 0.04
 @export var blip_every = 2
 
 @onready var rtl : RichTextLabel = $RichTextLabel
+@onready var voice: AudioStreamPlayer = $Voice
 
 var full_text = ""
 var is_typing = false
@@ -20,6 +21,11 @@ func _ready():
 func start_line() -> void:
 	var line = story[story_index]
 	var bb = "[b][color=%s]%s[/color][/b]:\n%s" % [line.color, line.speaker, line.text]
+	
+	if line["voice_path"]:
+		var sfx : AudioStream = load(line["voice_path"])
+		voice.stream = sfx
+	
 	rtl.bbcode_text = bb
 	rtl.visible_characters = 0
 	is_typing = true
@@ -37,7 +43,7 @@ func type_line_async() -> void:
 			return
 		rtl.visible_characters = i
 		if blip_every > 0 and i % blip_every == 0 and i > 0:
-			# $"../Blip".play()
+			$Voice.play()
 			pass
 		await get_tree().create_timer(char_speed).timeout
 	is_typing = false  
