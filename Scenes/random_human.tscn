@@ -126,7 +126,9 @@ script = ExtResource("1_rb5ka")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_5dpsi")
+position = Vector2(0, 16)
 texture = ExtResource("2_qewhn")
+offset = Vector2(0, -16)
 hframes = 3
 vframes = 4
 

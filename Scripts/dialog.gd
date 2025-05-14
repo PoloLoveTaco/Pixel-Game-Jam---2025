@@ -6,7 +6,8 @@ enum {
 	INTRO = 0,
 	FIRST_ACT_OFFICE = 1,
 	CANT_LEAVE_HOUSE = 2,
-	
+	BEACH_WIFE_BEFORE_SHELL = 3,
+	BEACH_WIFE_NO_SHELL = 4,
 }
 
 # dialog template
@@ -96,10 +97,10 @@ var dialogs = {
 	],
 	CANT_LEAVE_HOUSE : [
 		{
-		"speaker" : "Player",
-		"color" : "gray",
-		"text" : "Mmmhhhh . . .",
-		"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"speaker" : "Player",
+			"color" : "gray",
+			"text" : "Mmmhhhh . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
@@ -112,6 +113,52 @@ var dialogs = {
 			"color" : "gray",
 			"text" : ". . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	BEACH_WIFE_BEFORE_SHELL : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "The weather is nice.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Don't you think so?",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "I remember it like it was yesterday.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "This pretty shell . . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Do you think you can find the same one for me?",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		}
+	],
+	BEACH_WIFE_NO_SHELL : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Do you found it ?",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Oh noo . . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	]
 }
