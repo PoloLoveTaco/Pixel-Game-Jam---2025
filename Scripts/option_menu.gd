@@ -4,12 +4,22 @@ extends CanvasLayer
 @onready var music_volume: HSlider = $"Music Volume"
 @onready var sfx_volume: HSlider = $"SFX Volume"
 
+@onready var all_buttons: BoxContainer = $AllButtons
+@onready var save_button: Button = $AllButtons/SaveButton
+@onready var main_menu: Button = $AllButtons/GoToMainButton
+@onready var quit_button: Button = $AllButtons/QuitButton
+@onready var back_button: Button = $BackButton
+
 var bus_index_1: int
 var bus_index_2: int
 var bus_index_3: int
 
 func _ready() -> void:
 	self.hide()
+	if (get_tree().current_scene.name == "MainMenu"):
+		all_buttons.hide()
+	else:
+		back_button.hide()
 	bus_index_1 = AudioServer.get_bus_index("Master")
 	bus_index_2 = AudioServer.get_bus_index("Music")
 	bus_index_3 = AudioServer.get_bus_index("Sound Effect")
@@ -45,7 +55,16 @@ func _on_music_volume_value_changed(value: float) -> void:
 func _on_sfx_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index_3, linear_to_db(value))
 
+func _on_back_button_pressed() -> void:
+	self.hide()
 
 func _on_go_to_main_button_pressed() -> void:
 	SaveManager.save_game()
 	SceneTransition.change_scene_dissolve("res://Scenes/Menus/main_menu.tscn")
+
+func _on_save_button_pressed() -> void:
+	SaveManager.save_game()
+
+func _on_quit_button_pressed() -> void:
+	SaveManager.save_game()
+	get_tree().quit()

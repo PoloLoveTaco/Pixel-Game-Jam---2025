@@ -219,7 +219,6 @@ libraries = {
 }
 
 [node name="Option Menu" parent="." instance=ExtResource("3_penys")]
-visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_aur2u")
