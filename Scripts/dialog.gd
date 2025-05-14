@@ -23,25 +23,25 @@ var dialogs = {
 			"speaker": "Cell phone",
 			"color": "gray",
 			"text": "[DRIiiIIiiNG].",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker": "Adrien",
 			"color": "gray",
 			"text": "Hey bro, come a the bar close to the office, I am with Jules and Marie, we are goin to take a coffe before the weekend, come to join us !",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker": "Player",
 			"color": "gray",
 			"text": ". . . I'm tired, so . . ., maybe next time . . .",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker": "Cell phone",
 			"color": "gray",
 			"text": "[BIP].",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 	],
 	FIRST_ACT_OFFICE : [
@@ -49,19 +49,19 @@ var dialogs = {
 			"speaker" : "Player",
 			"color" : "gray",
 			"text" : "The office is close.",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
 			"text" : "I have to go home . . .",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
 			"text" : "Alone . . .",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
 	CANT_LEAVE_HOUSE : [
@@ -69,19 +69,19 @@ var dialogs = {
 		"speaker" : "Player",
 		"color" : "gray",
 		"text" : "Mmmhhhh . . .",
-		"voice_path" : "res://Assets/Music/bop.wav"
+		"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
 			"text" : "I prefer stay here",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
 			"text" : ". . .",
-			"voice_path" : "res://Assets/Music/bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	]
 }

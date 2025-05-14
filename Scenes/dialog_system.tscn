@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3sg7vw7dbh06" path="res://Scripts/dialog_system.gd" id="1_70xce"]
 [ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="2_eb8ay"]
-[ext_resource type="AudioStream" uid="uid://dbwrvs5gs32k4" path="res://Assets/Music/bop.wav" id="3_eb8ay"]
+[ext_resource type="AudioStream" uid="uid://dbwrvs5gs32k4" path="res://Assets/Music/SE_bop.wav" id="3_eb8ay"]
 
 [node name="DialogSystem" type="CanvasLayer"]
 script = ExtResource("1_70xce")
