@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var option_menu: CanvasLayer = $"Option Menu"
 @onready var audio_stream_player: AudioStreamPlayer = $"AudioStreamPlayer"
 
+var fade_anim_is_active = false
 
 func _ready() -> void:
 	audio_stream_player.play()
@@ -14,7 +15,7 @@ func _ready() -> void:
 	#GlobalVariables.bw_amount = 1.0
 
 func _process(delta: float) -> void:
-	if option_menu.visible:
+	if option_menu.visible or fade_anim_is_active:
 		all_buttons.hide()
 	else:
 		all_buttons.show()
@@ -29,6 +30,7 @@ func _on_continue_button_pressed() -> void:
 func _on_new_game_button_pressed() -> void:
 	audio_stream_player.stop()
 	GlobalVariables.is_new_game = true
+	fade_anim_is_active = true
 	SceneTransition.change_scene_very_low_fade_in("res://Scenes/intro_first_act.tscn")
 
 
