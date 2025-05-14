@@ -17,19 +17,19 @@ var dialogs = {
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "I have to go home..."
+			"text" : "I have to go home . . ."
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "Alone..."
+			"text" : "Alone . . ."
 		}
 	],
 	CANT_LEAVE_HOUSE : [
 		{
 		"speaker" : "Player",
 		"color" : "gray",
-		"text" : "Mmmhhhh..."
+		"text" : "Mmmhhhh . . ."
 		},
 		{
 			"speaker" : "Player",
@@ -39,7 +39,7 @@ var dialogs = {
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "....."
+			"text" : ". . ."
 		}
 	]
 }

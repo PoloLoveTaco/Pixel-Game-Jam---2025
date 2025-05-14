@@ -122,6 +122,9 @@ y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_cvnsp")
 
+[node name="LabelPos" type="Node2D" parent="."]
+position = Vector2(0, -24)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
 process_callback = 0

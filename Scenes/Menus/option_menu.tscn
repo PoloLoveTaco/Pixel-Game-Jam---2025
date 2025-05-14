@@ -169,6 +169,16 @@ theme_override_fonts/font = ExtResource("2_6qpvh")
 theme_override_font_sizes/font_size = 12
 text = "Go to main menu"
 
+[node name="Button" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 58.0
+offset_right = 488.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("2_6qpvh")
+theme_override_font_sizes/font_size = 24
+text = "X"
+flat = true
+
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="value_changed" from="Global Volume" to="." method="_on_global_volume_value_changed"]
 [connection signal="value_changed" from="Music Volume" to="." method="_on_music_volume_value_changed"]

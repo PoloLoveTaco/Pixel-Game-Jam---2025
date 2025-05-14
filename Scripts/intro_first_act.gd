@@ -25,7 +25,7 @@ var story = [
 	{
 		"speaker": "Player",
 		"color": "gray",
-		"text": "... I'm tired, so ..., maybe next time...",
+		"text": ". . . I'm tired, so . . ., maybe next time . . .",
 	},
 	{
 		"speaker": "Cell phone",
