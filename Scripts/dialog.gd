@@ -29,7 +29,7 @@ var dialogs = {
 			"speaker": "Adrien",
 			"color": "gray",
 			"text": "Hey bro, come a the bar close to the office, I am with Jules and Marie, we are goin to take a coffe before the weekend, come to join us !",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
 			"speaker": "Player",
