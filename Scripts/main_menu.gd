@@ -6,9 +6,13 @@ extends CanvasLayer
 @onready var option_menu: CanvasLayer = $"Option Menu"
 @onready var audio_stream_player: AudioStreamPlayer = $"AudioStreamPlayer"
 
+@onready var continue_button: Button = $AllButtons/ContinueButton
+
 var fade_anim_is_active = false
 
 func _ready() -> void:
+	if not FileAccess.file_exists("res://Saves/savegame.save"):
+		continue_button.hide()
 	audio_stream_player.play()
 	animation_player.play("idle")
 	animation_player_2.play("idle")
