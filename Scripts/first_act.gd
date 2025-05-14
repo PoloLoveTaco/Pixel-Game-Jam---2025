@@ -9,8 +9,9 @@ const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
 	var player_instance = PLAYER.instantiate()
-	player_instance.position.x = spawn_point.position.x
-	player_instance.position.y = spawn_point.position.y
+	if GlobalVariables.is_new_game:
+		player_instance.position.x = spawn_point.position.x
+		player_instance.position.y = spawn_point.position.y
 	add_child(player_instance)
 
 	cam = player_instance.get_node("Camera2D")

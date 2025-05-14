@@ -11,7 +11,7 @@ func _ready() -> void:
 	audio_stream_player.play()
 	animation_player.play("idle")
 	animation_player_2.play("idle")
-	GlobalVariables.bw_amount = 1.0
+	#GlobalVariables.bw_amount = 1.0
 
 func _process(delta: float) -> void:
 	if option_menu.visible:
@@ -22,11 +22,13 @@ func _process(delta: float) -> void:
 
 func _on_continue_button_pressed() -> void:
 	audio_stream_player.stop()
+	GlobalVariables.is_new_game = false
 	SaveManager.load_game()
 
 
 func _on_new_game_button_pressed() -> void:
 	audio_stream_player.stop()
+	GlobalVariables.is_new_game = true
 	SceneTransition.change_scene_dissolve("res://Scenes/intro_first_act.tscn")
 
 
