@@ -11,12 +11,12 @@ extends CanvasLayer
 var fade_anim_is_active = false
 
 func _ready() -> void:
+	GlobalVariables.bw_amount = 1.0
 	if not FileAccess.file_exists("res://Saves/savegame.save"):
 		continue_button.hide()
 	audio_stream_player.play()
 	animation_player.play("idle")
 	animation_player_2.play("idle")
-	#GlobalVariables.bw_amount = 1.0
 
 func _process(delta: float) -> void:
 	if option_menu.visible or fade_anim_is_active:
