@@ -6,6 +6,7 @@ extends Node2D
 @onready var house_door: InteractionArea = $HouseDoor
 @onready var spawn_point: Node2D = $SpawnPoint
 
+@onready var animation_background: CanvasLayer = $Animation
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var se_rain: AudioStreamPlayer = $SFX/Rain
 @onready var se_street: AudioStreamPlayer = $SFX/Street
@@ -35,6 +36,7 @@ func _ready() -> void:
 		await animation_player.animation_finished
 		GlobalVariables.is_in_cinematic = false
 	else:
+		animation_background.hide()
 		se_rain.play()
 		se_street.play()
 	

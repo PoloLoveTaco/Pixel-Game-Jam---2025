@@ -294,7 +294,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -511,7 +511,6 @@ bus = &"Sound Effect"
 [node name="Animation" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Animation"]
-modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
