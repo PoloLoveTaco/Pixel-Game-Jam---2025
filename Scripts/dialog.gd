@@ -72,7 +72,7 @@ var dialogs = {
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "The office is close.",
+			"text" : "The office is closed.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
