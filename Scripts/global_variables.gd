@@ -10,4 +10,4 @@ var is_speaking = false
 
 var saved_scene_name : String
 
-var is_new_game = false
+var is_new_game = true
