@@ -1,1 +1,1 @@
-{"filename":"res://Scenes/player.tscn","in_wich_scene":"res://Scenes/Levels/lobby_house.tscn","parent":"/root/LobbyHouse","pos_x":789.993530273438,"pos_y":378.574737548828}
+{"filename":"res://Scenes/player.tscn","in_wich_scene":"res://Scenes/Levels/first_act.tscn","parent":"/root/FirstAct","pos_x":764.50537109375,"pos_y":591.49462890625}
