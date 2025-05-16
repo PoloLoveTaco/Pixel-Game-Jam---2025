@@ -1,15 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://cm4fob547e24y"]
+[gd_scene load_steps=10 format=4 uid="uid://cm4fob547e24y"]
 
 [ext_resource type="Script" uid="uid://py2eds3s2es1" path="res://Scripts/level_beach.gd" id="1_hf8t5"]
-[ext_resource type="Texture2D" uid="uid://1v18acucsloy" path="res://Assets/shell.png" id="2_i8swp"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_xbhdl"]
 [ext_resource type="Texture2D" uid="uid://cjdnssfumnm3f" path="res://Assets/beach.png" id="3_nn4s6"]
 [ext_resource type="PackedScene" uid="uid://wsbupqp5fixv" path="res://Scenes/wife.tscn" id="4_mu5hk"]
-[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="5_ebsdy"]
-[ext_resource type="Script" uid="uid://bdb7youxqpebi" path="res://Scripts/rock.gd" id="7_2eeyr"]
-[ext_resource type="Texture2D" uid="uid://5ok8a4yxsi4m" path="res://Assets/rock.png" id="7_ebsdy"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_orsv8"]
+[ext_resource type="PackedScene" uid="uid://vu1t3kqs1og3" path="res://Scenes/rock.tscn" id="7_ebsdy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn4s6"]
 texture = ExtResource("2_xbhdl")
@@ -64,31 +59,9 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mu5hk")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eeyr"]
-size = Vector2(24, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi6xc"]
-size = Vector2(6, 9)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebsdy"]
-size = Vector2(24, 9)
-
 [node name="LevelBeach" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_hf8t5")
-
-[node name="Shell" type="Node2D" parent="."]
-z_index = -1
-position = Vector2(2588, 1075)
-
-[node name="Sprite2D" type="Sprite2D" parent="Shell"]
-texture = ExtResource("2_i8swp")
-
-[node name="Interaction Area" parent="Shell" instance=ExtResource("5_ebsdy")]
-action_name = "take"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shell/Interaction Area"]
-shape = SubResource("CircleShape2D_orsv8")
 
 [node name="Layers" type="Node2D" parent="."]
 
@@ -108,45 +81,50 @@ position = Vector2(2933, 991)
 [node name="Wife" parent="." instance=ExtResource("4_mu5hk")]
 position = Vector2(3273, 911)
 
-[node name="Rock" type="RigidBody2D" parent="."]
+[node name="Rocks" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Rock14" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(3088, 883)
+
+[node name="Rock" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2828, 972)
-gravity_scale = 0.0
-script = ExtResource("7_2eeyr")
 
-[node name="PushUp" parent="Rock" instance=ExtResource("5_ebsdy")]
-action_name = "push"
+[node name="Rock2" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2514, 900)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/PushUp"]
-position = Vector2(0, 19)
-shape = SubResource("RectangleShape2D_2eeyr")
+[node name="Rock3" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2397, 1004)
 
-[node name="PushDown" parent="Rock" instance=ExtResource("5_ebsdy")]
-position = Vector2(0, -14)
-action_name = "push"
+[node name="Rock4" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2637, 1070)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/PushDown"]
-position = Vector2(0, 19)
-shape = SubResource("RectangleShape2D_2eeyr")
+[node name="Rock5" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2271, 1192)
 
-[node name="PushLeft" parent="Rock" instance=ExtResource("5_ebsdy")]
-position = Vector2(24, -7)
-action_name = "push"
+[node name="Rock6" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2815, 1213)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/PushLeft"]
-position = Vector2(-9, 19)
-shape = SubResource("RectangleShape2D_fi6xc")
+[node name="Rock7" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(3066, 1110)
 
-[node name="PushRight" parent="Rock" instance=ExtResource("5_ebsdy")]
-position = Vector2(-6, -7)
-action_name = "push"
+[node name="Rock8" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(3224, 1213)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/PushRight"]
-position = Vector2(-9, 19)
-shape = SubResource("RectangleShape2D_fi6xc")
+[node name="Rock9" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2141, 1047)
 
-[node name="Sprite2D" type="Sprite2D" parent="Rock"]
-texture = ExtResource("7_ebsdy")
+[node name="Rock10" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(2038, 883)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
-position = Vector2(0, 11.5)
-shape = SubResource("RectangleShape2D_ebsdy")
+[node name="Rock11" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(1810, 928)
+
+[node name="Rock12" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(1674, 1058)
+
+[node name="Rock13" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(1883, 1122)
+
+[node name="Rock15" parent="Rocks" instance=ExtResource("7_ebsdy")]
+position = Vector2(1794, 1261)

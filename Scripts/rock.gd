@@ -7,7 +7,7 @@ class_name Rock
 @onready var push_right_ia: InteractionArea = $PushRight
 
 @export var push_distance_in_pixel = 32
-@export var push_time : float = 0.15
+@export var push_time : float = 0.45
 
 func _ready() -> void:
 	push_up_ia.interact = Callable(self, "push_up")

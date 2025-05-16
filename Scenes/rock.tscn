@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://vu1t3kqs1og3"]
+
+[ext_resource type="Script" uid="uid://bdb7youxqpebi" path="res://Scripts/rock.gd" id="1_vd8au"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="2_1rhfe"]
+[ext_resource type="Texture2D" uid="uid://5ok8a4yxsi4m" path="res://Assets/rock.png" id="3_1np5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eeyr"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi6xc"]
+size = Vector2(6, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebsdy"]
+size = Vector2(24, 9)
+
+[node name="Rock" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_vd8au")
+
+[node name="PushUp" parent="." instance=ExtResource("2_1rhfe")]
+action_name = "push"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushUp"]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_2eeyr")
+
+[node name="PushDown" parent="." instance=ExtResource("2_1rhfe")]
+position = Vector2(0, -14)
+action_name = "push"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDown"]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_2eeyr")
+
+[node name="PushLeft" parent="." instance=ExtResource("2_1rhfe")]
+position = Vector2(24, -7)
+action_name = "push"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushLeft"]
+position = Vector2(-9, 19)
+shape = SubResource("RectangleShape2D_fi6xc")
+
+[node name="PushRight" parent="." instance=ExtResource("2_1rhfe")]
+position = Vector2(-6, -7)
+action_name = "push"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushRight"]
+position = Vector2(-9, 19)
+shape = SubResource("RectangleShape2D_fi6xc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("3_1np5q")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_ebsdy")
+
+[node name="ShellSpawnPoint" type="Node2D" parent="."]
+position = Vector2(0, 8)

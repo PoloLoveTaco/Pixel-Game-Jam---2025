@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://rj7gswu6cfiu"]
+
+[ext_resource type="Texture2D" uid="uid://1v18acucsloy" path="res://Assets/shell.png" id="1_j4ghq"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="2_2hyhe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orsv8"]
+radius = 5.0
+
+[node name="Shell" type="Node2D"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j4ghq")
+
+[node name="Interaction Area" parent="." instance=ExtResource("2_2hyhe")]
+action_name = "take"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
+shape = SubResource("CircleShape2D_orsv8")

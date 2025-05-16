@@ -4,12 +4,25 @@ extends Node2D
 @onready var shell: InteractionArea = $"Shell/Interaction Area"
 @onready var wife: Wife = $Wife
 
-const PLAYER = preload("res://Scenes/player.tscn")
+@onready var rocks_parent: Node2D = $Rocks
+
+const SHELL_SCENE: PackedScene = preload("res://Scenes/shell.tscn")
+
+const PLAYER: PackedScene = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
-		
 	shell.interact = Callable(self, "take_shell")
+ 
+	var rocks = rocks_parent.get_children()
+	rocks.shuffle()
+	var shell_rocks = rocks.slice(0, 3)
 	
+	for rock : Rock in shell_rocks:
+		var shell_spawn_point: Node2D = rock.get_node("ShellSpawnPoint")
+		var shell = SHELL_SCENE.instantiate()
+		shell.global_position = shell_spawn_point.global_position
+		add_child(shell)
+		
 	if GlobalVariables.is_new_game or GlobalVariables.saved_scene_name != get_tree().current_scene.scene_file_path:
 		var player_instance = PLAYER.instantiate()
 		player_instance.position.x = spawn_point.position.x
