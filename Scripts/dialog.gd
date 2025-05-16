@@ -11,7 +11,8 @@ enum {
 	BEACH_WIFE_1_SHELL,
 	BEACH_WIFE_2_SHELL,
 	BEACH_WIFE_HAVE_SHELL,
-	LAZY_ROCK
+	LAZY_ROCK,
+	BABY_BOX
 }
 
 # dialog template
@@ -55,7 +56,7 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
-			"speaker": "Player",
+			"speaker": "Nemo",
 			"color": "gray",
 			"text": ". . . I'm tired, so . . ., maybe next time . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
@@ -67,7 +68,7 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
-			"speaker": "Player",
+			"speaker": "Nemo",
 			"color": "gray",
 			"text": "Maybe next week.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
@@ -81,19 +82,19 @@ var dialogs = {
 	],
 	FIRST_ACT_OFFICE : [
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "The office is closed.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "I have to go home . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "Alone . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
@@ -101,19 +102,19 @@ var dialogs = {
 	],
 	CANT_LEAVE_HOUSE : [
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "Mmmhhhh . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "I prefer stay here",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : ". . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
@@ -227,21 +228,41 @@ var dialogs = {
 	],
 	LAZY_ROCK : [
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "A rock . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "I could push it . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Player",
+			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "But I'm lazy . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	BABY_BOX : [
+		{
+			"speaker" : "System",
+			"color" : "green",
+			"text" : "This is the box for a baby bed.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker" : "System",
+			"color" : "green",
+			"text" : "It seems someone has already opened it . . . and closed it.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : ". . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	]
