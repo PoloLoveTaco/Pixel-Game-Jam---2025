@@ -3,14 +3,15 @@ extends Node
 @onready var dialog_system_scene: PackedScene = load("res://Scenes/dialog_system.tscn")
 
 enum {
-	WORK_IN_PROGRESS = 10000,
-	INTRO = 0,
-	FIRST_ACT_OFFICE = 1,
-	CANT_LEAVE_HOUSE = 2,
-	BEACH_WIFE_BEFORE_SHELL = 3,
-	BEACH_WIFE_NO_SHELL = 4,
-	BEACH_WIFE_HAVE_SHELL = 5,
-	BEAUTIFULL_SHELL = 6
+	INTRO,
+	FIRST_ACT_OFFICE,
+	CANT_LEAVE_HOUSE,
+	BEACH_WIFE_BEFORE_SHELL,
+	BEACH_WIFE_NO_SHELL,
+	BEACH_WIFE_1_SHELL,
+	BEACH_WIFE_2_SHELL,
+	BEACH_WIFE_HAVE_SHELL,
+	BEAUTIFULL_SHELL
 }
 
 # dialog template
@@ -22,44 +23,6 @@ enum {
 	#"end_sfx" : "res://Assets/Music/Path",
 
 var dialogs = {
-	WORK_IN_PROGRESS : [
-		{
-			"speaker": "SYSTEM",
-			"color": "green",
-			"text": "Work in progress . . .",
-			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
-		},
-		{
-			"speaker": "SYSTEM",
-			"color": "green",
-			"text": "Francois le petit coquain",
-			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
-		},
-		{
-			"speaker": "SYSTEM",
-			"color": "green",
-			"text": "Ehhhh",
-			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
-		},
-		{
-			"speaker": "SYSTEM",
-			"color": "green",
-			"text": "Tu me fais rougir",
-			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
-		},
-		{
-			"speaker": "SYSTEM",
-			"color": "green",
-			"text": "MOUUUAH !",
-			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
-		},
-		{
-			"speaker": "SYSTEM",
-			"color": "green",
-			"text": "[KISS] sur le bou",
-			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
-		}
-	],
 	INTRO : [
 		{
 			"speaker": "Cell phone",
@@ -178,13 +141,13 @@ var dialogs = {
 		{
 			"speaker" : "Wife",
 			"color" : "pink",
-			"text" : "This pretty shell . . .",
+			"text" : "There pretty shells . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Wife",
 			"color" : "pink",
-			"text" : "Do you think you can find the same one for me?",
+			"text" : "Do you think you can find  [color=cyan]3 shells[/color] for me?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	],
@@ -192,17 +155,57 @@ var dialogs = {
 		{
 			"speaker" : "Wife",
 			"color" : "pink",
-			"text" : "Do you found it ?",
+			"text" : "Do you found them ?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Wife",
 			"color" : "pink",
-			"text" : "Oh noo . . .",
+			"text" : "The [color=cyan]3 shells[/color]?",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Maybe search under the rocks.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		}
+	],
+	BEACH_WIFE_1_SHELL : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Oh [color=cyan]1 shell[/color]!",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Just 2 more . . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		}
+	],
+	BEACH_WIFE_2_SHELL : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Oh [color=cyan]2 shells[/color]!",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Just 1 more . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	],
 	BEACH_WIFE_HAVE_SHELL : [
+		{
+			"speaker" : "System",
+			"color" : "green",
+			"text" : "You give the [color=cyan]3 shells[/color].",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
 		{
 			"speaker" : "Wife",
 			"color" : "pink",
