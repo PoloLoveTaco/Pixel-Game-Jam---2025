@@ -23,3 +23,4 @@ shape = SubResource("CircleShape2D_orsv8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_vvlew")
+bus = &"Sound Effect"
