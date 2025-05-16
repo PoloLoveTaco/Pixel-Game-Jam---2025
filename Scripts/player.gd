@@ -5,9 +5,10 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var cam: Camera2D = $Camera2D
 
-var is_stats_open = false
+var is_stats_open: bool = false
 var world
 var tilemap
+var last_direction: String = "down"
 
 func _ready() -> void:	
 	world = get_parent();
@@ -29,14 +30,18 @@ func get_input():
 	
 	if velocity.x > 0:
 		animation_player.play("walk_right")
+		last_direction = "right"
 	elif velocity.x < 0:
 		animation_player.play("walk_left")
+		last_direction = "left"
 	elif velocity.y > 0:
 		animation_player.play("walk_down")
+		last_direction = "down"
 	elif velocity.y < 0:
 		animation_player.play("walk_up")
+		last_direction = "up"
 	elif velocity.x == 0 and velocity.y == 0:
-		animation_player.play("idle")
+		animation_player.play("idle_"+last_direction)
 	
 	if Input.is_action_just_pressed("more_bw"):
 		if GlobalVariables.bw_amount > 0:
