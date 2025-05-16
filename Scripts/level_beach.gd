@@ -10,7 +10,6 @@ const SHELL_SCENE: PackedScene = preload("res://Scenes/shell.tscn")
 const PLAYER: PackedScene = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
- 
 	var rocks = rocks_parent.get_children()
 	rocks.shuffle()
 	var shell_rocks = rocks.slice(0, 3)
@@ -28,9 +27,3 @@ func _ready() -> void:
 		player_instance.position.x = spawn_point.position.x
 		player_instance.position.y = spawn_point.position.y
 		add_child(player_instance)
-
-	#if wife.quest_status == Wife.SEARCH_SHELL:
-		#wife.quest_status = Wife.HAVE_SHELL
-		#$Shell.queue_free()
-	#else:
-		#Dialog.launch_dialog(Dialog.BEAUTIFULL_SHELL)

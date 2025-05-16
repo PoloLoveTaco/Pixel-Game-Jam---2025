@@ -11,7 +11,7 @@ enum {
 	BEACH_WIFE_1_SHELL,
 	BEACH_WIFE_2_SHELL,
 	BEACH_WIFE_HAVE_SHELL,
-	BEAUTIFULL_SHELL
+	LAZY_ROCK
 }
 
 # dialog template
@@ -225,23 +225,23 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	],
-	BEAUTIFULL_SHELL : [
+	LAZY_ROCK : [
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "It's beautifull",
+			"text" : "A rock . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : "That's remain me something",
+			"text" : "I could push it . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Player",
 			"color" : "gray",
-			"text" : ". . .",
+			"text" : "But I'm lazy . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	]

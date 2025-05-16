@@ -1,15 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://wsbupqp5fixv"]
+[gd_scene load_steps=13 format=3 uid="uid://wsbupqp5fixv"]
 
 [ext_resource type="Script" uid="uid://dljx47q5bqj62" path="res://Scripts/wife.gd" id="1_lwxgq"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="2_fhmwm"]
-[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="3_58lnf"]
 [ext_resource type="Texture2D" uid="uid://busuwk2ptd28t" path="res://Assets/UniversalCharacter.png" id="4_r1bit"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eeyr"]
 radius = 11.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebsdy"]
-shader = ExtResource("3_58lnf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eeyr"]
 size = Vector2(10, 9.5)
@@ -130,7 +126,7 @@ action_name = "talk"
 shape = SubResource("CircleShape2D_2eeyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_ebsdy")
+self_modulate = Color(0.951344, 0.618037, 1, 1)
 position = Vector2(0, 15)
 texture = ExtResource("4_r1bit")
 offset = Vector2(0, -15)

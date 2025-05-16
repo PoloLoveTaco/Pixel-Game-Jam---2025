@@ -24,7 +24,6 @@ func interact():
 		beach_quest()
 
 func shell_founded():
-	print("Shell founded")
 	shells_found += 1
 		
 func beach_quest():

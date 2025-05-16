@@ -9,6 +9,8 @@ class_name Rock
 @export var push_distance_in_pixel = 32
 @export var push_time : float = 0.45
 
+@onready var wife: Wife = $"../../Wife"
+
 func _ready() -> void:
 	push_up_ia.interact = Callable(self, "push_up")
 	push_down_ia.interact = Callable(self, "push_down")
@@ -17,6 +19,9 @@ func _ready() -> void:
 	sleeping = true
 	
 func push(dir : Vector2) -> void:
+	if wife.quest_status == wife.START:
+		Dialog.launch_dialog(Dialog.LAZY_ROCK)
+		return
 	if get_tree().paused:
 		return
 	var target = global_position + dir * push_distance_in_pixel
