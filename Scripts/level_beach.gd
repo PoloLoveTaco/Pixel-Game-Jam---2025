@@ -5,6 +5,8 @@ extends Node2D
 
 @onready var rocks_parent: Node2D = $Rocks
 
+@onready var water_music: AudioStreamPlayer = $Water
+
 const SHELL_SCENE: PackedScene = preload("res://Scenes/shell.tscn")
 
 const PLAYER: PackedScene = preload("res://Scenes/player.tscn")
@@ -13,6 +15,7 @@ func _ready() -> void:
 	var rocks = rocks_parent.get_children()
 	rocks.shuffle()
 	var shell_rocks = rocks.slice(0, 3)
+	water_music.play()
 	
 	for rock : Rock in shell_rocks:
 		var shell_spawn_point: Node2D = rock.get_node("ShellSpawnPoint")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rj7gswu6cfiu"]
+[gd_scene load_steps=6 format=3 uid="uid://rj7gswu6cfiu"]
 
 [ext_resource type="Script" uid="uid://ctv5oj2j3oxa2" path="res://Scripts/shell.gd" id="1_2hyhe"]
 [ext_resource type="Texture2D" uid="uid://1v18acucsloy" path="res://Assets/shell.png" id="1_j4ghq"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="2_2hyhe"]
+[ext_resource type="AudioStream" uid="uid://d0066mubgig6u" path="res://Assets/Music/item_pickup.mp3" id="4_vvlew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_orsv8"]
 radius = 2.0
@@ -19,3 +20,6 @@ action_name = "take"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
 shape = SubResource("CircleShape2D_orsv8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vvlew")

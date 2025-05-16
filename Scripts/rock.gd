@@ -7,9 +7,13 @@ class_name Rock
 @onready var push_right_ia: InteractionArea = $PushRight
 
 @export var push_distance_in_pixel = 32
-@export var push_time : float = 0.45
+@export var push_time : float = 1
 
 @onready var wife: Wife = $"../../Wife"
+
+@onready var sound: AudioStreamPlayer = $AudioStreamPlayer
+
+var is_mooving: bool = false
 
 func _ready() -> void:
 	push_up_ia.interact = Callable(self, "push_up")
@@ -19,13 +23,17 @@ func _ready() -> void:
 	sleeping = true
 	
 func push(dir : Vector2) -> void:
-	if wife.quest_status == wife.START:
+	if is_mooving:
+		return
+	if wife.quest_status == Wife.beach.START:
 		Dialog.launch_dialog(Dialog.LAZY_ROCK)
 		return
 	if get_tree().paused:
 		return
 	var target = global_position + dir * push_distance_in_pixel
+	is_mooving = true
 	sleeping = true
+	sound.play()
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "global_position", target, push_time
 	).set_trans(Tween.TRANS_QUAD
@@ -34,6 +42,7 @@ func push(dir : Vector2) -> void:
 	
 func on_tween_finished():
 	sleeping = false
+	is_mooving = false
 
 func push_up() -> void: push(Vector2.UP)
 func push_down() -> void: push(Vector2.DOWN)
