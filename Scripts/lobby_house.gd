@@ -3,6 +3,7 @@ extends Node2D
 @onready var book_1= $Book1
 @onready var beach_level = $BeachLevel
 @onready var leaveHouse = $LeaveHouse
+@onready var go_upstairs: InteractionArea = $"Go Upstairs"
 
 @onready var spawn_point: Node2D = $SpawnPoint
 
@@ -12,6 +13,7 @@ func _ready() -> void:
 	book_1.interact = Callable(self, "_to_world_1")
 	beach_level.interact = Callable(self, "_to_beach_scene")
 	leaveHouse.interact = Callable(self, "launch_dialog_cant_leave")
+	go_upstairs.interact = Callable(self, "_go_upstairs")
 	
 	if GlobalVariables.is_new_game or GlobalVariables.saved_scene_name != get_tree().current_scene.scene_file_path:
 		# Create the player when new game
@@ -26,6 +28,9 @@ func _to_world_1():
 
 func _to_beach_scene():
 	SceneTransition.change_scene_slide("res://Scenes/Levels/level_beach.tscn")
-	
+
+func _go_upstairs():
+	SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house_upstairs.tscn")
+
 func launch_dialog_cant_leave():
 	Dialog.launch_dialog(Dialog.CANT_LEAVE_HOUSE)
