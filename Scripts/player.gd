@@ -6,6 +6,11 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var cam: Camera2D = $Camera2D
 
+@onready var sprite: Sprite2D = $Sprite2D
+var level_textures := {
+	"LevelBeach": preload("res://Assets/Nemo_beach.png"),
+}
+
 var is_stats_open: bool = false
 var world
 var tilemap
@@ -15,6 +20,11 @@ func _ready() -> void:
 	world = get_parent();
 	tilemap = world.get_node("Layers/CameraLockLayer")
 	set_camera_limits();
+	update_texture(get_tree().current_scene.name)
+
+func update_texture(level_name: String) -> void:
+	if level_textures.has(level_name):
+		sprite.texture = level_textures[level_name]
 
 func get_half_viewport() -> Vector2:
 	var px_size = get_viewport().get_visible_rect().size
