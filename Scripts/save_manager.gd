@@ -20,18 +20,25 @@ func _capture_scene(root: Node) -> void:
 				data["global"]["Player"] = d
 			else:
 				data["scenes"][path][d["id"]] = d
-
-func save_game():
-	_capture_scene(get_tree().current_scene)
+				
+func write_file():
 	data["timestamp"] = Time.get_unix_time_from_system()
 	data["current_scene"] = get_tree().current_scene.scene_file_path
 	var f = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	f.store_string(JSON.stringify(data))
 	f.close()
 
+func save_game():
+	save_cache()
+	write_file()
+
+func save_cache():
+	_capture_scene(get_tree().current_scene)
+	
 func on_change_scene(root: Node):
 	print("exit scene: " + root.scene_file_path)
 	_capture_scene(root)
+	print(data)
 	
 func load_game() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
@@ -64,9 +71,10 @@ func charge_saved_scene(scene_path: String) -> void:
 		if n:
 			n._load(object)
 		else:
-			var instance = load(object["file_path"]).instantiate()
-			instance._load(object)
-			current_scene.add_child(instance)
+			print("_load func not found in n")
+			#var instance = load(object["file_path"]).instantiate()
+			#instance._load(object)
+			#current_scene.add_child(instance)
 	
 		
 #func load_game() -> void:

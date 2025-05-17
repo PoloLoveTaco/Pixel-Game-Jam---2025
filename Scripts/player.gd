@@ -80,6 +80,7 @@ func _save() -> Dictionary:
 	return {
 		"scene_path" : get_tree().current_scene.scene_file_path,
 		"id"         : "Player",
+		"node_path" : get_path_to(self),
 		"file_path"  : get_scene_file_path(),
 		"pos"        : [global_position.x, global_position.y],
 	}

@@ -34,6 +34,6 @@ func change_scene_very_low_fade_in(target: String):
 func change_to(path: String) -> void:
 	var current = get_tree().current_scene
 	if current:
-		SaveManager.on_change_scene(current)
+		await SaveManager.on_change_scene(current)
 	get_tree().change_scene_to_file(path)
 	SaveManager.charge_saved_scene(path)

@@ -90,64 +90,65 @@ position = Vector2(3273, 911)
 [node name="Rocks" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Rock1" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_01" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2828, 972)
+uid = "Rocks/Rock_01"
 
-[node name="Rock2" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_02" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2514, 900)
-uid = "Rock_02"
+uid = "Rocks/Rock_02"
 
-[node name="Rock3" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_03" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2397, 1004)
-uid = "Rock_03"
+uid = "Rocks/Rock_03"
 
-[node name="Rock4" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_04" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2637, 1070)
-uid = "Rock_04"
+uid = "Rocks/Rock_04"
 
-[node name="Rock5" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_05" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2271, 1192)
-uid = "Rock_05"
+uid = "Rocks/Rock_05"
 
-[node name="Rock6" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_06" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2815, 1213)
-uid = "Rock_06"
+uid = "Rocks/Rock_06"
 
-[node name="Rock7" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_07" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(3066, 1110)
-uid = "Rock_07"
+uid = "Rocks/Rock_07"
 
-[node name="Rock8" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_08" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(3224, 1213)
-uid = "Rock_08"
+uid = "Rocks/Rock_08"
 
-[node name="Rock9" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_09" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2141, 1047)
-uid = "Rock_09"
+uid = "Rocks/Rock_09"
 
-[node name="Rock10" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_10" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2038, 883)
-uid = "Rock_10"
+uid = "Rocks/Rock_10"
 
-[node name="Rock11" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_11" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1810, 928)
-uid = "Rock_11"
+uid = "Rocks/Rock_11"
 
-[node name="Rock12" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_12" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1674, 1058)
-uid = "Rock_12"
+uid = "Rocks/Rock_12"
 
-[node name="Rock13" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_13" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1883, 1122)
-uid = "Rock_13"
+uid = "Rocks/Rock_13"
 
-[node name="Rock14" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_14" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(3088, 883)
-uid = "Rock_14"
+uid = "Rocks/Rock_14"
 
-[node name="Rock15" parent="Rocks" instance=ExtResource("7_ebsdy")]
+[node name="Rock_15" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1794, 1261)
-uid = "Rock_15"
+uid = "Rocks/Rock_15"
 
 [node name="Water" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2eeyr")
