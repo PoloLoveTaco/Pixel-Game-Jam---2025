@@ -19,13 +19,20 @@ func capture_scene(root: Node) -> void:
 	for n in root.get_tree().get_nodes_in_group("Persist"):
 		if n.has_method("_save"):
 			var d = n._save()
-			data["scenes"][path][d["id"]] = d
+			if d["id"] == "Player":
+				data["global"]["Player"] = d
+			else:
+				data["scenes"][path][d["id"]] = d
 
-func save_game() -> void:
+func write_file() -> void:
 	data["timestamp"] = Time.get_unix_time_from_system()
 	var f = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	f.store_string(JSON.stringify(data))
 	f.close()
+	
+func save_game():
+	capture_scene(get_tree().current_scene)
+	write_file()
 
 func on_change_scene(root: Node):
 	print("exit scene: " + root.scene_file_path)

@@ -10,7 +10,6 @@ extends Node2D
 const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
-	connect("tree_exiting", Callable(SaveManager, "on_change_scene").bind(self))
 	book_1.interact = Callable(self, "_to_world_1")
 	beach_level.interact = Callable(self, "_to_beach_scene")
 	leaveHouse.interact = Callable(self, "launch_dialog_cant_leave")

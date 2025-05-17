@@ -15,7 +15,6 @@ const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
 	animation_background.show()
-	connect("tree_exiting", Callable(SaveManager, "on_change_scene").bind(self))
 	if not get_tree().root.has_node("Player"):
 		var player_instance = PLAYER.instantiate()
 		player_instance.global_position = spawn_point.global_position
