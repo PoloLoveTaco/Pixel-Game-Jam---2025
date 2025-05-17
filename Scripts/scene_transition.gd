@@ -15,6 +15,10 @@ func change_scene_slide(target: String):
 	change_to(target)
 	animation_player.play("slide 2")
 
+func load_scene_from_save(target: String):
+	get_tree().change_scene_to_file(target)
+	SaveManager.charge_saved_scene(target)
+	animation_player.play("slide 2")
 
 func change_scene_slide_only_exit(target: String):
 	change_to(target)
@@ -32,3 +36,4 @@ func change_to(path: String) -> void:
 	if current:
 		SaveManager.on_change_scene(current)
 	get_tree().change_scene_to_file(path)
+	SaveManager.charge_saved_scene(path)
