@@ -29,4 +29,6 @@ func _ready() -> void:
 		var player_instance = PLAYER.instantiate()
 		player_instance.position.x = spawn_point.position.x
 		player_instance.position.y = spawn_point.position.y
+		var texture = load("res://Assets/Nemo_beach.png")
+		player_instance.get_node("Sprite2D").texture = texture
 		add_child(player_instance)
