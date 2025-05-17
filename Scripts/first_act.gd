@@ -15,12 +15,15 @@ const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
 	animation_background.show()
-	if GlobalVariables.is_new_game:
-		# Create the player when new game
+	if not get_tree().root.has_node("Player"):
 		var player_instance = PLAYER.instantiate()
-		player_instance.position.x = spawn_point.position.x
-		player_instance.position.y = spawn_point.position.y
+		player_instance.global_position = spawn_point.global_position
 		add_child(player_instance)
+	else:
+		var player_instance = get_tree().root.get_node("Player")
+		player_instance.get_parent().remove_child(player_instance)
+		add_child(player_instance)
+		player_instance.global_position = spawn_point.global_position
 	
 	while not has_node("Player"):
 		await get_tree().process_frame

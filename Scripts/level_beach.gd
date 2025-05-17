@@ -25,8 +25,12 @@ func _ready() -> void:
 		shell.global_position = shell_spawn_point.global_position
 		add_child(shell)
 		
-	if GlobalVariables.is_new_game or GlobalVariables.saved_scene_name != get_tree().current_scene.scene_file_path:
+	if not get_tree().root.has_node("Player"):
 		var player_instance = PLAYER.instantiate()
-		player_instance.position.x = spawn_point.position.x
-		player_instance.position.y = spawn_point.position.y
+		player_instance.global_position = spawn_point.global_position
 		add_child(player_instance)
+	else:
+		var player_instance = get_tree().root.get_node("Player")
+		player_instance.get_parent().remove_child(player_instance)
+		add_child(player_instance)
+		player_instance.global_position = spawn_point.global_position
