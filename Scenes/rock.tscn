@@ -18,7 +18,7 @@ shader = ExtResource("3_1rhfe")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebsdy"]
 size = Vector2(24, 9)
 
-[node name="Rock" type="RigidBody2D" groups=["Persist", "Rock"]]
+[node name="Rock" type="RigidBody2D" groups=["Persist"]]
 gravity_scale = 0.0
 script = ExtResource("1_vd8au")
 

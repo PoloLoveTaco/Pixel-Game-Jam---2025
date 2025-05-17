@@ -15,6 +15,7 @@ const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
 	animation_background.show()
+	connect("tree_exiting", Callable(SaveManager, "on_change_scene").bind(self))
 	if GlobalVariables.is_new_game:
 		# Create the player when new game
 		var player_instance = PLAYER.instantiate()

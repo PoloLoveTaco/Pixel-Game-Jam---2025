@@ -78,13 +78,14 @@ func set_camera_limits():
 
 func _save() -> Dictionary:
 	return {
-		"name"      : "Player",
-		"scene"   : get_scene_file_path(),
-		"pos"     : var_to_str(global_position),
+		"scene_path" : get_tree().current_scene.scene_file_path,
+		"id"         : "Player",
+		"file_path"  : get_scene_file_path(),
+		"pos"        : [global_position.x, global_position.y],
 	}
 
 func _load(data: Dictionary) -> void:
-	global_position = str_to_var(data["pos"])
+	global_position = Vector2(data["pos"][0], data["pos"][1])
 
 #func save():
 	#var save_dict = {

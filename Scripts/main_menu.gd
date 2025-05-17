@@ -12,7 +12,7 @@ var fade_anim_is_active = false
 
 func _ready() -> void:
 	GlobalVariables.bw_amount = 1.0
-	if not FileAccess.file_exists("res://Saves/savegame.save"):
+	if not FileAccess.file_exists("user://savegame.json"):
 		continue_button.hide()
 	audio_stream_player.play()
 	animation_player.play("idle")

@@ -12,6 +12,7 @@ const SHELL_SCENE: PackedScene = preload("res://Scenes/shell.tscn")
 const PLAYER: PackedScene = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
+	connect("tree_exiting", Callable(SaveManager, "on_change_scene").bind(self))
 	var rocks = rocks_parent.get_children()
 	rocks.shuffle()
 	var shell_rocks = rocks.slice(0, 3)

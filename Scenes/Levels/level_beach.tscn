@@ -95,59 +95,59 @@ position = Vector2(2828, 972)
 
 [node name="Rock2" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2514, 900)
-rock_name = "Rock_02"
+uid = "Rock_02"
 
 [node name="Rock3" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2397, 1004)
-rock_name = "Rock_03"
+uid = "Rock_03"
 
 [node name="Rock4" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2637, 1070)
-rock_name = "Rock_04"
+uid = "Rock_04"
 
 [node name="Rock5" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2271, 1192)
-rock_name = "Rock_05"
+uid = "Rock_05"
 
 [node name="Rock6" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2815, 1213)
-rock_name = "Rock_06"
+uid = "Rock_06"
 
 [node name="Rock7" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(3066, 1110)
-rock_name = "Rock_07"
+uid = "Rock_07"
 
 [node name="Rock8" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(3224, 1213)
-rock_name = "Rock_08"
+uid = "Rock_08"
 
 [node name="Rock9" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2141, 1047)
-rock_name = "Rock_09"
+uid = "Rock_09"
 
 [node name="Rock10" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(2038, 883)
-rock_name = "Rock_10"
+uid = "Rock_10"
 
 [node name="Rock11" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1810, 928)
-rock_name = "Rock_11"
+uid = "Rock_11"
 
 [node name="Rock12" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1674, 1058)
-rock_name = "Rock_12"
+uid = "Rock_12"
 
 [node name="Rock13" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1883, 1122)
-rock_name = "Rock_13"
+uid = "Rock_13"
 
 [node name="Rock14" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(3088, 883)
-rock_name = "Rock_14"
+uid = "Rock_14"
 
 [node name="Rock15" parent="Rocks" instance=ExtResource("7_ebsdy")]
 position = Vector2(1794, 1261)
-rock_name = "Rock_15"
+uid = "Rock_15"
 
 [node name="Water" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2eeyr")
