@@ -13,6 +13,8 @@ class_name Rock
 
 @onready var sound: AudioStreamPlayer = $AudioStreamPlayer
 
+@export var rock_name: String = "Rock_01"
+
 var is_mooving: bool = false
 
 func _ready() -> void:
@@ -48,3 +50,13 @@ func push_up() -> void: push(Vector2.UP)
 func push_down() -> void: push(Vector2.DOWN)
 func push_left() -> void: push(Vector2.LEFT)
 func push_right() -> void: push(Vector2.RIGHT)
+
+func _save() -> Dictionary:
+	return {
+		"name"      : "Rock",
+		"scene_path" : get_tree().current_scene.scene_file_path,
+		"pos"     : var_to_str(global_position),
+	}
+
+func _load(data: Dictionary) -> void:
+	global_position = str_to_var(data["pos"])

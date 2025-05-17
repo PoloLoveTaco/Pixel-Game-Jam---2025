@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed = 150
 
@@ -14,7 +15,6 @@ func _ready() -> void:
 	world = get_parent();
 	tilemap = world.get_node("Layers/CameraLockLayer")
 	set_camera_limits();
-
 
 func get_half_viewport() -> Vector2:
 	var px_size = get_viewport().get_visible_rect().size
@@ -66,12 +66,22 @@ func set_camera_limits():
 	cam.limit_bottom = used.end.y * size.y
 
 
-func save():
-	var save_dict = {
-		"in_wich_scene" : get_tree().current_scene.scene_file_path,
-		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x,
-		"pos_y" : position.y,
+func _save() -> Dictionary:
+	return {
+		"name"      : "Player",
+		"scene"   : get_scene_file_path(),
+		"pos"     : var_to_str(global_position),
 	}
-	return save_dict
+
+func _load(data: Dictionary) -> void:
+	global_position = str_to_var(data["pos"])
+
+#func save():
+	#var save_dict = {
+		#"scene" : get_tree().current_scene.scene_file_path,
+		#"filename" : get_scene_file_path(),
+		#"parent" : get_parent().get_path(),
+		#"pos_x" : position.x,
+		#"pos_y" : position.y,
+	#}
+	#return save_dict
