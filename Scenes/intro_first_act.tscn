@@ -72,3 +72,5 @@ text_direction = 1
 
 [node name="Voice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_wgi7r")
+max_polyphony = 10000
+bus = &"Sound Effect"
