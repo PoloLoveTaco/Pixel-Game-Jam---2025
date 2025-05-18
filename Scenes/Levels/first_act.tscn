@@ -306,7 +306,7 @@ sources/0 = SubResource("TileSetAtlasSource_m64e0")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnpau"]
 shader = ExtResource("3_gai07")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygyml"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gai07"]
 texture = ExtResource("7_wbeqj")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -583,7 +583,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_cveba"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ygyml")
+sources/0 = SubResource("TileSetAtlasSource_gai07")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ec1"]
 size = Vector2(42, 20)
