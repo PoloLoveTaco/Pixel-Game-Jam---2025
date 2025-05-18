@@ -25,6 +25,14 @@ var data : Dictionary = {
 
 var _player_ref : Node = null
 
+func remove_save():
+	if FileAccess.file_exists(SAVE_PATH):
+		var err = DirAccess.remove_absolute(SAVE_PATH)
+		if err == OK:
+			print("Save removed.")
+		else:
+			push_error("Error : %s" % error_string(err))
+
 func _capture_scene(root: Node) -> void:
 	var path = root.scene_file_path
 	data["scenes"][path] = {}
