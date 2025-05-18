@@ -25,6 +25,8 @@ enum {
 	# Kitchen
 	KITCHEN_WIFE_ASK_CAKE,
 	KITCHEN_WIFE_FRIDGE,
+	NN_FURNACE,
+	NN_FRIDGE
 	
 }
 
@@ -396,6 +398,34 @@ var dialogs = {
 			"text" : "Start by opening the [color=blue]fridge[/color]",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
+	],
+	NN_FRIDGE : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "The fridge, ",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Not for the moment.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	NN_FURNACE : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "The furnace, ",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Not for the moment.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
 	]
 }
 
