@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_orsv8"]
 radius = 2.0
 
-[node name="Shell" type="Node2D"]
+[node name="Shell" type="Node2D" groups=["Persist"]]
 z_index = -1
 script = ExtResource("1_2hyhe")
 

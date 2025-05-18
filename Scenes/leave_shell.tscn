@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3gq6y6qa5l1k"]
+
+[ext_resource type="Script" uid="uid://cbyxrk2gpa11i" path="res://Scripts/leave_shell.gd" id="1_kbpmw"]
+[ext_resource type="Texture2D" uid="uid://1v18acucsloy" path="res://Assets/shell.png" id="2_yii7d"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="3_r26qa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpkue"]
+
+[node name="LeaveShell" type="Node2D" groups=["Persist"]]
+script = ExtResource("1_kbpmw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_yii7d")
+
+[node name="Interaction Area" parent="." instance=ExtResource("3_r26qa")]
+action_name = "leave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
+shape = SubResource("CircleShape2D_bpkue")

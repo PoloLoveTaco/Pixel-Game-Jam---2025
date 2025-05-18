@@ -6,35 +6,30 @@ class_name Wife
 
 @export var fade_time : float  = 3.0
 
-enum beach {
-	START,
-	SEARCH_SHELLS,
-	END
-}
-
 var is_fading : bool = false
 
-var shells_found = 0
-
-var quest_status
+var quest : Dictionary
 
 func _ready() -> void:
 	interaction.interact = Callable(self, "interact")
 	animation_player.play("idle")
 	
-	if get_tree().current_scene.name == "LevelBeach":
-		quest_status = beach.START
+	if (get_tree().current_scene.name == "LevelBeach"):
+		quest = SaveManager.data["quests"]["beach"]
 	
+	if quest["status"] == SaveManager.beach_status.END:
+		queue_free()
+		
 func interact():
 	if (get_tree().current_scene.name == "LevelBeach"):
 		beach_quest()
 
 func shell_founded():
-	shells_found += 1
+	quest["shells_found"] += 1
 
 func _process(delta: float) -> void:
 	if get_tree().current_scene.name == "LevelBeach":
-		if quest_status != beach.END:
+		if quest["status"] != SaveManager.beach_status.END:
 			return
 		
 		if get_tree().current_scene.get_node_or_null("DialogSystem") == null and not is_fading:
@@ -49,19 +44,20 @@ func start_fade_and_exit() -> void:
 	tween.connect("finished", Callable(self, "on_fade_finished"))
 
 func on_fade_finished() -> void:
-	SceneTransition.change_scene_dissolve("res://Scenes/Levels/lobby_house.tscn")
+	if get_tree().current_scene.name == "LevelBeach":
+		queue_free() 
 
 
 func beach_quest():
-	if quest_status == beach.START:
+	if quest["status"] == SaveManager.beach_status.START:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_BEFORE_SHELL)
-		quest_status = beach.SEARCH_SHELLS
-	elif quest_status == beach.SEARCH_SHELLS and shells_found == 0:
+		quest["status"] = SaveManager.beach_status.SEARCH_SHELLS
+	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 0:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_NO_SHELL)
-	elif quest_status == beach.SEARCH_SHELLS and shells_found == 1:
+	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 1:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_1_SHELL)
-	elif quest_status == beach.SEARCH_SHELLS and shells_found == 2:
+	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 2:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_2_SHELL)
-	elif quest_status == beach.SEARCH_SHELLS and shells_found == 3:
+	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 3:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_HAVE_SHELL)
-		quest_status = beach.END
+		quest["status"] = SaveManager.beach_status.END

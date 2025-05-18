@@ -2,10 +2,25 @@ extends Node
 
 const SAVE_PATH = "user://savegame.json"
 
+enum beach_status {
+	NOT_START,
+	START,
+	SEARCH_SHELLS,
+	END
+}
+
 var data : Dictionary = {
 	"version": 1,
 	"global": {},	# ex: Player
 	"scenes": {},	# cache by scenes
+	"quests": {
+		"total": 1,
+		"nb_finished": 0,
+		"beach" : {
+			"status" : beach_status.NOT_START,
+			"shells_found" : 0
+		}
+	}
 }
 
 var _player_ref : Node = null
@@ -50,8 +65,7 @@ func load_game() -> void:
 		await get_tree().process_frame
 	
 	_load_globals()
-
-# Probably load quest here
+	
 func _load_globals():
 	if data["global"].has("Player"):
 		var player_data = data["global"]["Player"]
@@ -70,10 +84,9 @@ func charge_saved_scene(scene_path: String) -> void:
 		if n:
 			n._load(object)
 		else:
-			print("_load func not found in n")
-			#var instance = load(object["file_path"]).instantiate()
-			#instance._load(object)
-			#current_scene.add_child(instance)
+			var instance = load(object["file_path"]).instantiate()
+			instance._load(object)
+			current_scene.add_child(instance)
 	
 		
 #func load_game() -> void:

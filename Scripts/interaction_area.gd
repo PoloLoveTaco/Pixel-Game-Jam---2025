@@ -1,7 +1,7 @@
 extends Area2D
 class_name InteractionArea
 
-@export_enum("interact", "enter", "leave", "talk", "take", "push", "go upstairs", "go downstairs") var action_name: String = "interact"
+@export_enum("interact", "enter", "leave", "talk", "take", "push", "go upstairs", "go downstairs", "remember") var action_name: String = "interact"
 
 var interact: Callable = func() -> void:
 	pass

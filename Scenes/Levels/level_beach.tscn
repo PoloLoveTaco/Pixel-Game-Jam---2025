@@ -154,3 +154,6 @@ uid = "Rocks/Rock_15"
 stream = ExtResource("7_2eeyr")
 volume_db = -14.648
 bus = &"Music"
+
+[node name="SpawnPointShellLeave" type="Node2D" parent="."]
+position = Vector2(3273, 921)

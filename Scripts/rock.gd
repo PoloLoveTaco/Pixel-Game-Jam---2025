@@ -17,6 +17,8 @@ class_name Rock
 
 var is_mooving: bool = false
 
+var quest : Dictionary
+
 func _ready() -> void:
 	push_up_ia.interact = Callable(self, "push_up")
 	push_down_ia.interact = Callable(self, "push_down")
@@ -24,10 +26,12 @@ func _ready() -> void:
 	push_right_ia.interact = Callable(self, "push_right")
 	sleeping = true
 	
+	quest = SaveManager.data["quests"]["beach"]
+	
 func push(dir : Vector2) -> void:
 	if is_mooving:
 		return
-	if wife.quest_status == Wife.beach.START:
+	if quest["status"] == SaveManager.beach_status.START:
 		Dialog.launch_dialog(Dialog.LAZY_ROCK)
 		return
 	if get_tree().paused:
