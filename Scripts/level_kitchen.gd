@@ -11,6 +11,9 @@ var player_instance
 func _ready() -> void:
 	quest = SaveManager.data["quests"]["kitchen"]
 	
+	if quest["status"] == SaveManager.kitchen_status.NOT_START:
+		quest["status"] = SaveManager.kitchen_status.START
+	
 	if not get_tree().root.has_node("Player"):
 		player_instance = PLAYER.instantiate()
 		player_instance.global_position = spawn_point.global_position

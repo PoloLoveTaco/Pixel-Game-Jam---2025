@@ -10,7 +10,10 @@ enum beach_status {
 }
 
 enum kitchen_status {
-	NOT_START
+	NOT_START,
+	START,
+	MAKE_A_CAKE,
+	END
 }
 
 var data : Dictionary = {
