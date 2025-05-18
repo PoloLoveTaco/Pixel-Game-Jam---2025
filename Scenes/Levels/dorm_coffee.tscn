@@ -1,10 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://ctikrvyifxpac"]
+[gd_scene load_steps=20 format=4 uid="uid://cxucrv6l36jfw"]
 
 [ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="1_ntcow"]
-[ext_resource type="Script" uid="uid://dg2s15cw46ysm" path="res://Scripts/dorm_coffee.gd" id="1_xlr4o"]
+[ext_resource type="Script" path="res://Scripts/dorm_coffee.gd" id="1_xlr4o"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_xlr4o"]
 [ext_resource type="Texture2D" uid="uid://bn4umqwp07ssl" path="res://Assets/Tileset_005.png" id="3_1ukp4"]
-[ext_resource type="PackedScene" path="res://Scenes/barman.tscn" id="5_1ukp4"]
+[ext_resource type="PackedScene" uid="uid://di38x12lt7sa4" path="res://Scenes/barman.tscn" id="5_1ukp4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8610c"]
 shader = ExtResource("1_ntcow")
