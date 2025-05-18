@@ -4,6 +4,7 @@ extends Node2D
 @onready var cam: Camera2D
 @onready var office_door: InteractionArea = $OfficeDoor
 @onready var house_door: InteractionArea = $HouseDoor
+@onready var coffe_door: InteractionArea = $CoffeeDoor
 @onready var spawn_point: Node2D = $SpawnPoint
 
 @onready var animation_background: CanvasLayer = $Animation
@@ -32,6 +33,7 @@ func _ready() -> void:
 	
 	office_door.interact = Callable(self, "launch_dialog_1")
 	house_door.interact = Callable(self, "go_home")
+	coffe_door.interact = Callable(self, "go_coffee_first_act")
 	
 	if GlobalVariables.is_new_game:
 		GlobalVariables.is_in_cinematic = true
@@ -57,3 +59,6 @@ func launch_dialog_1():
 
 func go_home():
 	SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house.tscn")
+
+func go_coffee_first_act():
+	Dialog.launch_dialog(Dialog.COFFEE_FIRST_ACT)
