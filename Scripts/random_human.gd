@@ -30,7 +30,7 @@ func _ready() -> void:
 	var random_index = randi() % 4;
 	
 	sprite.self_modulate = color_possibility[random_index]
-	anim.play("walk_up")
+	#anim.play("walk_up")
 
 func _physics_process(delta: float) -> void:
 	if is_dodging:

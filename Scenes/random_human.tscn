@@ -129,7 +129,7 @@ material = SubResource("ShaderMaterial_5dpsi")
 position = Vector2(0, 16)
 texture = ExtResource("2_qewhn")
 offset = Vector2(0, -16)
-hframes = 3
+hframes = 6
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
