@@ -9,6 +9,10 @@ enum beach_status {
 	END
 }
 
+enum kitchen_status {
+	NOT_START
+}
+
 var data : Dictionary = {
 	"version": 1,
 	"global": {},	# ex: Player
@@ -19,6 +23,9 @@ var data : Dictionary = {
 		"beach" : {
 			"status" : beach_status.NOT_START,
 			"shells_found" : 0
+		},
+		"kitchen" : {
+			"status" : kitchen_status.NOT_START,
 		}
 	}
 }

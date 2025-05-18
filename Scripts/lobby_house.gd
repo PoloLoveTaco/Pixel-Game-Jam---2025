@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var book_1= $Book1
-@onready var beach_level = $BeachLevel
-@onready var leaveHouse = $LeaveHouse
+@onready var level_kitchen: InteractionArea  = $LevelKitchen
+@onready var level_beach: InteractionArea  = $LevelBeach
+@onready var leaveHouse: InteractionArea  = $LeaveHouse
 @onready var go_upstairs: InteractionArea = $"Go Upstairs"
 
 @onready var spawn_point: Node2D = $SpawnPoint
@@ -11,8 +11,8 @@ const PLAYER = preload("res://Scenes/player.tscn")
 var quest : Dictionary
 
 func _ready() -> void:
-	book_1.interact = Callable(self, "_to_world_1")
-	beach_level.interact = Callable(self, "_to_beach_scene")
+	level_kitchen.interact = Callable(self, "to_kitchen_scene")
+	level_beach.interact = Callable(self, "to_beach_scene")
 	leaveHouse.interact = Callable(self, "leave_house")
 	go_upstairs.interact = Callable(self, "_go_upstairs")
 	
@@ -32,7 +32,10 @@ func _ready() -> void:
 func _to_world_1():
 	SceneTransition.change_scene_slide("res://Scenes/Levels/level_kitchen.tscn")
 
-func _to_beach_scene():
+func to_kitchen_scene():
+	SceneTransition.change_scene_slide("res://Scenes/Levels/level_kitchen.tscn")
+
+func to_beach_scene():
 	SceneTransition.change_scene_slide("res://Scenes/Levels/level_beach.tscn")
 
 func _go_upstairs():

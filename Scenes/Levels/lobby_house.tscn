@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://1e86om8caein"]
+[gd_scene load_steps=38 format=4 uid="uid://1e86om8caein"]
 
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="1_81w7o"]
 [ext_resource type="Script" uid="uid://bfwdgjpl1djpm" path="res://Scripts/lobby_house.gd" id="1_ldafp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cw4xaqsqbwle4" path="res://Assets/Tileset_002.png" id="3_6otqr"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="3_p04sg"]
 [ext_resource type="Texture2D" uid="uid://1v18acucsloy" path="res://Assets/shell.png" id="6_gce4q"]
+[ext_resource type="Texture2D" uid="uid://dqym0p0wt40hs" path="res://Assets/buildings.png" id="7_40e33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gce4q"]
 texture = ExtResource("1_81w7o")
@@ -1075,7 +1076,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_6ls5x")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldafp"]
-size = Vector2(21, 65)
+size = Vector2(21, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g20sl"]
 size = Vector2(65, 45)
@@ -1144,18 +1145,19 @@ tile_set = SubResource("TileSet_gce4q")
 material = SubResource("ShaderMaterial_7ph5o")
 tile_set = SubResource("TileSet_p5ugh")
 
-[node name="Book1" parent="." instance=ExtResource("3_p04sg")]
-position = Vector2(240, -25.67)
+[node name="LevelKitchen" parent="." instance=ExtResource("3_p04sg")]
+position = Vector2(567, -69)
 action_name = "remember"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelKitchen"]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ldafp")
 
-[node name="BeachLevel" parent="." instance=ExtResource("3_p04sg")]
+[node name="LevelBeach" parent="." instance=ExtResource("3_p04sg")]
 position = Vector2(398, -26)
 action_name = "remember"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BeachLevel"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBeach"]
 shape = SubResource("RectangleShape2D_ldafp")
 
 [node name="LeaveHouse" parent="." instance=ExtResource("3_p04sg")]
@@ -1183,3 +1185,8 @@ position = Vector2(400, -31)
 scale = Vector2(0.5625, 0.5625)
 texture = ExtResource("6_gce4q")
 offset = Vector2(0, 7.11111)
+
+[node name="Buildings" type="Sprite2D" parent="."]
+position = Vector2(567, -70)
+scale = Vector2(0.0734376, 0.0734376)
+texture = ExtResource("7_40e33")

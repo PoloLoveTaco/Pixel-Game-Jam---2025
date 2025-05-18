@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://ubumonpyt0p6"]
+[gd_scene load_steps=22 format=4 uid="uid://ubumonpyt0p6"]
 
+[ext_resource type="Script" uid="uid://gbhy5ogsm7gj" path="res://Scripts/level_kitchen.gd" id="1_50cth"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="1_oek50"]
 [ext_resource type="Texture2D" uid="uid://dfb1041rh1eiy" path="res://Assets/Tileset_006.png" id="3_vvp7s"]
 [ext_resource type="Texture2D" uid="uid://cw4xaqsqbwle4" path="res://Assets/Tileset_002.png" id="4_rhn2y"]
@@ -703,6 +704,7 @@ sources/0 = SubResource("TileSetAtlasSource_28lhv")
 sources/1 = SubResource("TileSetAtlasSource_4w372")
 
 [node name="Level_kitchen" type="Node2D"]
+script = ExtResource("1_50cth")
 
 [node name="Layers" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -743,3 +745,6 @@ tile_set = SubResource("TileSet_2jocm")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAHAP3/AQAJAAgAAAALAAEAAQAIAAQAAAA=")
 tile_set = SubResource("TileSet_g1h6w")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(547, 116)
