@@ -12,7 +12,9 @@ enum {
 	BEACH_WIFE_2_SHELL,
 	BEACH_WIFE_HAVE_SHELL,
 	LAZY_ROCK,
-	BABY_BOX
+	BABY_BOX,
+	HOUSE_END_ACT,
+	OFFICE_END_ACT
 }
 
 # dialog template
@@ -263,6 +265,40 @@ var dialogs = {
 			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : ". . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	HOUSE_END_ACT : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "No, I must not go back.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "I have to go to the coffe.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	OFFICE_END_ACT : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "The office is closed.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "I have to go to the coffe.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "He is on the other side of the road.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	]
