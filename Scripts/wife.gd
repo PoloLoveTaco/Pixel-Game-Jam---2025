@@ -12,13 +12,13 @@ var quest : Dictionary
 
 func _ready() -> void:
 	interaction.interact = Callable(self, "interact")
-	animation_player.play("idle")
+	#animation_player.play("idle")
 	
 	if (get_tree().current_scene.name == "LevelBeach"):
 		quest = SaveManager.data["quests"]["beach"]
 	
-	if quest["status"] == SaveManager.beach_status.END:
-		queue_free()
+		if quest["status"] == SaveManager.beach_status.END:
+			queue_free()
 		
 func interact():
 	if (get_tree().current_scene.name == "LevelBeach"):
