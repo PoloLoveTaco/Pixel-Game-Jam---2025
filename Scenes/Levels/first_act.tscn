@@ -700,7 +700,6 @@ position = Vector2(244, 2715)
 position = Vector2(458, 2715)
 
 [node name="Rain" parent="." instance=ExtResource("8_qnpau")]
-visible = false
 
 [node name="OfficeDoor" parent="." instance=ExtResource("9_ygyml")]
 position = Vector2(912, 319)
