@@ -57,3 +57,4 @@ text = "Text to speach klnfkandk slkdnlak nd lknsd lnld nlakn sdn laksna nsnd al
 
 [node name="Voice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_eb8ay")
+max_polyphony = 10000
