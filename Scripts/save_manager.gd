@@ -38,7 +38,6 @@ func save_cache():
 func on_change_scene(root: Node):
 	print("exit scene: " + root.scene_file_path)
 	_capture_scene(root)
-	print(data)
 	
 func load_game() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):

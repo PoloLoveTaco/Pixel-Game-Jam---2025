@@ -1,13 +1,13 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed = 150
+@export var speed: float = 150
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var cam: Camera2D = $Camera2D
 
 @onready var sprite: Sprite2D = $Sprite2D
-var level_textures := {
+var level_textures : Dictionary = {
 	"LevelBeach": preload("res://Assets/Nemo_beach.png"),
 }
 
@@ -27,7 +27,7 @@ func update_texture(level_name: String) -> void:
 		sprite.texture = level_textures[level_name]
 
 func get_half_viewport() -> Vector2:
-	var px_size = get_viewport().get_visible_rect().size
+	var px_size : Vector2 = get_viewport().get_visible_rect().size
 	return px_size * 0.5 * cam.zoom
 
 func get_input():

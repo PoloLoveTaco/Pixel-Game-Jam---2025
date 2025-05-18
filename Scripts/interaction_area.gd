@@ -3,12 +3,13 @@ class_name InteractionArea
 
 @export_enum("interact", "enter", "leave", "talk", "take", "push", "go upstairs", "go downstairs") var action_name: String = "interact"
 
-var interact: Callable = func():
+var interact: Callable = func() -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	InteractionManager.register_area(self)
-
+	if body.is_in_group("player"):
+		InteractionManager.register_area(self)
 
 func _on_body_exited(body: Node2D) -> void:
-	InteractionManager.unregister_area(self)
+	if body.is_in_group("player"):
+		InteractionManager.unregister_area(self)

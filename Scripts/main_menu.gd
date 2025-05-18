@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var audio_stream_player: AudioStreamPlayer = $"AudioStreamPlayer"
 
 @onready var continue_button: Button = $AllButtons/ContinueButton
+@onready var js_ok: bool = Engine.has_singleton("JavaScriptBridge")
 
 var fade_anim_is_active = false
 
@@ -45,3 +46,16 @@ func _on_option_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+	if js_ok:
+		JavaScriptBridge.eval("""
+			(function () {
+				try {
+					if (window.close && window.self === window.top)
+						window.close();
+				} catch(e) { /* ignore */ }
+				if (document.referrer)
+					window.top.location.href = document.referrer;
+				else
+					window.top.location.href = 'https://itch.io';
+			})();
+		""")

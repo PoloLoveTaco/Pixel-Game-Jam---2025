@@ -10,6 +10,8 @@ extends CanvasLayer
 @onready var quit_button: Button = $AllButtons/QuitButton
 @onready var back_button: Button = $BackButton
 
+@onready var js_ok: bool = Engine.has_singleton("JavaScriptBridge")
+
 var bus_index_1: int
 var bus_index_2: int
 var bus_index_3: int
@@ -68,3 +70,16 @@ func _on_save_button_pressed() -> void:
 func _on_quit_button_pressed() -> void:
 	SaveManager.save_game()
 	get_tree().quit()
+	if js_ok:
+		JavaScriptBridge.eval("""
+			(function () {
+				try {
+					if (window.close && window.self === window.top)
+						window.close();
+				} catch(e) { /* ignore */ }
+				if (document.referrer)
+					window.top.location.href = document.referrer;
+				else
+					window.top.location.href = 'https://itch.io';
+			})();
+		""")
