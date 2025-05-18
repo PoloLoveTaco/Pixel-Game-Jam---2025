@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://di38x12lt7sa4"]
+[gd_scene load_steps=7 format=3 uid="uid://ce4nv1d1c5bnl"]
 
 [ext_resource type="Texture2D" uid="uid://cal7l0nkkkb5c" path="res://Assets/barman.png" id="1_10e4g"]
-[ext_resource type="Script" uid="uid://cluw0d66i4pl2" path="res://Scripts/barman.gd" id="1_w87df"]
+[ext_resource type="Script" path="res://Scripts/barman.gd" id="1_w87df"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w87df"]
 size = Vector2(20, 6)
@@ -49,7 +49,11 @@ _data = {
 script = ExtResource("1_w87df")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(0, 11)
 texture = ExtResource("1_10e4g")
+offset = Vector2(0, -11)
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
