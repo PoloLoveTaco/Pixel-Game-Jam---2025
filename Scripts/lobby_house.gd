@@ -40,6 +40,6 @@ func _go_upstairs():
 
 func leave_house():
 	if quest["nb_finished"] >= quest["total"]:
-		SceneTransition.change_scene_slide("res://Scenes/Levels/end_act.tscn")
+		SceneTransition.change_scene_slide("res://Scenes/Levels/city.tscn")
 	else:
 		Dialog.launch_dialog(Dialog.CANT_LEAVE_HOUSE)

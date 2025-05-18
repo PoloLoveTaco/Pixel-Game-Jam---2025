@@ -1,84 +1,18 @@
-[gd_scene load_steps=25 format=4 uid="uid://pwgubgloq41g"]
+[gd_scene load_steps=27 format=4 uid="uid://ykfid1776sg3"]
 
-[ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_doyvo"]
-[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="3_qw32v"]
-[ext_resource type="Texture2D" uid="uid://d1vhiq5rt168i" path="res://Assets/Tileset_004.png" id="4_j3mkj"]
-[ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="5_f2whk"]
-[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="7_432yt"]
-[ext_resource type="AudioStream" uid="uid://d16ikfl2l0baq" path="res://Assets/Music/SE_street.wav" id="10_2qpan"]
+[ext_resource type="Script" uid="uid://p3gib0cge2lc" path="res://Scripts/city.gd" id="1_s7f8u"]
+[ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_u0s6v"]
+[ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="3_nkqla"]
+[ext_resource type="Texture2D" uid="uid://d1vhiq5rt168i" path="res://Assets/Tileset_004.png" id="4_fxspg"]
+[ext_resource type="Script" uid="uid://dkgdeo864oia2" path="res://Scripts/human_spawner.gd" id="5_320g1"]
+[ext_resource type="PackedScene" uid="uid://cq8x5j46f8q5u" path="res://Scenes/rain.tscn" id="6_lwyr8"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="7_o4t3i"]
+[ext_resource type="AudioStream" uid="uid://iqkbohle0cpw" path="res://Assets/Music/SE_thunder.wav" id="8_0kupl"]
+[ext_resource type="AudioStream" uid="uid://bl460ax1x76uh" path="res://Assets/Music/SE_rain.wav" id="9_iifu0"]
+[ext_resource type="AudioStream" uid="uid://d16ikfl2l0baq" path="res://Assets/Music/SE_street.wav" id="10_nb4eq"]
 
-[sub_resource type="GDScript" id="GDScript_vbbk3"]
-script/source = "extends Node2D
-
-@onready var office_door: InteractionArea = $OfficeDoor
-@onready var house_door: InteractionArea = $HouseDoor
-@onready var coffee_door: InteractionArea = $CoffeeDoor
-
-const PLAYER = preload(\"res://Scenes/player.tscn\")
-@onready var spawn_point: Node2D = $SpawnPoint
-@onready var se_street: AudioStreamPlayer = $SFX/Street
-
-@onready var bw_detector_1 : Node2D = $BwDetectors/BwDetector
-@onready var bw_detector_2 : Node2D = $BwDetectors/BwDetector2
-@onready var bw_detector_3 : Node2D = $BwDetectors/BwDetector3
-@onready var bw_detector_4 : Node2D = $BwDetectors/BwDetector4
-@onready var bw_detector_5 : Node2D = $BwDetectors/BwDetector5
-@onready var bw_detector_6 : Node2D = $BwDetectors/BwDetector6
-
-var player_instance
-
-func _ready() -> void:
-	office_door.interact = Callable(self, \"launch_dialog_office_end_act\")
-	house_door.interact = Callable(self, \"launch_dialog_house_end_act\")
-	coffee_door.interact = Callable(self, \"go_to_coffee\")
-	se_street.play()
-	
-	if not get_tree().root.has_node(\"Player\"):
-		player_instance = PLAYER.instantiate()
-		player_instance.global_position = spawn_point.global_position
-		add_child(player_instance)
-	else:
-		player_instance = get_tree().root.get_node(\"Player\")
-		player_instance.get_parent().remove_child(player_instance)
-		add_child(player_instance)
-		player_instance.global_position = spawn_point.global_position
-
-func _process(delta: float) -> void:
-	if not player_instance: return
-	
-	var player_y = player_instance.global_position.y
-	var bw1_y = bw_detector_1.global_position.y
-	var bw2_y = bw_detector_2.global_position.y
-	var bw3_y = bw_detector_3.global_position.y
-	var bw4_y = bw_detector_4.global_position.y
-	var bw5_y = bw_detector_5.global_position.y
-	var bw6_y = bw_detector_6.global_position.y
-	
-	if player_y > bw1_y:
-		GlobalVariables.bw_amount = 1.0
-	elif player_y < bw1_y and player_y > bw2_y:
-		GlobalVariables.bw_amount = 0.90
-	elif player_y < bw2_y and player_y > bw3_y:
-		GlobalVariables.bw_amount = 0.80
-	elif player_y < bw3_y and player_y > bw4_y:
-		GlobalVariables.bw_amount = 0.70
-	elif player_y < bw4_y and player_y > bw5_y:
-		GlobalVariables.bw_amount = 0.60
-	elif player_y < bw6_y:
-		GlobalVariables.bw_amount = 0.0
-
-func launch_dialog_office_end_act():
-	Dialog.launch_dialog(Dialog.OFFICE_END_ACT)
-
-func launch_dialog_house_end_act():
-	Dialog.launch_dialog(Dialog.HOUSE_END_ACT)
-	
-func go_to_coffee():
-	SceneTransition.change_scene_slide(\"res://Scenes/Levels/dorm_coffee.tscn\")
-"
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g32u"]
-texture = ExtResource("2_doyvo")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ms1xf"]
+texture = ExtResource("2_u0s6v")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 3:0/0 = 0
@@ -98,19 +32,19 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 4:4/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_1r0rt"]
+[sub_resource type="TileSet" id="TileSet_gcpds"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
-sources/0 = SubResource("TileSetAtlasSource_1g32u")
+sources/0 = SubResource("TileSetAtlasSource_ms1xf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbeqj"]
-shader = ExtResource("3_qw32v")
+shader = ExtResource("3_nkqla")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_37h6t"]
-shader = ExtResource("3_qw32v")
+shader = ExtResource("3_nkqla")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcpds"]
-texture = ExtResource("4_j3mkj")
+texture = ExtResource("4_fxspg")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -243,10 +177,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gcpds")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gcpds"]
-shader = ExtResource("3_qw32v")
+shader = ExtResource("3_nkqla")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m64e0"]
-texture = ExtResource("4_j3mkj")
+texture = ExtResource("4_fxspg")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -353,13 +287,13 @@ texture_region_size = Vector2i(32, 32)
 11:8/0 = 0
 15:8/0 = 0
 15:8/0/z_index = 1
-15:8/0/y_sort_origin = 15
+15:8/0/y_sort_origin = 16
 7:9/0 = 0
 8:9/0 = 0
 10:9/0 = 0
 11:9/0 = 0
 15:9/0 = 0
-15:9/0/y_sort_origin = 9
+15:9/0/y_sort_origin = 16
 15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, 16, -5, 16, -5, 12, 4, 12)
 15:10/0 = 0
 15:10/0/y_sort_origin = -16
@@ -370,11 +304,11 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_m64e0")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g32u"]
-shader = ExtResource("3_qw32v")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnpau"]
+shader = ExtResource("3_nkqla")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1r0rt"]
-texture = ExtResource("4_j3mkj")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gai07"]
+texture = ExtResource("4_fxspg")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -677,13 +611,13 @@ texture_region_size = Vector2i(32, 32)
 18:17/0 = 0
 18:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSet" id="TileSet_7j6hy"]
+[sub_resource type="TileSet" id="TileSet_cveba"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1r0rt")
+sources/0 = SubResource("TileSetAtlasSource_gai07")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ec1"]
-size = Vector2(42, 20)
+size = Vector2(30, 21)
 
 [sub_resource type="Animation" id="Animation_ms1xf"]
 resource_name = "RESET"
@@ -691,22 +625,70 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SFX/Street:playing")
+tracks/0/path = NodePath("Animation/ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SFX/Street:volume_db")
+tracks/1/path = NodePath("SFX/Thunder:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Rain:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Street:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Rain:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/Street:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -719,22 +701,70 @@ length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SFX/Street:playing")
+tracks/0/path = NodePath("Animation/ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFX/Thunder:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SFX/Street:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX/Rain:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX/Street:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX/Rain:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX/Street:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -747,19 +777,16 @@ _data = {
 &"intro": SubResource("Animation_wbeqj")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g32u"]
-size = Vector2(30, 21)
-
-[node name="EndAct" type="Node2D"]
+[node name="City" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_vbbk3")
+script = ExtResource("1_s7f8u")
 
 [node name="Layers" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="CameraLockLayer" type="TileMapLayer" parent="Layers"]
 tile_map_data = PackedByteArray("AADy/1QAAAABAAAAAAAiAFQAAAABAAAAAADy/wIAAAABAAAAAAAiAAIAAAABAAAAAAAGAAIAAAABAAIAAAAGAAMAAAABAAIAAAAGAAQAAAABAAIAAAAGAAUAAAABAAIAAAAPAAIAAAABAAIAAAAPAAMAAAABAAIAAAAPAAQAAAABAAIAAAAPAAUAAAABAAIAAAAGAAYAAAABAAIAAAAGAAcAAAABAAIAAAAGAAgAAAABAAIAAAAGAAkAAAABAAIAAAAGAAoAAAABAAIAAAAGAAsAAAABAAIAAAAGAAwAAAABAAIAAAAGAA0AAAABAAIAAAAGAA4AAAABAAIAAAAGAA8AAAABAAIAAAAGABAAAAABAAIAAAAGABEAAAABAAIAAAAGABIAAAABAAIAAAAGABMAAAABAAIAAAAGABQAAAABAAIAAAAGABUAAAABAAIAAAAGABYAAAABAAIAAAAGABcAAAABAAIAAAAGABgAAAABAAIAAAAGABkAAAABAAIAAAAGABoAAAABAAIAAAAGABsAAAABAAIAAAAGABwAAAABAAIAAAAGAB0AAAABAAIAAAAGAB4AAAABAAIAAAAGAB8AAAABAAIAAAAGACAAAAABAAIAAAAGACEAAAABAAIAAAAGACIAAAABAAIAAAAGACMAAAABAAIAAAAGACQAAAABAAIAAAAGACUAAAABAAIAAAAGACYAAAABAAIAAAAGACcAAAABAAIAAAAGACgAAAABAAIAAAAGACkAAAABAAIAAAAGACoAAAABAAIAAAAGACsAAAABAAIAAAAGACwAAAABAAIAAAAGAC0AAAABAAIAAAAGAC4AAAABAAIAAAAGAC8AAAABAAIAAAAGADAAAAABAAIAAAAGADEAAAABAAIAAAAGADIAAAABAAIAAAAGADMAAAABAAIAAAAGADQAAAABAAIAAAAGADUAAAABAAIAAAAGADYAAAABAAIAAAAGADcAAAABAAIAAAAGADgAAAABAAIAAAAGADkAAAABAAIAAAAGADoAAAABAAIAAAAGADsAAAABAAIAAAAGADwAAAABAAIAAAAGAD0AAAABAAIAAAAGAD4AAAABAAIAAAAGAD8AAAABAAIAAAAGAEAAAAABAAIAAAAGAEEAAAABAAIAAAAGAEIAAAABAAIAAAAGAEMAAAABAAIAAAAGAEQAAAABAAIAAAAGAEUAAAABAAIAAAAGAEYAAAABAAIAAAAGAEcAAAABAAIAAAAGAEgAAAABAAIAAAAGAEkAAAABAAIAAAAGAEoAAAABAAIAAAAGAEsAAAABAAIAAAAGAEwAAAABAAIAAAAGAE0AAAABAAIAAAAGAE4AAAABAAIAAAAGAE8AAAABAAIAAAAGAFAAAAABAAIAAAAGAFEAAAABAAIAAAAGAFIAAAABAAIAAAAGAFMAAAABAAIAAAAGAFQAAAABAAIAAAAPAAYAAAABAAIAAAAPAAcAAAABAAIAAAAPAAgAAAABAAIAAAAPAAkAAAABAAIAAAAPAAoAAAABAAIAAAAPAAsAAAABAAIAAAAPAAwAAAABAAIAAAAPAA0AAAABAAIAAAAPAA4AAAABAAIAAAAPAA8AAAABAAIAAAAPABAAAAABAAIAAAAPABEAAAABAAIAAAAPABIAAAABAAIAAAAPABMAAAABAAIAAAAPABQAAAABAAIAAAAPABUAAAABAAIAAAAPABYAAAABAAIAAAAPABcAAAABAAIAAAAPABgAAAABAAIAAAAPABkAAAABAAIAAAAPABoAAAABAAIAAAAPABsAAAABAAIAAAAPABwAAAABAAIAAAAPAB0AAAABAAIAAAAPAB4AAAABAAIAAAAPAB8AAAABAAIAAAAPACAAAAABAAIAAAAPACEAAAABAAIAAAAPACIAAAABAAIAAAAPACMAAAABAAIAAAAPACQAAAABAAIAAAAPACUAAAABAAIAAAAPACYAAAABAAIAAAAPACcAAAABAAIAAAAPACgAAAABAAIAAAAPACkAAAABAAIAAAAPACoAAAABAAIAAAAPACsAAAABAAIAAAAPACwAAAABAAIAAAAPAC0AAAABAAIAAAAPAC4AAAABAAIAAAAPAC8AAAABAAIAAAAPADAAAAABAAIAAAAPADEAAAABAAIAAAAPADIAAAABAAIAAAAPADMAAAABAAIAAAAPADQAAAABAAIAAAAPADUAAAABAAIAAAAPADYAAAABAAIAAAAPADcAAAABAAIAAAAPADgAAAABAAIAAAAPADkAAAABAAIAAAAPADoAAAABAAIAAAAPADsAAAABAAIAAAAPADwAAAABAAIAAAAPAD0AAAABAAIAAAAPAD4AAAABAAIAAAAPAD8AAAABAAIAAAAPAEAAAAABAAIAAAAPAEEAAAABAAIAAAAPAEIAAAABAAIAAAAPAEMAAAABAAIAAAAPAEQAAAABAAIAAAAPAEUAAAABAAIAAAAPAEYAAAABAAIAAAAPAEcAAAABAAIAAAAPAEgAAAABAAIAAAAPAEkAAAABAAIAAAAPAEoAAAABAAIAAAAPAEsAAAABAAIAAAAPAEwAAAABAAIAAAAPAE0AAAABAAIAAAAPAE4AAAABAAIAAAAPAE8AAAABAAIAAAAPAFAAAAABAAIAAAAPAFEAAAABAAIAAAAPAFIAAAABAAIAAAAPAFMAAAABAAIAAAAPAFQAAAABAAIAAAA=")
-tile_set = SubResource("TileSet_1r0rt")
+tile_set = SubResource("TileSet_gcpds")
 
 [node name="Background" type="TileMapLayer" parent="Layers"]
 material = SubResource("ShaderMaterial_wbeqj")
@@ -778,12 +805,12 @@ tile_set = SubResource("TileSet_gai07")
 
 [node name="Building" type="TileMapLayer" parent="Layers"]
 y_sort_enabled = true
-material = SubResource("ShaderMaterial_1g32u")
+material = SubResource("ShaderMaterial_qnpau")
 tile_map_data = PackedByteArray("AAAZAAMAAAARAAAAAAAZAAQAAAARAAEAAAAZAAUAAAARAAIAAAAZAAYAAAARAAMAAAAZAAcAAAARAAQAAAAZAAgAAAARAAUAAAAZAAkAAAARAAYAAAAaAAMAAAASAAAAAAAaAAQAAAASAAEAAAAaAAUAAAASAAIAAAAaAAYAAAASAAMAAAAaAAcAAAASAAQAAAAaAAgAAAASAAUAAAAaAAkAAAASAAYAAAAbAAMAAAATAAAAAAAbAAQAAAATAAEAAAAbAAUAAAATAAIAAAAbAAYAAAATAAMAAAAbAAcAAAATAAQAAAAbAAgAAAATAAUAAAAbAAkAAAATAAYAAAAcAAMAAAAUAAAAAAAcAAQAAAAUAAEAAAAcAAUAAAAUAAIAAAAcAAYAAAAUAAMAAAAcAAcAAAAUAAQAAAAcAAgAAAAUAAUAAAAcAAkAAAAUAAYAAAAdAAMAAAAVAAAAAAAdAAQAAAAVAAEAAAAdAAUAAAAVAAIAAAAdAAYAAAAVAAMAAAAdAAcAAAAVAAQAAAAdAAgAAAAVAAUAAAAdAAkAAAAVAAYAAAAeAAMAAAAWAAAAAAAeAAQAAAAWAAEAAAAeAAUAAAAWAAIAAAAeAAYAAAAWAAMAAAAeAAcAAAAWAAQAAAAeAAgAAAAWAAUAAAAeAAkAAAAWAAYAAAAfAAMAAAAXAAAAAAAfAAQAAAAXAAEAAAAfAAUAAAAXAAIAAAAfAAYAAAAXAAMAAAAfAAcAAAAXAAQAAAAfAAgAAAAXAAUAAAAfAAkAAAAXAAYAAAD0/0AAAAAQAAkAAAD0/0EAAAAQAAoAAAD0/0IAAAAQAAsAAAD1/0AAAAARAAkAAAD1/0EAAAARAAoAAAD1/0IAAAARAAsAAAD1/0MAAAARAAwAAAD1/0QAAAARAA0AAAD1/0UAAAARAA4AAAD2/0AAAAASAAkAAAD2/0EAAAASAAoAAAD2/0IAAAASAAsAAAD2/0MAAAASAAwAAAD2/0QAAAASAA0AAAD2/0UAAAASAA4AAAD3/0AAAAATAAkAAAD3/0EAAAATAAoAAAD3/0IAAAATAAsAAAD3/0MAAAATAAwAAAD3/0QAAAATAA0AAAD3/0UAAAATAA4AAAD4/0AAAAAUAAkAAAD4/0EAAAAUAAoAAAD4/0IAAAAUAAsAAAD4/0MAAAAUAAwAAAD5/0AAAAAVAAkAAAD5/0EAAAAVAAoAAAD5/0IAAAAVAAsAAAD5/0MAAAAVAAwAAAD6/0AAAAAWAAkAAAD6/0EAAAAWAAoAAAD6/0IAAAAWAAsAAAD6/0MAAAAWAAwAAAD7/0AAAAAXAAkAAAD7/0EAAAAXAAoAAAD7/0IAAAAXAAsAAAD7/0MAAAAXAAwAAAD8/0AAAAAYAAkAAAD8/0EAAAAYAAoAAAD8/0IAAAAYAAsAAAD8/0MAAAAYAAwAAAD1/z8AAAARAAgAAAD2/z8AAAASAAgAAAD3/z8AAAATAAgAAAD4/z8AAAAUAAgAAAD5/z8AAAAVAAgAAAD6/z8AAAAWAAgAAAD7/z8AAAAXAAgAAAD8/z8AAAAYAAgAAAD9/z8AAAAZAAgAAAD9/0AAAAAZAAkAAAD9/0EAAAAZAAoAAAAgAAUAAAAYAAIAAAAYAAUAAAAQAAIAAAAYAAYAAAAQAAMAAAAYAAcAAAAQAAQAAAAYAAgAAAAQAAUAAAAYAAkAAAAQAAYAAAD0/wUAAAARAA8AAAD0/wYAAAARABAAAAD0/wcAAAARABEAAAD0/wgAAAARABIAAAD0/wkAAAARABMAAAD1/wUAAAASAA8AAAD1/wYAAAASABAAAAD1/wcAAAASABEAAAD1/wgAAAASABIAAAD1/wkAAAASABMAAAD2/wUAAAATAA8AAAD2/wYAAAATABAAAAD2/wcAAAATABEAAAD2/wgAAAATABIAAAD2/wkAAAATABMAAAD3/wUAAAAUAA8AAAD3/wYAAAAUABAAAAD3/wcAAAAUABEAAAD3/wgAAAAUABIAAAD3/wkAAAAUABMAAAD4/wUAAAAVAA8AAAD4/wYAAAAVABAAAAD4/wcAAAAVABEAAAD4/wgAAAAVABIAAAD4/wkAAAAVABMAAAD5/wUAAAAWAA8AAAD5/wYAAAAWABAAAAD5/wcAAAAWABEAAAD5/wgAAAAWABIAAAD5/wkAAAAWABMAAAA=")
-tile_set = SubResource("TileSet_7j6hy")
+tile_set = SubResource("TileSet_cveba")
 
 [node name="HumanSpawner" type="Node2D" parent="."]
-script = ExtResource("5_f2whk")
+script = ExtResource("5_320g1")
 
 [node name="Timer" type="Timer" parent="HumanSpawner"]
 wait_time = 0.3
@@ -795,29 +822,55 @@ position = Vector2(244, 2715)
 [node name="SpawnMax" type="Node2D" parent="HumanSpawner"]
 position = Vector2(458, 2715)
 
-[node name="OfficeDoor" parent="." instance=ExtResource("7_432yt")]
+[node name="Rain" parent="." instance=ExtResource("6_lwyr8")]
+
+[node name="OfficeDoor" parent="." instance=ExtResource("7_o4t3i")]
 position = Vector2(912, 319)
 action_name = "enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeDoor"]
 shape = SubResource("RectangleShape2D_52ec1")
 
-[node name="HouseDoor" parent="." instance=ExtResource("7_432yt")]
+[node name="CoffeeDoor" parent="." instance=ExtResource("7_o4t3i")]
+position = Vector2(-214, 319)
+action_name = "enter"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeeDoor"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_52ec1")
+
+[node name="HouseDoor" parent="." instance=ExtResource("7_o4t3i")]
 position = Vector2(-304.27, 2208.22)
 action_name = "enter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseDoor"]
 shape = SubResource("RectangleShape2D_52ec1")
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(-305, 2235)
-
 [node name="SFX" type="Node" parent="."]
 
+[node name="Thunder" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_0kupl")
+bus = &"Sound Effect"
+
+[node name="Rain" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_iifu0")
+bus = &"Sound Effect"
+
 [node name="Street" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("10_2qpan")
+stream = ExtResource("10_nb4eq")
 volume_db = -15.0
 bus = &"Sound Effect"
+
+[node name="Animation" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Animation"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -844,12 +897,10 @@ position = Vector2(313, 592)
 [node name="BwDetector6" type="Node2D" parent="BwDetectors"]
 position = Vector2(313, 592)
 
-[node name="CoffeeDoor" parent="." instance=ExtResource("7_432yt")]
-position = Vector2(-214, 319)
-action_name = "enter"
+[node name="SpawnPointHouse" type="Node2D" parent="."]
+position = Vector2(-305, 2235)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeeDoor"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_1g32u")
+[node name="SpawnPointOffice" type="Node2D" parent="."]
+position = Vector2(911, 343)
 
 [connection signal="timeout" from="HumanSpawner/Timer" to="HumanSpawner" method="_on_timer_timeout"]
