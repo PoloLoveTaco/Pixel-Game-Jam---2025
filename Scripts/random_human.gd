@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 140
 @export var dodge_speed = 160
-@export var dodge_time = 0.25
+@export var dodge_time = 0.15
 
 @export var dir: Vector2 = Vector2(0.0, -1.0)
 var dodge_timer = 0.0

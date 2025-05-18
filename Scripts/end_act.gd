@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var office_door: InteractionArea = $OfficeDoor
 @onready var house_door: InteractionArea = $HouseDoor
+@onready var coffee_door: InteractionArea = $CoffeeDoor
+
 const PLAYER = preload("res://Scenes/player.tscn")
 @onready var spawn_point: Node2D = $SpawnPoint
 @onready var se_street: AudioStreamPlayer = $SFX/Street
@@ -18,6 +20,7 @@ var player_instance
 func _ready() -> void:
 	office_door.interact = Callable(self, "launch_dialog_office_end_act")
 	house_door.interact = Callable(self, "launch_dialog_house_end_act")
+	coffee_door.interact = Callable(self, "go_to_coffee")
 	se_street.play()
 	
 	if not get_tree().root.has_node("Player"):
@@ -59,3 +62,6 @@ func launch_dialog_office_end_act():
 
 func launch_dialog_house_end_act():
 	Dialog.launch_dialog(Dialog.HOUSE_END_ACT)
+	
+func go_to_coffee():
+	SceneTransition.change_scene_slide("res://Scenes/Levels/dorm_coffee.tscn")

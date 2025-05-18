@@ -14,7 +14,8 @@ enum {
 	LAZY_ROCK,
 	BABY_BOX,
 	HOUSE_END_ACT,
-	OFFICE_END_ACT
+	OFFICE_END_ACT,
+	COFFEE_FIRST_ACT
 }
 
 # dialog template
@@ -298,10 +299,42 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "He is on the other side of the road.",
+			"text" : "It is on the other side of the road.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
-	]
+	],
+	COFFEE_FIRST_ACT : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "The coffee . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "They probably wait for me",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : ". . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "I will go to my house.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Just under . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
 }
 
 func launch_dialog(index):

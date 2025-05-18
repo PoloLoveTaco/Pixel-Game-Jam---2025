@@ -60,4 +60,5 @@ func beach_quest():
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_2_SHELL)
 	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 3:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_HAVE_SHELL)
+		SaveManager.data["quests"]["nb_finished"] += 1
 		quest["status"] = SaveManager.beach_status.END
