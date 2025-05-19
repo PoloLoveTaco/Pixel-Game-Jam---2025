@@ -9,7 +9,7 @@ extends Node
 
 const FOOD: PackedScene = preload("res://Scenes/MiniGames/food.tscn")
 const TOTAL_FOOD : int = 20
-const SPAWN_DELAY : float = 1.5
+const SPAWN_DELAY : float = 1.2
 
 var current_player_food: int = 0
 
@@ -43,7 +43,6 @@ func game_is_win():
 func game_is_loosed():
 	get_tree().current_scene.quit_mini_game()
 	queue_free()
-
 
 
 func _on_destroy_food_area_area_entered(area: Area2D) -> void:

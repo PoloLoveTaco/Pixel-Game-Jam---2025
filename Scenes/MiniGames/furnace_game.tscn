@@ -1,0 +1,126 @@
+[gd_scene load_steps=12 format=3 uid="uid://bv0bb7q5kf1ne"]
+
+[ext_resource type="Script" uid="uid://d2aer5v5o35s7" path="res://Scripts/MiniGames/furnace_game.gd" id="1_sabxr"]
+[ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="2_7aecr"]
+[ext_resource type="Texture2D" uid="uid://bothg6suegwit" path="res://Assets/MiniGame/void.png" id="3_fsmtc"]
+[ext_resource type="Texture2D" uid="uid://cefhk77sw6tja" path="res://Assets/MiniGame/grab.png" id="4_b0vqo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uqw8"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.787759, 0.787759, 0.787759, 0.3)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53o6p"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_4sxxj"]
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 12
+ProgressBar/fonts/font = ExtResource("2_7aecr")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_3uqw8")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_53o6p")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8d4t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t81to"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_527qa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.986752, 0.986752, 0.986752, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_c2687"]
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("3_fsmtc")
+HSlider/icons/grabber_disabled = ExtResource("4_b0vqo")
+HSlider/icons/grabber_highlight = ExtResource("3_fsmtc")
+HSlider/icons/tick = ExtResource("3_fsmtc")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_h8d4t")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_t81to")
+HSlider/styles/slider = SubResource("StyleBoxFlat_527qa")
+
+[node name="FurnaceGame" type="Node"]
+script = ExtResource("1_sabxr")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 272.0
+offset_top = 248.0
+offset_right = 312.0
+offset_bottom = 256.0
+color = Color(1, 1, 1, 0.364706)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(30, 200)
+offset_left = 454.0
+offset_top = 73.0
+offset_right = 484.0
+offset_bottom = 273.0
+theme = SubResource("Theme_4sxxj")
+fill_mode = 3
+show_percentage = false
+
+[node name="HSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -124.0
+offset_right = 73.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_c2687")
+editable = false
+scrollable = false
