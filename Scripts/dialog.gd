@@ -26,7 +26,8 @@ enum {
 	KITCHEN_WIFE_ASK_CAKE,
 	KITCHEN_WIFE_FRIDGE,
 	NN_FURNACE,
-	NN_FRIDGE
+	NN_FRIDGE,
+	NN_BOWL
 	
 }
 
@@ -418,6 +419,20 @@ var dialogs = {
 			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "The furnace, ",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Not for the moment.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	NN_BOWL : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "A bowl, ",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{

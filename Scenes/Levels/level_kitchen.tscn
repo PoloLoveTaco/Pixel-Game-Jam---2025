@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ubumonpyt0p6"]
+[gd_scene load_steps=27 format=4 uid="uid://ubumonpyt0p6"]
 
 [ext_resource type="Script" uid="uid://gbhy5ogsm7gj" path="res://Scripts/level_kitchen.gd" id="1_50cth"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="1_oek50"]
@@ -630,6 +630,7 @@ texture_region_size = Vector2i(32, 32)
 19:19/0 = 0
 19:19/0/y_sort_origin = -15
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -4, 10, -4, 10, -16, -16, -16)
+10:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2jocm"]
 tile_size = Vector2i(32, 32)
@@ -748,6 +749,7 @@ texture_region_size = Vector2i(32, 32)
 17:9/0/y_sort_origin = -12
 16:9/0 = 0
 16:9/0/y_sort_origin = -12
+10:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_g1h6w"]
 tile_size = Vector2i(32, 32)
@@ -760,6 +762,9 @@ size = Vector2(16, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvp7s"]
 size = Vector2(15, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj6pe"]
+size = Vector2(20, 42)
 
 [node name="Level_kitchen" type="Node2D"]
 y_sort_enabled = true
@@ -807,7 +812,7 @@ tile_set = SubResource("TileSet_2jocm")
 
 [node name="Decoration" type="TileMapLayer" parent="Layers"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAHAP3/AQAJAAgAAAALAAEAAQAIAAQAAAA=")
+tile_map_data = PackedByteArray("AAAHAP3/AQAJAAgAAAALAAEAAQAIAAQAAAAMAAEAAQAKAAYAAAA=")
 tile_set = SubResource("TileSet_g1h6w")
 
 [node name="SpawnPoint" type="Node2D" parent="."]
@@ -831,3 +836,11 @@ position = Vector2(565, -51)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Furnace"]
 position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_vvp7s")
+
+[node name="Bowl" parent="." instance=ExtResource("6_vvp7s")]
+position = Vector2(400, 58)
+action_name = "use"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_oj6pe")

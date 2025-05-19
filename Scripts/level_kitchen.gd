@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var fridge: InteractionArea = $Fridge
 @onready var furnace: InteractionArea = $Furnace
+@onready var bowl: InteractionArea = $Bowl
 
 const PLAYER = preload("res://Scenes/player.tscn")
 
@@ -18,6 +19,7 @@ func _ready() -> void:
 	furnace.action_name = "use"
 	fridge.interact = Callable(self, "use_fridge")
 	furnace.interact = Callable(self, "use_furnace")
+	bowl.interact = Callable(self, "use_bowl")
 	
 	if quest["status"] == SaveManager.kitchen_status.NOT_START:
 		quest["status"] = SaveManager.kitchen_status.START
@@ -40,3 +42,6 @@ func use_fridge():
 	
 func use_furnace():
 	Dialog.launch_dialog(Dialog.NN_FURNACE)
+
+func use_bowl():
+	Dialog.launch_dialog(Dialog.NN_BOWL)
