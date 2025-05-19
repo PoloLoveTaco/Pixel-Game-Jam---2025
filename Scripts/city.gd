@@ -11,6 +11,7 @@ extends Node2D
 @onready var bw_detector_6 : Node2D = $BwDetectors/BwDetector6
 
 @onready var office_door: InteractionArea = $OfficeDoor
+@onready var second_office_door: InteractionArea = $SecondOfficeDoor
 @onready var house_door: InteractionArea = $HouseDoor
 @onready var coffee_door: InteractionArea = $CoffeeDoor
 
@@ -40,6 +41,7 @@ func _ready() -> void:
 		is_first_act = false
 	
 	office_door.interact = Callable(self, "go_to_office")
+	second_office_door.interact = Callable(self, "second_office_interact")
 	house_door.interact = Callable(self, "go_to_house")
 	coffee_door.interact = Callable(self, "go_to_coffee")
 	
@@ -104,7 +106,10 @@ func go_to_office():
 		Dialog.launch_dialog(Dialog.FIRST_ACT_OFFICE)
 	else:
 		Dialog.launch_dialog(Dialog.OFFICE_END_ACT)
-	
+
+func second_office_interact():
+	Dialog.launch_dialog(Dialog.SECOND_OFFICE)
+
 func go_to_house():
 	if is_first_act:
 		SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house.tscn")

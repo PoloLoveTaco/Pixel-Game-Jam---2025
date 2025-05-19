@@ -8,6 +8,7 @@ enum {
 	FIRST_ACT_OFFICE,
 	HOUSE_END_ACT,
 	OFFICE_END_ACT,
+	SECOND_OFFICE,
 	COFFEE_FIRST_ACT,
 	
 	# Beach
@@ -319,6 +320,20 @@ var dialogs = {
 			"text" : "It is on the other side of the road.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
+	],
+	SECOND_OFFICE : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Mr. Ctor seems to really like the office",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "He built the exact same one. . . but in yellow.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
 	],
 	COFFEE_FIRST_ACT : [
 		{
