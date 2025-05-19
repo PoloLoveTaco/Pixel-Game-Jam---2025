@@ -10,6 +10,7 @@ enum {
 	OFFICE_END_ACT,
 	SECOND_OFFICE,
 	COFFEE_FIRST_ACT,
+	HECTOR_HOUSE,
 	
 	# Beach
 	BEACH_WIFE_BEFORE_SHELL,
@@ -366,6 +367,20 @@ var dialogs = {
 			"text" : "Just under . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
+	],
+	HECTOR_HOUSE : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Oh, Mr.Ector's house.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "These shapes remind me of something. . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
 	],
 	KITCHEN_WIFE_ASK_CAKE : [
 		{

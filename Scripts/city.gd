@@ -14,6 +14,7 @@ extends Node2D
 @onready var second_office_door: InteractionArea = $SecondOfficeDoor
 @onready var house_door: InteractionArea = $HouseDoor
 @onready var coffee_door: InteractionArea = $CoffeeDoor
+@onready var hector_house: InteractionArea = $"Hector House"
 
 @onready var spawn_point_office: Node2D = $SpawnPointOffice
 @onready var spawn_point_house: Node2D = $SpawnPointHouse
@@ -44,6 +45,7 @@ func _ready() -> void:
 	second_office_door.interact = Callable(self, "second_office_interact")
 	house_door.interact = Callable(self, "go_to_house")
 	coffee_door.interact = Callable(self, "go_to_coffee")
+	hector_house.interact = Callable(self, "hector_house_interact")
 	
 	var spawn_point: Node2D
 	if is_first_act:
@@ -101,25 +103,31 @@ func _process(delta: float) -> void:
 		
 		GlobalVariables.bw_amount = lerp(1.0, 0.0, t)
 
+
 func go_to_office():
 	if is_first_act:
 		Dialog.launch_dialog(Dialog.FIRST_ACT_OFFICE)
 	else:
 		Dialog.launch_dialog(Dialog.OFFICE_END_ACT)
 
+
 func second_office_interact():
 	Dialog.launch_dialog(Dialog.SECOND_OFFICE)
+
 
 func go_to_house():
 	if is_first_act:
 		SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house.tscn")
 	else:
 		Dialog.launch_dialog(Dialog.HOUSE_END_ACT)
-	
+
+
 func go_to_coffee():
 	if is_first_act:
 		Dialog.launch_dialog(Dialog.COFFEE_FIRST_ACT)
 	else:
 		SceneTransition.change_scene_slide("res://Scenes/Levels/dorm_coffee.tscn")
-	
-	
+
+
+func hector_house_interact():
+	Dialog.launch_dialog(Dialog.HECTOR_HOUSE)
