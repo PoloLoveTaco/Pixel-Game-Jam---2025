@@ -10,6 +10,8 @@ var is_speaking : bool = false
 
 var is_in_cinematic : bool = false
 
+var is_in_mini_game : bool = false
+
 var saved_scene_name : String
 
 var is_new_game : bool = true

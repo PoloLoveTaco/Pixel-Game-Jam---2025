@@ -62,7 +62,7 @@ func get_input():
 			GlobalVariables.bw_amount = GlobalVariables.bw_amount + 0.25
 
 func _physics_process(delta):
-	if (GlobalVariables.is_speaking or GlobalVariables.is_in_cinematic): return
+	if (GlobalVariables.is_speaking or GlobalVariables.is_in_cinematic or GlobalVariables.is_in_mini_game): return
 	get_input()
 	move_and_slide()
 	

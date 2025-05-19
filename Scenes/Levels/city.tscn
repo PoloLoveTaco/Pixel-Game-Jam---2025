@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bso5kfbh7pu28"]
+[gd_scene load_steps=29 format=4 uid="uid://ykfid1776sg3"]
 
 [ext_resource type="Script" uid="uid://p3gib0cge2lc" path="res://Scripts/city.gd" id="1_s7f8u"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_u0s6v"]

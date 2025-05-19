@@ -48,6 +48,8 @@ enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 player=""
 Persist=""
+Food="Food in the fridge mini game"
+FridgePlayer=""
 
 [input]
 

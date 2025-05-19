@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvt0ukcodicf1"]
+
+[ext_resource type="Script" uid="uid://ckvrdmmoxe2ml" path="res://Scripts/MiniGames/fridge_game.gd" id="1_b62yd"]
+[ext_resource type="PackedScene" uid="uid://c8r3fbm68qqvn" path="res://Scenes/MiniGames/fridge_player.tscn" id="2_b62yd"]
+[ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="3_apdgu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b62yd"]
+size = Vector2(23, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apdgu"]
+size = Vector2(384, 11)
+
+[node name="FridgeGame" type="Node"]
+script = ExtResource("1_b62yd")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+
+[node name="FridgePlayer" parent="." instance=ExtResource("2_b62yd")]
+position = Vector2(314, 255)
+
+[node name="SpawnLeft" type="Node2D" parent="."]
+position = Vector2(137, 46)
+
+[node name="SpawnRight" type="Node2D" parent="."]
+position = Vector2(503, 46)
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(115.5, 176)
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+shape = SubResource("RectangleShape2D_b62yd")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(524, 176)
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+shape = SubResource("RectangleShape2D_b62yd")
+
+[node name="DestroyFoodArea" type="Area2D" parent="."]
+position = Vector2(327, 288)
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestroyFoodArea"]
+position = Vector2(-7, 4.5)
+shape = SubResource("RectangleShape2D_apdgu")
+
+[node name="FoodsLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_apdgu")
+theme_override_fonts/mono_font = ExtResource("3_apdgu")
+theme_override_fonts/italics_font = ExtResource("3_apdgu")
+theme_override_fonts/bold_italics_font = ExtResource("3_apdgu")
+theme_override_fonts/bold_font = ExtResource("3_apdgu")
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "0 / 20"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="DestroyFoodArea" to="." method="_on_destroy_food_area_area_entered"]

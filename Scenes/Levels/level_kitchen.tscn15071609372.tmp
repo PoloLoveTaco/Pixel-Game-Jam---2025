@@ -922,5 +922,3 @@ texture = ExtResource("7_rhn2y")
 libraries = {
 &"": SubResource("AnimationLibrary_ql31y")
 }
-
-[node name="GamePlace" type="Node" parent="MiniGame"]

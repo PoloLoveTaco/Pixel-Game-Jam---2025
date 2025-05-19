@@ -12,7 +12,12 @@ enum beach_status {
 enum kitchen_status {
 	NOT_START,
 	START,
-	MAKE_A_CAKE,
+	GO_FRIDGE,
+	END_FRIDGE,
+	GO_BOWL,
+	END_BOWL,
+	GO_FURNACE,
+	END_FURNACE,
 	END
 }
 
@@ -33,6 +38,9 @@ var data : Dictionary = {
 		"kitchen" : {
 			"finished" : false,
 			"status" : kitchen_status.NOT_START,
+			"fridge" : false,
+			"bowl": false,
+			"furnace": false,
 		}
 	}
 }

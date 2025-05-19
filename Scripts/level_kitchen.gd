@@ -9,14 +9,14 @@ extends Node2D
 @onready var mini_game: CanvasLayer = $MiniGame
 @onready var animation_player_minigame: AnimationPlayer = $MiniGame/AnimationPlayer
 
-const PLAYER = preload("res://Scenes/player.tscn")
+@onready var game_place: Node = $MiniGame/GamePlace
 
-var quest : Dictionary
+const PLAYER = preload("res://Scenes/player.tscn")
+const FRIDGE_GAME = preload("res://Scenes/MiniGames/fridge_game.tscn")
 
 var player_instance
 
 func _ready() -> void:
-	quest = SaveManager.data["quests"]["kitchen"]
 	
 	fridge.action_name = "use"
 	furnace.action_name = "use"
@@ -24,8 +24,8 @@ func _ready() -> void:
 	furnace.interact = Callable(self, "use_furnace")
 	bowl.interact = Callable(self, "use_bowl")
 	
-	if quest["status"] == SaveManager.kitchen_status.NOT_START:
-		quest["status"] = SaveManager.kitchen_status.START
+	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.NOT_START:
+		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.START
 	
 	if not get_tree().root.has_node("Player"):
 		player_instance = PLAYER.instantiate()
@@ -42,28 +42,36 @@ func _ready() -> void:
 	
 	mini_game.hide()
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("display stats"):
-		if mini_game.visible == false:
-			launch_mini_game()
-		else:
-			quit_mini_game()
-
 func use_fridge():
-	Dialog.launch_dialog(Dialog.NN_FRIDGE)
+	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FRIDGE:
+		launch_mini_game()
+		var fg = FRIDGE_GAME.instantiate()
+		game_place.add_child(fg)
+	else:
+		Dialog.launch_dialog(Dialog.NN_FRIDGE)
 	
 func use_furnace():
-	Dialog.launch_dialog(Dialog.NN_FURNACE)
+	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FURNACE:
+		launch_mini_game()
+	else:
+		Dialog.launch_dialog(Dialog.NN_FURNACE)
 
 func use_bowl():
-	Dialog.launch_dialog(Dialog.NN_BOWL)
+	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_BOWL:
+		launch_mini_game()
+	else:
+		Dialog.launch_dialog(Dialog.NN_BOWL)
+	
 
 func launch_mini_game():
+	if GlobalVariables.is_in_mini_game: return
 	mini_game.show()
+	GlobalVariables.is_in_mini_game = true
 	animation_player_minigame.play("launch_mini_game")
 	await animation_player_minigame.animation_finished
 
 func quit_mini_game():
 	animation_player_minigame.play("quit_mini_game")
+	GlobalVariables.is_in_mini_game = false
 	await animation_player_minigame.animation_finished
 	mini_game.hide()

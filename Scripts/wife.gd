@@ -72,9 +72,14 @@ func beach_quest():
 		SaveManager.data["quests"]["beach"]["finished"] = true
 		SaveManager.data["quests"]["beach"]["status"] = SaveManager.beach_status.END
 
+
 func kitchen_quest():
 	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.START:
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_ASK_CAKE)
-		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.MAKE_A_CAKE
-	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.MAKE_A_CAKE:
+		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.GO_FRIDGE
+	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FRIDGE:
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_FRIDGE)
+	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_BOWL:
+		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_BOWL)
+	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FURNACE:
+		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_FURNACE)

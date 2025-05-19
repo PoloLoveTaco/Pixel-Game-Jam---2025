@@ -18,7 +18,7 @@ func unregister_area(area: InteractionArea):
 		active_areas.remove_at(index)
 
 func _process(delta):
-	if active_areas.size() > 0 and can_interact and !GlobalVariables.is_speaking:
+	if active_areas.size() > 0 and can_interact and not GlobalVariables.is_speaking and not GlobalVariables.is_in_mini_game:
 		#active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name
 		var label_pos = get_tree().current_scene.get_node("Player/LabelPos").global_position

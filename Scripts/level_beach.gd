@@ -11,17 +11,14 @@ const SHELL_SCENE: PackedScene = preload("res://Scenes/shell.tscn")
 
 const PLAYER: PackedScene = preload("res://Scenes/player.tscn")
 
-var quest : Dictionary
-
 @onready var LEAVE_SHELL: PackedScene = preload("res://Scenes/leave_shell.tscn")
 var leave_shell_spawned = false
 @onready var spawn_shell_leave: Node2D = $SpawnPointShellLeave
 
 func _ready() -> void:
-	quest = SaveManager.data["quests"]["beach"]
-	if quest["status"] == SaveManager.beach_status.NOT_START:
+	if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.NOT_START:
 		spawn_shells()
-		quest["status"] = SaveManager.beach_status.START
+		SaveManager.data["quests"]["beach"]["status"] = SaveManager.beach_status.START
 		
 	if not get_tree().root.has_node("Player"):
 		var player_instance = PLAYER.instantiate()
@@ -34,7 +31,7 @@ func _ready() -> void:
 		player_instance.global_position = spawn_point.global_position
 		
 func _process(delta: float) -> void:
-	if quest["status"] == SaveManager.beach_status.END and not leave_shell_spawned:
+	if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.END and not leave_shell_spawned:
 		leave_shell_spawned = true
 		var ls: Node2D = LEAVE_SHELL.instantiate()
 		ls.global_position = spawn_shell_leave.global_position

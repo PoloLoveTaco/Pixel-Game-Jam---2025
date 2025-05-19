@@ -26,6 +26,9 @@ enum {
 	# Kitchen
 	KITCHEN_WIFE_ASK_CAKE,
 	KITCHEN_WIFE_FRIDGE,
+	KITCHEN_WIFE_BOWL,
+	KITCHEN_WIFE_FURNACE,
+	KITCHEN_WIFE_HAVE_CAKE,
 	NN_FURNACE,
 	NN_FRIDGE,
 	NN_BOWL,
@@ -397,7 +400,35 @@ var dialogs = {
 		{
 			"speaker" : "Wife",
 			"color" : "pink",
-			"text" : "Start by opening the [color=blue]fridge[/color]",
+			"text" : "Start by get what you need in the [color=blue]fridge[/color]",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	],
+	KITCHEN_WIFE_BOWL : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Now to make the [color=orange]cake[/color], ",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "use the [color=brown]bowl[/color] on the table.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	],
+	KITCHEN_WIFE_FURNACE : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Now to cook the [color=orange]cake[/color], ",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "use the [color=red]furnace[/color].",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 	],
