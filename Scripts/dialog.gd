@@ -3,19 +3,33 @@ extends Node
 @onready var dialog_system_scene: PackedScene = load("res://Scenes/dialog_system.tscn")
 
 enum {
+	# City
 	INTRO,
 	FIRST_ACT_OFFICE,
-	CANT_LEAVE_HOUSE,
+	HOUSE_END_ACT,
+	OFFICE_END_ACT,
+	COFFEE_FIRST_ACT,
+	
+	# Beach
 	BEACH_WIFE_BEFORE_SHELL,
 	BEACH_WIFE_NO_SHELL,
 	BEACH_WIFE_1_SHELL,
 	BEACH_WIFE_2_SHELL,
 	BEACH_WIFE_HAVE_SHELL,
 	LAZY_ROCK,
+	
+	# House
 	BABY_BOX,
-	HOUSE_END_ACT,
-	OFFICE_END_ACT,
-	COFFEE_FIRST_ACT
+	CANT_LEAVE_HOUSE,
+	PHONE,
+	
+	# Kitchen
+	KITCHEN_WIFE_ASK_CAKE,
+	KITCHEN_WIFE_FRIDGE,
+	NN_FURNACE,
+	NN_FRIDGE,
+	NN_BOWL,
+	
 }
 
 # dialog template
@@ -335,6 +349,145 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
+	KITCHEN_WIFE_ASK_CAKE : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Do you remenber?",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Our first cake in our kitchen.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "We had a lot of fun.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "I wish I had the chance to . . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "to make one last cake.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Can you [color=orange]make a cake[/color] my love?",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	],
+	KITCHEN_WIFE_FRIDGE : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "To [color=orange]make a cake[/color], ",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Start by opening the [color=blue]fridge[/color]",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	],
+	NN_FRIDGE : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "The fridge, ",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Not for the moment.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	NN_FURNACE : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "The furnace, ",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Not for the moment.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	NN_BOWL : [
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "A bowl, ",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Not for the moment.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	PHONE : [
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "Please, please, please, . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Emergencies",
+			"color": "red",
+			"text": "Here, I listen to the emergency services?",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "It's my wife !!!",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "We were on the boat !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "There is a storm !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "She fell over the edge !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Emergencies",
+			"color": "red",
+			"text": "Give us your location, we'll be right there!",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		
+	]
 }
 
 func launch_dialog(index):

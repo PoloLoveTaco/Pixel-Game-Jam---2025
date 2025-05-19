@@ -10,7 +10,10 @@ enum beach_status {
 }
 
 enum kitchen_status {
-	NOT_START
+	NOT_START,
+	START,
+	MAKE_A_CAKE,
+	END
 }
 
 var data : Dictionary = {
@@ -18,7 +21,7 @@ var data : Dictionary = {
 	"global": {},	# ex: Player
 	"scenes": {},	# cache by scenes
 	"quests": {
-		"total": 1,
+		"total": 2,
 		"nb_finished": 0,
 		"beach" : {
 			"status" : beach_status.NOT_START,

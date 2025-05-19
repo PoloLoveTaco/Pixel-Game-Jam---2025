@@ -4,6 +4,7 @@ extends Node2D
 @onready var level_beach: InteractionArea  = $LevelBeach
 @onready var leaveHouse: InteractionArea  = $LeaveHouse
 @onready var go_upstairs: InteractionArea = $"Go Upstairs"
+@onready var phone: InteractionArea = $Phone
 
 @onready var spawn_point: Node2D = $SpawnPoint
 
@@ -15,6 +16,7 @@ func _ready() -> void:
 	level_beach.interact = Callable(self, "to_beach_scene")
 	leaveHouse.interact = Callable(self, "leave_house")
 	go_upstairs.interact = Callable(self, "_go_upstairs")
+	phone.interact = Callable(self, "to_phone_scene")
 	
 	quest = SaveManager.data["quests"]
 	
@@ -40,6 +42,9 @@ func to_beach_scene():
 
 func _go_upstairs():
 	SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house_upstairs.tscn")
+
+func to_phone_scene():
+	SceneTransition.change_scene_slide("res://Scenes/Levels/phone.tscn")
 
 func leave_house():
 	if quest["nb_finished"] >= quest["total"]:

@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvdfahl2sxdwa"]
+
+[ext_resource type="Script" uid="uid://cwky4mvitempc" path="res://Scripts/phone.gd" id="1_iifdj"]
+[ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="2_6hkyp"]
+[ext_resource type="AudioStream" uid="uid://dbwrvs5gs32k4" path="res://Assets/Music/SE_bop.wav" id="3_1hxnx"]
+
+[node name="Phone" type="CanvasLayer"]
+script = ExtResource("1_iifdj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 652.0
+offset_bottom = 370.0
+color = Color(0, 0, 0, 1)
+
+[node name="SpeakerLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.0
+offset_top = -37.0
+offset_right = 277.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("2_6hkyp")
+theme_override_fonts/mono_font = ExtResource("2_6hkyp")
+theme_override_fonts/italics_font = ExtResource("2_6hkyp")
+theme_override_fonts/bold_italics_font = ExtResource("2_6hkyp")
+theme_override_fonts/bold_font = ExtResource("2_6hkyp")
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Je Suis un test pour léditeur"
+fit_content = true
+vertical_alignment = 1
+text_direction = 1
+
+[node name="TextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.0
+offset_top = 5.0
+offset_right = 277.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("2_6hkyp")
+theme_override_fonts/mono_font = ExtResource("2_6hkyp")
+theme_override_fonts/italics_font = ExtResource("2_6hkyp")
+theme_override_fonts/bold_italics_font = ExtResource("2_6hkyp")
+theme_override_fonts/bold_font = ExtResource("2_6hkyp")
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Je Suis un test pour léditeur"
+fit_content = true
+vertical_alignment = 1
+text_direction = 1
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1hxnx")
+max_polyphony = 10000
+bus = &"Sound Effect"
