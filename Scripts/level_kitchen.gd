@@ -43,11 +43,11 @@ func _ready() -> void:
 	mini_game.hide()
 
 func use_fridge():
-	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FRIDGE:
+	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FRIDGE and not GlobalVariables.is_in_mini_game:
 		launch_mini_game()
 		var fg = FRIDGE_GAME.instantiate()
 		game_place.add_child(fg)
-	else:
+	elif not GlobalVariables.is_in_mini_game :
 		Dialog.launch_dialog(Dialog.NN_FRIDGE)
 	
 func use_furnace():
@@ -64,7 +64,6 @@ func use_bowl():
 	
 
 func launch_mini_game():
-	if GlobalVariables.is_in_mini_game: return
 	mini_game.show()
 	GlobalVariables.is_in_mini_game = true
 	animation_player_minigame.play("launch_mini_game")

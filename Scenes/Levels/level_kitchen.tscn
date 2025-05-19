@@ -918,6 +918,21 @@ offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("7_rhn2y")
 
+[node name="ColorRect2" type="ColorRect" parent="MiniGame"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_right = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196078, 0.196078, 0.196078, 0.533333)
+
+[node name="TextureRect2" type="TextureRect" parent="MiniGame"]
+offset_left = -640.0
+offset_bottom = 360.0
+texture = ExtResource("7_rhn2y")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MiniGame"]
 libraries = {
 &"": SubResource("AnimationLibrary_ql31y")
