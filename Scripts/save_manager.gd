@@ -49,8 +49,8 @@ func get_nb_quest_finished() -> int:
 	if data["quests"]["kitchen"]["finished"] == true:
 		finished += 1
 	
-	print(finished)
 	return finished
+
 
 func remove_save():
 	if FileAccess.file_exists(SAVE_PATH):
@@ -59,6 +59,7 @@ func remove_save():
 			print("Save removed.")
 		else:
 			push_error("Error : %s" % error_string(err))
+
 
 func _capture_scene(root: Node) -> void:
 	var path = root.scene_file_path
@@ -70,7 +71,8 @@ func _capture_scene(root: Node) -> void:
 				data["global"]["Player"] = d
 			else:
 				data["scenes"][path][d["id"]] = d
-				
+
+
 func write_file():
 	data["timestamp"] = Time.get_unix_time_from_system()
 	data["current_scene"] = get_tree().current_scene.scene_file_path
@@ -78,17 +80,21 @@ func write_file():
 	f.store_string(JSON.stringify(data))
 	f.close()
 
+
 func save_game():
 	save_cache()
 	write_file()
 
+
 func save_cache():
 	_capture_scene(get_tree().current_scene)
-	
+
+
 func on_change_scene(root: Node):
 	print("exit scene: " + root.scene_file_path)
 	_capture_scene(root)
-	
+
+
 func load_game() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
 		push_warning("No save found.")
@@ -100,12 +106,14 @@ func load_game() -> void:
 		await get_tree().process_frame
 	
 	_load_globals()
-	
+
+
 func _load_globals():
 	if data["global"].has("Player"):
 		var player_data = data["global"]["Player"]
 		var player: Player = get_tree().current_scene.get_node("Player")
 		player._load(player_data)
+
 
 func charge_saved_scene(scene_path: String) -> void:
 	if not data["scenes"].has(scene_path): return
@@ -122,26 +130,3 @@ func charge_saved_scene(scene_path: String) -> void:
 			var instance = load(object["file_path"]).instantiate()
 			instance._load(object)
 			current_scene.add_child(instance)
-	
-		
-#func load_game() -> void:
-	#if not FileAccess.file_exists(SAVE_PATH):
-		#push_warning("No save found.")
-		#return
-	#var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
-	#var header = JSON.parse_string(file.get_line())
-	#var scene_path = header["scene"]
-	#SceneTransition.change_scene_slide_only_exit(scene_path)
-	#GlobalVariables.saved_scene_name = scene_path
-	#
-	#while not get_tree().current_scene:
-		#await get_tree().process_frame
-	#
-	#while file.get_position() < file.get_length():
-		#var line = file.get_line()
-		#var data = JSON.parse_string(line)
-		#if data["name"] == "Player":
-			#var player: Player = load(data["scene"]).instantiate()
-			#player._load(data)
-			#get_tree().current_scene.add_child(player)
-	#file.close()

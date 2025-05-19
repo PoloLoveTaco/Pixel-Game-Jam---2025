@@ -86,26 +86,18 @@ func _process(delta: float) -> void:
 		rain.global_position = cam.get_canvas_transform().affine_inverse() * Vector2.ZERO
 		rain.global_position.y -= 32;
 	else:
-		var player_y = player_instance.global_position.y
-		var bw1_y = bw_detector_1.global_position.y
-		var bw2_y = bw_detector_2.global_position.y
-		var bw3_y = bw_detector_3.global_position.y
-		var bw4_y = bw_detector_4.global_position.y
-		var bw5_y = bw_detector_5.global_position.y
-		var bw6_y = bw_detector_6.global_position.y
+		var top_y = bw_detector_1.global_position.y
+		var bottom_y = bw_detector_6.global_position.y
 		
-		if player_y > bw1_y:
-			GlobalVariables.bw_amount = 1.0
-		elif player_y < bw1_y and player_y > bw2_y:
-			GlobalVariables.bw_amount = 0.90
-		elif player_y < bw2_y and player_y > bw3_y:
-			GlobalVariables.bw_amount = 0.80
-		elif player_y < bw3_y and player_y > bw4_y:
-			GlobalVariables.bw_amount = 0.70
-		elif player_y < bw4_y and player_y > bw5_y:
-			GlobalVariables.bw_amount = 0.60
-		elif player_y < bw6_y:
+		if top_y == bottom_y:
 			GlobalVariables.bw_amount = 0.0
+			return
+		
+		var player_y = player_instance.global_position.y
+		
+		var t = clamp((player_y - top_y) / (bottom_y - top_y), 0.0, 1.0)
+		
+		GlobalVariables.bw_amount = lerp(1.0, 0.0, t)
 
 func go_to_office():
 	if is_first_act:
