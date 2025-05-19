@@ -13,9 +13,7 @@ enum kitchen_status {
 	NOT_START,
 	START,
 	GO_FRIDGE,
-	END_FRIDGE,
 	GO_BOWL,
-	END_BOWL,
 	GO_FURNACE,
 	END_FURNACE,
 	END
@@ -26,7 +24,7 @@ var data : Dictionary = {
 	"global": {},	# ex: Player
 	"scenes": {},	# cache by scenes
 	"quests": {
-		"total": 2,
+		"total": 3,
 		"phone" : {
 			"finished" : false,
 		},

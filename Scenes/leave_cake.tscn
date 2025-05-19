@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddp4r5lbgx1v5"]
+
+[ext_resource type="Script" uid="uid://26g2ovmah6h0" path="res://Scripts/leave_cake.gd" id="1_1ttpc"]
+[ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="2_14s2h"]
+[ext_resource type="Texture2D" uid="uid://cdmirosriok3s" path="res://Assets/cake.png" id="3_6us25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8f3k"]
+size = Vector2(20, 41)
+
+[node name="LeaveCake" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1ttpc")
+
+[node name="Interaction Area" parent="." instance=ExtResource("2_14s2h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_q8f3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6us25")
+offset = Vector2(0, -16)

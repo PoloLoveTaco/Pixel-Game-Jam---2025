@@ -21,7 +21,7 @@ offset_bottom = 288.0
 color = Color(0, 0, 0, 1)
 
 [node name="FridgePlayer" parent="." instance=ExtResource("2_b62yd")]
-position = Vector2(314, 255)
+position = Vector2(312, 271)
 
 [node name="SpawnLeft" type="Node2D" parent="."]
 position = Vector2(137, 46)
