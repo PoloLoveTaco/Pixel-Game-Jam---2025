@@ -21,13 +21,14 @@ enum {
 	# House
 	BABY_BOX,
 	CANT_LEAVE_HOUSE,
+	PHONE,
 	
 	# Kitchen
 	KITCHEN_WIFE_ASK_CAKE,
 	KITCHEN_WIFE_FRIDGE,
 	NN_FURNACE,
 	NN_FRIDGE,
-	NN_BOWL
+	NN_BOWL,
 	
 }
 
@@ -441,6 +442,51 @@ var dialogs = {
 			"text" : "Not for the moment.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
+	],
+	PHONE : [
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "Please, please, please, . . .",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Emergencies",
+			"color": "red",
+			"text": "Here, I listen to the emergency services?",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "It's my wife !!!",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "We were on the boat !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "There is a storm !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Nemo",
+			"color": "gray",
+			"text": "She fell over the edge !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker": "Emergencies",
+			"color": "red",
+			"text": "Give us your location, we'll be right there!",
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
+		},
+		
 	]
 }
 

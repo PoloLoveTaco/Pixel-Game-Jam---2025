@@ -21,7 +21,7 @@ var data : Dictionary = {
 	"global": {},	# ex: Player
 	"scenes": {},	# cache by scenes
 	"quests": {
-		"total": 1,
+		"total": 2,
 		"nb_finished": 0,
 		"beach" : {
 			"status" : beach_status.NOT_START,
