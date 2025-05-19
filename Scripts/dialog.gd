@@ -462,6 +462,38 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 	],
+	KITCHEN_WIFE_HAVE_CAKE : [
+		{
+			"speaker" : "System",
+			"color" : "green",
+			"text" : "You give the [color=orange]cake[/color].",
+			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Oh!",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Thank you my love!",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "That was our last cake together.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "bye [color=red]<3[/color]",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	],
 	NN_FRIDGE : [
 		{
 			"speaker" : "Nemo",

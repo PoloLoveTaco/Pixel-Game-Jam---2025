@@ -53,8 +53,7 @@ func start_fade_and_exit() -> void:
 	tween.connect("finished", Callable(self, "on_fade_finished"))
 
 func on_fade_finished() -> void:
-	if get_tree().current_scene.name == "LevelBeach":
-		queue_free() 
+	queue_free() 
 
 
 func beach_quest():
@@ -83,3 +82,7 @@ func kitchen_quest():
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_BOWL)
 	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.GO_FURNACE:
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_FURNACE)
+	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.END_FURNACE:
+		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_HAVE_CAKE)
+		SaveManager.data["quests"]["kitchen"]["finished"] = true
+		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.END

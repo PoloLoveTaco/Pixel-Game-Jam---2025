@@ -4,6 +4,7 @@ extends Node
 @onready var slider: HSlider = $HSlider
 
 var in_the_zone: bool = false
+var can_loose: bool = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept"):
@@ -13,6 +14,7 @@ func _process(delta: float) -> void:
 		
 	if slider.value > 35.0 and slider.value < 65.0:
 		in_the_zone = true
+		can_loose = true
 	else:
 		in_the_zone = false
 		
@@ -23,10 +25,12 @@ func _process(delta: float) -> void:
 		
 	if progress_bar.value >= 100.0:
 		game_is_win()
+	elif progress_bar.value <= 0.0 and can_loose:
+		game_is_loosed()
 
 func game_is_win():
 	SaveManager.data["quests"]["kitchen"]["furnace"] = true
-	SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.GO_FURNACE
+	SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.END_FURNACE
 	get_tree().current_scene.quit_mini_game()
 	queue_free()
 	

@@ -875,7 +875,7 @@ tile_set = SubResource("TileSet_g1h6w")
 position = Vector2(547, 116)
 
 [node name="Wife" parent="." instance=ExtResource("5_50cth")]
-position = Vector2(558, 14)
+position = Vector2(525, -48)
 
 [node name="Fridge" parent="." instance=ExtResource("6_vvp7s")]
 z_index = 1
@@ -939,3 +939,6 @@ libraries = {
 }
 
 [node name="GamePlace" type="Node" parent="MiniGame"]
+
+[node name="SpawnCake" type="Node2D" parent="."]
+position = Vector2(527, -62)
