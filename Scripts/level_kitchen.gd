@@ -6,6 +6,9 @@ extends Node2D
 @onready var furnace: InteractionArea = $Furnace
 @onready var bowl: InteractionArea = $Bowl
 
+@onready var mini_game: CanvasLayer = $MiniGame
+@onready var animation_player_minigame: AnimationPlayer = $MiniGame/AnimationPlayer
+
 const PLAYER = preload("res://Scenes/player.tscn")
 
 var quest : Dictionary
@@ -36,6 +39,15 @@ func _ready() -> void:
 	
 	while not has_node("Player"):
 		await get_tree().process_frame
+	
+	mini_game.hide()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("display stats"):
+		if mini_game.visible == false:
+			launch_mini_game()
+		else:
+			quit_mini_game()
 
 func use_fridge():
 	Dialog.launch_dialog(Dialog.NN_FRIDGE)
@@ -45,3 +57,13 @@ func use_furnace():
 
 func use_bowl():
 	Dialog.launch_dialog(Dialog.NN_BOWL)
+
+func launch_mini_game():
+	mini_game.show()
+	animation_player_minigame.play("launch_mini_game")
+	await animation_player_minigame.animation_finished
+
+func quit_mini_game():
+	animation_player_minigame.play("quit_mini_game")
+	await animation_player_minigame.animation_finished
+	mini_game.hide()
