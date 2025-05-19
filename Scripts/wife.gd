@@ -8,22 +8,17 @@ class_name Wife
 
 var is_fading : bool = false
 
-var quest : Dictionary
-
 func _ready() -> void:
 	interaction.interact = Callable(self, "interact")
 	#animation_player.play("idle")
 	
-	if (get_tree().current_scene.name == "LevelBeach"):
-		quest = SaveManager.data["quests"]["beach"]
-	
-		if quest["status"] == SaveManager.beach_status.END:
+	if (get_tree().current_scene.name == "LevelBeach"):	
+		if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.END:
 			queue_free()
 	
 	elif (get_tree().current_scene.name == "Level_kitchen"):
-		quest = SaveManager.data["quests"]["kitchen"]
 		
-		if quest["status"] == SaveManager.kitchen_status.END:
+		if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.END:
 			queue_free()
 		
 func interact():
@@ -33,17 +28,17 @@ func interact():
 		kitchen_quest()
 
 func shell_founded():
-	quest["shells_found"] += 1
+	SaveManager.data["quests"]["beach"]["shells_found"] += 1
 
 func _process(delta: float) -> void:
 	if get_tree().current_scene.name == "LevelBeach":
-		if quest["status"] != SaveManager.beach_status.END:
+		if SaveManager.data["quests"]["beach"]["status"] != SaveManager.beach_status.END:
 			return
 		
 		if get_tree().current_scene.get_node_or_null("DialogSystem") == null and not is_fading:
 			start_fade_and_exit()
 	elif get_tree().current_scene.name == "Level_kitchen":
-		if quest["status"] != SaveManager.kitchen_status.END:
+		if SaveManager.data["quests"]["kitchen"]["status"] != SaveManager.kitchen_status.END:
 			return
 		
 		if get_tree().current_scene.get_node_or_null("DialogSystem") == null and not is_fading:
@@ -63,23 +58,23 @@ func on_fade_finished() -> void:
 
 
 func beach_quest():
-	if quest["status"] == SaveManager.beach_status.START:
+	if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.START:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_BEFORE_SHELL)
-		quest["status"] = SaveManager.beach_status.SEARCH_SHELLS
-	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 0:
+		SaveManager.data["quests"]["beach"]["status"] = SaveManager.beach_status.SEARCH_SHELLS
+	elif SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.SEARCH_SHELLS and SaveManager.data["quests"]["beach"]["shells_found"] == 0:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_NO_SHELL)
-	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 1:
+	elif SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.SEARCH_SHELLS and SaveManager.data["quests"]["beach"]["shells_found"] == 1:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_1_SHELL)
-	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 2:
+	elif SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.SEARCH_SHELLS and SaveManager.data["quests"]["beach"]["shells_found"] == 2:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_2_SHELL)
-	elif quest["status"] == SaveManager.beach_status.SEARCH_SHELLS and quest["shells_found"] == 3:
+	elif SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.SEARCH_SHELLS and SaveManager.data["quests"]["beach"]["shells_found"] == 3:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_HAVE_SHELL)
-		SaveManager.data["quests"]["nb_finished"] += 1
-		quest["status"] = SaveManager.beach_status.END
+		SaveManager.data["quests"]["beach"]["finished"] = true
+		SaveManager.data["quests"]["beach"]["status"] = SaveManager.beach_status.END
 
 func kitchen_quest():
-	if quest["status"] == SaveManager.kitchen_status.START:
+	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.START:
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_ASK_CAKE)
-		quest["status"] = SaveManager.kitchen_status.MAKE_A_CAKE
-	elif quest["status"] == SaveManager.kitchen_status.MAKE_A_CAKE:
+		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.MAKE_A_CAKE
+	elif SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.MAKE_A_CAKE:
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_FRIDGE)

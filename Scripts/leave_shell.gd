@@ -8,7 +8,7 @@ func _ready() -> void:
 	ia.interact = Callable(self, "leave")
 
 func leave():
-	SceneTransition.change_scene_dissolve("res://Scenes/Levels/lobby_house.tscn")
+	SceneTransition.change_scene_slide("res://Scenes/Levels/lobby_house.tscn")
 
 func _save() -> Dictionary:
 	return {

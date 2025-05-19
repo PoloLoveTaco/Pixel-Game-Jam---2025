@@ -22,18 +22,35 @@ var data : Dictionary = {
 	"scenes": {},	# cache by scenes
 	"quests": {
 		"total": 2,
-		"nb_finished": 0,
+		"phone" : {
+			"finished" : false,
+		},
 		"beach" : {
+			"finished" : false,
 			"status" : beach_status.NOT_START,
-			"shells_found" : 0
+			"shells_found" : 0,
 		},
 		"kitchen" : {
+			"finished" : false,
 			"status" : kitchen_status.NOT_START,
 		}
 	}
 }
 
 var _player_ref : Node = null
+
+func get_nb_quest_finished() -> int:
+	var finished = 0
+	
+	if data["quests"]["phone"]["finished"] == true:
+		finished += 1
+	if data["quests"]["beach"]["finished"]  == true:
+		finished += 1
+	if data["quests"]["kitchen"]["finished"] == true:
+		finished += 1
+	
+	print(finished)
+	return finished
 
 func remove_save():
 	if FileAccess.file_exists(SAVE_PATH):

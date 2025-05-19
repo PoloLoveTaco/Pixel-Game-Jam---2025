@@ -47,7 +47,7 @@ func to_phone_scene():
 	SceneTransition.change_scene_slide("res://Scenes/Levels/phone.tscn")
 
 func leave_house():
-	if quest["nb_finished"] >= quest["total"]:
+	if SaveManager.get_nb_quest_finished() >= quest["total"]:
 		SceneTransition.change_scene_slide("res://Scenes/Levels/city.tscn")
 	else:
 		Dialog.launch_dialog(Dialog.CANT_LEAVE_HOUSE)

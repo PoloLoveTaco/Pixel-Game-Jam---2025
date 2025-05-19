@@ -34,7 +34,7 @@ var is_first_act: bool
 func _ready() -> void:
 	quest = SaveManager.data["quests"]
 	
-	if quest["nb_finished"] == 0:
+	if SaveManager.get_nb_quest_finished() == 0:
 		is_first_act = true
 	else: 
 		is_first_act = false

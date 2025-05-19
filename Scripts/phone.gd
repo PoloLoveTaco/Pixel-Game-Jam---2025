@@ -69,5 +69,5 @@ func _input(event: InputEvent) -> void:
 			if story_index < story.size():
 				start_line()
 			else:
-				quest["nb_finished"] += 1
+				SaveManager.data["quests"]["phone"]["finished"] = true
 				get_tree().change_scene_to_file("res://Scenes/Levels/lobby_house.tscn")
