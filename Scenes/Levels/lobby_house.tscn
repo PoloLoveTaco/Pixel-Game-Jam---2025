@@ -5,8 +5,8 @@
 [ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="2_3eh2x"]
 [ext_resource type="Texture2D" uid="uid://cw4xaqsqbwle4" path="res://Assets/Tileset_002.png" id="3_6otqr"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="3_p04sg"]
+[ext_resource type="Texture2D" uid="uid://cdmirosriok3s" path="res://Assets/cake.png" id="6_40e33"]
 [ext_resource type="Texture2D" uid="uid://1v18acucsloy" path="res://Assets/shell.png" id="6_gce4q"]
-[ext_resource type="Texture2D" uid="uid://dqym0p0wt40hs" path="res://Assets/buildings.png" id="7_40e33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gce4q"]
 texture = ExtResource("1_81w7o")
@@ -1154,9 +1154,9 @@ position = Vector2(567, -69)
 action_name = "remember"
 
 [node name="Buildings" type="Sprite2D" parent="LevelKitchen"]
-position = Vector2(0, -1)
-scale = Vector2(0.0734376, 0.0734376)
-texture = ExtResource("7_40e33")
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_40e33")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelKitchen"]
 position = Vector2(0, 3.5)
