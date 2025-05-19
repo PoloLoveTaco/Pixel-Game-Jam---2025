@@ -6,11 +6,12 @@ class_name Wife
 
 @export var fade_time : float  = 3.0
 
+var last_direction: String = "down"
+
 var is_fading : bool = false
 
 func _ready() -> void:
 	interaction.interact = Callable(self, "interact")
-	#animation_player.play("idle")
 	
 	if (get_tree().current_scene.name == "LevelBeach"):	
 		if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.END:
@@ -20,17 +21,35 @@ func _ready() -> void:
 		
 		if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.END:
 			queue_free()
-		
+
+
 func interact():
 	if (get_tree().current_scene.name == "LevelBeach"):
 		beach_quest()
 	elif (get_tree().current_scene.name == "Level_kitchen"):
 		kitchen_quest()
 
+
 func shell_founded():
 	SaveManager.data["quests"]["beach"]["shells_found"] += 1
 
+
 func _process(delta: float) -> void:
+	if velocity.x > 0:
+		animation_player.play("walk_right")
+		last_direction = "right"
+	elif velocity.x < 0:
+		animation_player.play("walk_left")
+		last_direction = "left"
+	elif velocity.y > 0:
+		animation_player.play("walk_down")
+		last_direction = "down"
+	elif velocity.y < 0:
+		animation_player.play("walk_up")
+		last_direction = "up"
+	elif velocity.x == 0 and velocity.y == 0:
+		animation_player.play("idle_"+last_direction)
+	
 	if get_tree().current_scene.name == "LevelBeach":
 		if SaveManager.data["quests"]["beach"]["status"] != SaveManager.beach_status.END:
 			return
@@ -43,7 +62,8 @@ func _process(delta: float) -> void:
 		
 		if get_tree().current_scene.get_node_or_null("DialogSystem") == null and not is_fading:
 			start_fade_and_exit()
-			
+
+
 func start_fade_and_exit() -> void:
 	is_fading = true
 	var tween : Tween = create_tween()
@@ -51,6 +71,7 @@ func start_fade_and_exit() -> void:
 	).set_trans(Tween.TRANS_QUAD
 	).set_ease(Tween.EASE_OUT)
 	tween.connect("finished", Callable(self, "on_fade_finished"))
+
 
 func on_fade_finished() -> void:
 	if get_tree().current_scene.name == "LevelBeach":

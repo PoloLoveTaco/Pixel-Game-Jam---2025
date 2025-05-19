@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://wsbupqp5fixv"]
+[gd_scene load_steps=16 format=3 uid="uid://wsbupqp5fixv"]
 
 [ext_resource type="Script" uid="uid://dljx47q5bqj62" path="res://Scripts/wife.gd" id="1_lwxgq"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="2_fhmwm"]
-[ext_resource type="Texture2D" uid="uid://busuwk2ptd28t" path="res://Assets/UniversalCharacter.png" id="4_r1bit"]
+[ext_resource type="Texture2D" uid="uid://bcikv520uv32e" path="res://Assets/honey.png" id="3_ico4u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eeyr"]
 radius = 11.0
@@ -11,6 +11,7 @@ radius = 11.0
 size = Vector2(10, 9.5)
 
 [sub_resource type="Animation" id="Animation_x3wgy"]
+length = 0.001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -19,26 +20,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 1]
-}
-
-[sub_resource type="Animation" id="Animation_3smsa"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [1, 4, 7, 10]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_fkybt"]
@@ -70,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [9, 10, 11, 10]
+"values": [18, 19, 20, 19]
 }
 
 [sub_resource type="Animation" id="Animation_6t5aa"]
@@ -86,7 +71,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [6, 7, 8, 7]
+"values": [12, 13, 14, 13]
 }
 
 [sub_resource type="Animation" id="Animation_cvnsp"]
@@ -102,13 +87,84 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3, 4, 5, 4]
+"values": [6, 7, 8, 7]
+}
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "idle_down"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_lwxgq"]
+resource_name = "idle_up"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_fhmwm"]
+resource_name = "idle_left"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_58lnf"]
+resource_name = "idle_right"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [16, 17]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
 _data = {
 &"RESET": SubResource("Animation_x3wgy"),
-&"idle": SubResource("Animation_3smsa"),
+&"idle_down": SubResource("Animation_3smsa"),
+&"idle_left": SubResource("Animation_fhmwm"),
+&"idle_right": SubResource("Animation_58lnf"),
+&"idle_up": SubResource("Animation_lwxgq"),
 &"walk_down": SubResource("Animation_fkybt"),
 &"walk_left": SubResource("Animation_vgqql"),
 &"walk_right": SubResource("Animation_6t5aa"),
@@ -126,12 +182,12 @@ action_name = "talk"
 shape = SubResource("CircleShape2D_2eeyr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.951344, 0.618037, 1, 1)
 position = Vector2(0, 15)
-texture = ExtResource("4_r1bit")
+texture = ExtResource("3_ico4u")
 offset = Vector2(0, -15)
 hframes = 6
 vframes = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10.25)

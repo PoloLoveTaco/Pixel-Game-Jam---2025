@@ -326,7 +326,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "Mr. Ector seems to really like the office",
+			"text" : "Mr.Ector seems to really like the office",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
