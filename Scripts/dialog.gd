@@ -150,31 +150,31 @@ var dialogs = {
 	],
 	BEACH_WIFE_BEFORE_SHELL : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "The weather is nice.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Don't you think so?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I remember it like it was yesterday.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "There pretty shells . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Do you think you can find  [color=cyan]3 shells[/color] for me?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -182,19 +182,19 @@ var dialogs = {
 	],
 	BEACH_WIFE_NO_SHELL : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Do you found them ?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "The [color=cyan]3 shells[/color]?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Maybe search under the rocks.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -202,13 +202,13 @@ var dialogs = {
 	],
 	BEACH_WIFE_1_SHELL : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Oh [color=cyan]1 shell[/color]!",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Just 2 more . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -216,13 +216,13 @@ var dialogs = {
 	],
 	BEACH_WIFE_2_SHELL : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Oh [color=cyan]2 shells[/color]!",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Just 1 more . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -236,19 +236,19 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Oh my love !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "It's so beautifull!",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Thank you !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -390,37 +390,37 @@ var dialogs = {
 	],
 	KITCHEN_WIFE_ASK_CAKE : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Do you remenber?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Our first cake in our kitchen.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "We had a lot of fun.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I wish I had the chance to . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "to make one last cake.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Can you [color=orange]make a cake[/color] my love?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -428,13 +428,13 @@ var dialogs = {
 	],
 	KITCHEN_WIFE_FRIDGE : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "To [color=orange]make a cake[/color], ",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Start by get what you need in the [color=blue]fridge[/color]",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -442,13 +442,13 @@ var dialogs = {
 	],
 	KITCHEN_WIFE_BOWL : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Now to make the [color=orange]cake[/color], ",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "use the [color=brown]bowl[/color] on the table.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -456,13 +456,13 @@ var dialogs = {
 	],
 	KITCHEN_WIFE_FURNACE : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Now to cook the [color=orange]cake[/color], ",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "use the [color=red]furnace[/color].",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -476,25 +476,25 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Oh!",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Thank you my love!",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "That was our last cake together.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "bye [color=red]<3[/color]",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -589,49 +589,49 @@ var dialogs = {
 	
 	FINAL_GOODBYE : [
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Nemo. . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "My love. . .",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "We write a beautiful story.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Surely with down and up, but a beatiful one.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I never stop loving you.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I will stay here for a while.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Go meet people, live your life and be happy.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "That's all i want.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -643,13 +643,13 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "Nemo !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I will allways be with you.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -661,7 +661,7 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
-			"speaker" : "Wife",
+			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I know.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
@@ -671,15 +671,15 @@ var dialogs = {
 	CAFFEE_1 : [
 		{
 			"speaker" : "Adrien",
-			"color" : "pink",
+			"color" : "orange",
 			"text" : "Nemo ??",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
 			"speaker" : "Adrien",
-			"color" : "pink",
+			"color" : "orange",
 			"text" : "Come here !",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		}
 	],
 	CAFFEE_2 : [
