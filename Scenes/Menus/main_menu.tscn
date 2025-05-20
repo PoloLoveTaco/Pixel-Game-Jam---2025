@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bockfjime8a0c"]
+[gd_scene load_steps=13 format=3 uid="uid://bockfjime8a0c"]
 
 [ext_resource type="Script" uid="uid://bmvuqsdlg5426" path="res://Scripts/main_menu.gd" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://bwh3pyc0kyy0y" path="res://Assets/heart.png" id="2_pha2q"]
 [ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="3_5wi6m"]
 [ext_resource type="PackedScene" uid="uid://d4b541h6jucfu" path="res://Scenes/Menus/option_menu.tscn" id="3_penys"]
 [ext_resource type="AudioStream" uid="uid://e8vlvw4gj6w1" path="res://Assets/Music/Intro.wav" id="4_aur2u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5wi6m"]
+font = ExtResource("3_5wi6m")
+font_size = 32
 
 [sub_resource type="Animation" id="Animation_aur2u"]
 length = 0.001
@@ -145,6 +149,18 @@ offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_pha2q")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.5
+offset_top = 60.0
+offset_right = 134.5
+offset_bottom = 93.0
+grow_horizontal = 2
+text = "Echoes of grief"
+label_settings = SubResource("LabelSettings_5wi6m")
 
 [node name="AllButtons" type="HBoxContainer" parent="."]
 anchors_preset = 8
