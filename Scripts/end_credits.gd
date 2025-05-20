@@ -10,7 +10,11 @@ func _ready() -> void:
 func ending_credits():
 	animation_player.play("classic")
 	await animation_player.animation_finished
+	
 	label.text = "Thank you for playing"
 	animation_player.play("classic")
+	await animation_player.animation_finished
+	
+	animation_player.play("credits")
 	await animation_player.animation_finished
 	SceneTransition.change_without_animation_or_saving("res://Scenes/Menus/main_menu.tscn")
