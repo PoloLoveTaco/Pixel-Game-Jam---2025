@@ -54,13 +54,13 @@ func get_input():
 	elif velocity.x == 0 and velocity.y == 0:
 		animation_player.play("idle_"+last_direction)
 	
-	if Input.is_action_just_pressed("more_bw"):
-		if GlobalVariables.bw_amount > 0:
-			GlobalVariables.bw_amount = GlobalVariables.bw_amount - 0.25
-	
-	if Input.is_action_just_pressed("less_bw"):
-		if GlobalVariables.bw_amount < 1:
-			GlobalVariables.bw_amount = GlobalVariables.bw_amount + 0.25
+	#if Input.is_action_just_pressed("more_bw"):
+		#if GlobalVariables.bw_amount > 0:
+			#GlobalVariables.bw_amount = GlobalVariables.bw_amount - 0.25
+	#
+	#if Input.is_action_just_pressed("less_bw"):
+		#if GlobalVariables.bw_amount < 1:
+			#GlobalVariables.bw_amount = GlobalVariables.bw_amount + 0.25
 
 func _physics_process(delta):
 	if (GlobalVariables.is_speaking or GlobalVariables.is_in_cinematic or GlobalVariables.is_in_mini_game): return
