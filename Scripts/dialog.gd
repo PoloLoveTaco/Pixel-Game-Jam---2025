@@ -325,7 +325,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "The café is on the other side of the road.",
+			"text" : "The coffee is on the other side of the road.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
