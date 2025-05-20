@@ -787,6 +787,7 @@ texture_region_size = Vector2i(32, 32)
 9:9/0 = 0
 5:7/0 = 0
 6:7/0 = 0
+6:7/0/texture_origin = Vector2i(0, 3)
 1:7/0 = 0
 2:7/0 = 0
 2:8/0 = 0
@@ -1134,10 +1135,11 @@ tile_set = SubResource("TileSet_2oqld")
 [node name="Decoration" type="TileMapLayer" parent="Layers"]
 y_sort_enabled = true
 material = SubResource("ShaderMaterial_a1p48")
-tile_map_data = PackedByteArray("AAATAAQAAQALAAkAAAAUAAQAAQAMAAkAAAAfAP//AQASAAIAAAAVAAYAAQAFAAgAAAA=")
+tile_map_data = PackedByteArray("AAATAAQAAQALAAkAAAAUAAQAAQAMAAkAAAAfAP//AQASAAIAAAAVAAYAAQAFAAgAAAASAAYAAQAGAAcAAAA=")
 tile_set = SubResource("TileSet_166j0")
 
 [node name="AlwaysColoredObject" type="TileMapLayer" parent="Layers"]
+visible = false
 tile_map_data = PackedByteArray("AAASAAYAAAAGAAcAAAA=")
 tile_set = SubResource("TileSet_skn5u")
 

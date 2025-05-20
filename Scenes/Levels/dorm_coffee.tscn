@@ -1116,8 +1116,8 @@ libraries = {
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_lweja")
-volume_db = -15.0
 bus = &"Music"
+parameters/looping = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(850, 0)
