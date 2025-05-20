@@ -11,7 +11,7 @@ var can_loose: bool = false
 func _ready() -> void:
 	anim.play("furnace")
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept"):
 		slider.value += 70 * delta
 	else:
