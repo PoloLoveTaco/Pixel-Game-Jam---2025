@@ -8,10 +8,9 @@ func _ready() -> void:
 
 
 func ending_credits():
-	animation_player.play("classic")
+	animation_player.play("logo")
 	await animation_player.animation_finished
 	
-	label.text = "Thank you for playing"
 	animation_player.play("classic")
 	await animation_player.animation_finished
 	

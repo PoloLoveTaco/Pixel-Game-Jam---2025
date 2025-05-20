@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cnutycjvnuvom" path="res://Assets/npc_caffee_002.png" id="7_hp72u"]
 [ext_resource type="Texture2D" uid="uid://6n854tidnv0j" path="res://Assets/npc_caffee_003.png" id="8_aprjd"]
 [ext_resource type="Texture2D" uid="uid://t3241g2fomet" path="res://Assets/Adrien.png" id="9_hp72u"]
-[ext_resource type="Texture2D" uid="uid://c0okctq8ttdh5" path="res://Jules.png" id="10_4sho1"]
+[ext_resource type="Texture2D" uid="uid://cfqcst1srulu8" path="res://Assets/Jules.png" id="10_4sho1"]
 [ext_resource type="Texture2D" uid="uid://ckpl8kdic7qka" path="res://Assets/Marie.png" id="11_hr1wh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8610c"]
