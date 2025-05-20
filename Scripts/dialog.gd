@@ -640,7 +640,7 @@ var dialogs = {
 			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "Honey I-",
-			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Wife",
@@ -658,7 +658,7 @@ var dialogs = {
 			"speaker" : "Nemo",
 			"color" : "gray",
 			"text" : "I love you. . .",
-			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Wife",
