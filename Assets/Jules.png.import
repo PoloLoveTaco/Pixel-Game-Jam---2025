@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hp11f7skvvd"
-path="res://.godot/imported/Adrien.png-53c2224b7cc603f124fd5f3756eeaa88.ctex"
+uid="uid://cfqcst1srulu8"
+path="res://.godot/imported/Jules.png-ce536d0d54f8cf5717eebdb537c0f80c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Adrien.png"
-dest_files=["res://.godot/imported/Adrien.png-53c2224b7cc603f124fd5f3756eeaa88.ctex"]
+source_file="res://Assets/Jules.png"
+dest_files=["res://.godot/imported/Jules.png-ce536d0d54f8cf5717eebdb537c0f80c.ctex"]
 
 [params]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0tcxkefi3n5r"]
+[gd_scene load_steps=15 format=3 uid="uid://d0tcxkefi3n5r"]
 
 [ext_resource type="Script" uid="uid://diu37nx6w47vt" path="res://Scripts/end_credits.gd" id="1_edobi"]
 [ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="2_nwu3r"]
+[ext_resource type="Texture2D" uid="uid://cbe66t0dkaldd" path="res://Assets/logo.png" id="2_ri5er"]
 [ext_resource type="Texture2D" uid="uid://dn5ylyqgj4t6h" path="res://Assets/splashcreen.png" id="3_lcxx5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aggjr"]
@@ -35,6 +36,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_5a716"]
 resource_name = "classic"
@@ -63,6 +76,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_lcxx5"]
 resource_name = "credits"
@@ -79,12 +104,65 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ri5er"]
+resource_name = "logo"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68kyt"]
 _data = {
 &"RESET": SubResource("Animation_b4ss7"),
 &"classic": SubResource("Animation_5a716"),
-&"credits": SubResource("Animation_lcxx5")
+&"credits": SubResource("Animation_lcxx5"),
+&"logo": SubResource("Animation_ri5er")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_nwu3r"]
@@ -114,6 +192,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -148.0
+offset_right = 527.0
+offset_bottom = 516.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ri5er")
+
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -127,7 +221,7 @@ offset_right = 49.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Echoes of grief"
+text = "Thank you for playing"
 label_settings = SubResource("LabelSettings_aggjr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
