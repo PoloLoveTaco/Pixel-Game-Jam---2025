@@ -67,8 +67,8 @@ var dialogs = {
 		},
 		{
 			"speaker": "Adrien",
-			"color": "orange",
-			"text": "Come a the bar close to the office.",
+			"color": "gray",
+			"text": "Come at the usual bar close to the office.",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
@@ -79,8 +79,8 @@ var dialogs = {
 		},
 		{
 			"speaker": "Adrien",
-			"color": "orange",
-			"text": "Friday coffee !",
+			"color": "gray",
+			"text": "Our usual Friday Coffee !",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
@@ -138,7 +138,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "I prefer stay here",
+			"text" : "I prefer to stay here",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
@@ -152,31 +152,31 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "The weather is nice.",
+			"text" : "The weather is very nice...",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Don't you think so?",
+			"text" : "...isn't it ?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "I remember it like it was yesterday.",
+			"text" : "I remember this place, this weather, even the smell of the sand like it was yesterday.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "There pretty shells . . .",
+			"text" : "There is still so many pretty shells . . . I remember you offered me to search for every single one of them and gift them to me.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Do you think you can find  [color=cyan]3 shells[/color] for me?",
+			"text" : "Do you think you can find [color=cyan]3 shells[/color] for me?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	],
@@ -184,7 +184,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Do you found them ?",
+			"text" : "Did you find them ?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
@@ -196,7 +196,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Maybe search under the rocks.",
+			"text" : "Maybe search under the rocks !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	],
@@ -238,19 +238,19 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Oh my love !",
+			"text" : "Oh my love ! Thank you so much !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "It's so beautifull!",
+			"text" : "They are so beautiful ! I will keep them forever !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Thank you !",
+			"text" : "Thank you again !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		}
 	],
@@ -284,7 +284,7 @@ var dialogs = {
 		{
 			"speaker" : "System",
 			"color" : "green",
-			"text" : "It seems someone has already opened it . . . and closed it.",
+			"text" : "It seems someone already opened it . . . and closed it again.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
 		},
 		{
@@ -298,13 +298,13 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "No, I must not go back.",
+			"text" : "No, I should stay here.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "I have to go to the coffe.",
+			"text" : "I have to go to the coffee shop.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
@@ -318,13 +318,13 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "I have to go to the coffe.",
+			"text" : "I have to go to the coffee shop.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "It is on the other side of the road.",
+			"text" : "The café is on the other side of the road.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
@@ -332,7 +332,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "Mr.Ector seems to really like the office",
+			"text" : "Mr.Ector seems to really like the office.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
@@ -346,13 +346,13 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "The coffee . . .",
+			"text" : "The coffee shop. . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "They probably wait for me",
+			"text" : "They are probably waiting for me.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
@@ -370,7 +370,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "Just under . . .",
+			"text" : "Just a bit further south . . .",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
@@ -422,7 +422,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Can you [color=orange]make a cake[/color] my love?",
+			"text" : "Can you [color=orange]make a cake[/color] my love ?",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 	],
@@ -436,7 +436,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Start by get what you need in the [color=blue]fridge[/color]",
+			"text" : "Start by getting what you need in the [color=blue]fridge[/color]",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 	],
@@ -472,7 +472,7 @@ var dialogs = {
 		{
 			"speaker" : "System",
 			"color" : "green",
-			"text" : "You give the [color=orange]cake[/color].",
+			"text" : "You give the [color=orange]cake[/color] to your wife.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife_old.wav"
 		},
 		{
@@ -484,19 +484,19 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Thank you my love!",
+			"text" : "Thank you my love !",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "That was our last cake together.",
+			"text" : "That was our last cake together. It was delicious, I will remember it forever.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "bye [color=red]<3[/color]",
+			"text" : "Good bye [color=red]<3[/color]",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 	],
@@ -510,7 +510,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "Not for the moment.",
+			"text" : "I should not use it now.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
@@ -524,7 +524,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "Not for the moment.",
+			"text" : "I should not use it now.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
@@ -538,7 +538,7 @@ var dialogs = {
 		{
 			"speaker" : "Nemo",
 			"color" : "gray",
-			"text" : "Not for the moment.",
+			"text" : "I should not use it now.",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
@@ -552,7 +552,7 @@ var dialogs = {
 		{
 			"speaker": "Emergencies",
 			"color": "red",
-			"text": "Here, I listen to the emergency services?",
+			"text": "911, what's your emergency ?",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
@@ -564,7 +564,7 @@ var dialogs = {
 		{
 			"speaker": "Nemo",
 			"color": "gray",
-			"text": "We were on the boat !",
+			"text": "We are on a boat !",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
@@ -576,13 +576,13 @@ var dialogs = {
 		{
 			"speaker": "Nemo",
 			"color": "gray",
-			"text": "She fell over the edge !",
+			"text": "SHE FELL OVER THE EDGE !!",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker": "Emergencies",
 			"color": "red",
-			"text": "Give us your location, we'll be right there!",
+			"text": "Please, give us your location. We'll be here right away !",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 	],
@@ -603,25 +603,25 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "We write a beautiful story.",
+			"text" : "We wrote a beautiful story.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Surely with down and up, but a beatiful one.",
+			"text" : "Surely with up and downs, but a beautiful one.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "I never stop loving you.",
+			"text" : "I will never stop loving you. ",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "I will stay here for a while.",
+			"text" : "I will have to stay here for a while.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
@@ -633,7 +633,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "That's all i want.",
+			"text" : "That's all I want, your happiness...",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
@@ -651,7 +651,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "I will allways be with you.",
+			"text" : "I will always be with you.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
@@ -692,19 +692,19 @@ var dialogs = {
 		{
 			"speaker" : "Jules",
 			"color" : "green",
-			"text" : "Grab a drink and join us.",
+			"text" : "Grab a drink and join us !",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Marie",
 			"color" : "blue",
-			"text" : "We was watching Mr.Ector video when he design the new building.",
+			"text" : "We were watching Mr.Ector's video, he designed a new building !",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		},
 		{
 			"speaker" : "Marie",
 			"color" : "blue",
-			"text" : "Pretty funny.",
+			"text" : "Pretty funny, come on ! Watch with us !d           ",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
