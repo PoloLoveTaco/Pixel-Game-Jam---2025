@@ -13,6 +13,9 @@ func _ready() -> void:
 	let_go_interaction.hide()
 	collision_shape_2d.disabled = true
 	
+	if SaveManager.data["quests"]["bye"]["status"] == SaveManager.bye_status.END:
+		dialogue_count = 2
+	
 	let_go_interaction.interact = Callable(self, "let_go")
 	
 	if not get_tree().root.has_node("Player"):

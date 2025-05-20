@@ -119,3 +119,5 @@ func kitchen_quest():
 
 func final_goodbye_interact():
 	Dialog.launch_dialog(Dialog.FINAL_GOODBYE)
+	SaveManager.data["quests"]["bye"]["finished"] = true
+	SaveManager.data["quests"]["bye"]["status"] = SaveManager.bye_status.END

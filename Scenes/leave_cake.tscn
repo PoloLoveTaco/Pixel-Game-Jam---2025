@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8f3k"]
 size = Vector2(20, 41)
 
-[node name="LeaveCake" type="Node2D"]
+[node name="LeaveCake" type="Node2D" groups=["Persist"]]
 y_sort_enabled = true
 script = ExtResource("1_1ttpc")
 

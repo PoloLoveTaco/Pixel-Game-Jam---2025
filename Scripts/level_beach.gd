@@ -16,6 +16,9 @@ var leave_shell_spawned = false
 @onready var spawn_shell_leave: Node2D = $SpawnPointShellLeave
 
 func _ready() -> void:
+	
+	GlobalVariables.last_scene_name = "LevelBeach"
+	
 	if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.NOT_START:
 		spawn_shells()
 		SaveManager.data["quests"]["beach"]["status"] = SaveManager.beach_status.START

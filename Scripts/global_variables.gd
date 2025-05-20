@@ -15,3 +15,5 @@ var is_in_mini_game : bool = false
 var saved_scene_name : String
 
 var is_new_game : bool = true
+
+var last_scene_name: String

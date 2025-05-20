@@ -30,6 +30,8 @@ func _ready() -> void:
 	furnace.interact = Callable(self, "use_furnace")
 	bowl.interact = Callable(self, "use_bowl")
 	
+	GlobalVariables.last_scene_name = "LevelKitchen"
+	
 	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.NOT_START:
 		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.START
 	

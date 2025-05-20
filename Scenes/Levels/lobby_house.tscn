@@ -1192,9 +1192,6 @@ action_name = "go upstairs"
 position = Vector2(525, -42.5)
 shape = SubResource("RectangleShape2D_g20sl")
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(213, 333)
-
 [node name="Phone" parent="." instance=ExtResource("3_p04sg")]
 position = Vector2(368, 263)
 action_name = "remember"
@@ -1202,3 +1199,15 @@ action_name = "remember"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Phone"]
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_40e33")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(213, 333)
+
+[node name="SpawnPhone" type="Node2D" parent="."]
+position = Vector2(368, 293)
+
+[node name="SpawnBeach" type="Node2D" parent="."]
+position = Vector2(239, 2)
+
+[node name="SpawnKitchen" type="Node2D" parent="."]
+position = Vector2(566, -38)

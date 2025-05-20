@@ -70,4 +70,5 @@ func _input(event: InputEvent) -> void:
 				start_line()
 			else:
 				SaveManager.data["quests"]["phone"]["finished"] = true
+				GlobalVariables.last_scene_name = "Phone"
 				get_tree().change_scene_to_file("res://Scenes/Levels/lobby_house.tscn")

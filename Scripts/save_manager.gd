@@ -19,12 +19,17 @@ enum kitchen_status {
 	END
 }
 
+enum bye_status {
+	START,
+	END
+}
+
 var data : Dictionary = {
 	"version": 1,
 	"global": {},	# ex: Player
 	"scenes": {},	# cache by scenes
 	"quests": {
-		"total": 3,
+		"total": 4,
 		"phone" : {
 			"finished" : false,
 		},
@@ -39,7 +44,11 @@ var data : Dictionary = {
 			"fridge" : false,
 			"bowl": false,
 			"furnace": false,
-		}
+		},
+		"bye" : {
+			"finished" : false,
+			"status" : bye_status.START
+		},
 	}
 }
 
@@ -53,6 +62,8 @@ func get_nb_quest_finished() -> int:
 	if data["quests"]["beach"]["finished"]  == true:
 		finished += 1
 	if data["quests"]["kitchen"]["finished"] == true:
+		finished += 1
+	if data["quests"]["bye"]["finished"] == true:
 		finished += 1
 	
 	return finished

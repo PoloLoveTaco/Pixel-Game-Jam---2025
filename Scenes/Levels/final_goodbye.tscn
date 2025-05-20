@@ -127,6 +127,7 @@ sources/0 = SubResource("TileSetAtlasSource_v2rk3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blfcd"]
 
 [node name="Final goodbye" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_63fmx")
 
 [node name="Layers" type="Node2D" parent="."]
