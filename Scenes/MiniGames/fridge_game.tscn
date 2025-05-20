@@ -87,4 +87,60 @@ vertical_alignment = 1
 stream = ExtResource("4_3txld")
 bus = &"Sound Effect"
 
+[node name="Label" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -637.0
+offset_top = -104.0
+offset_right = -537.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_apdgu")
+theme_override_fonts/mono_font = ExtResource("3_apdgu")
+theme_override_fonts/italics_font = ExtResource("3_apdgu")
+theme_override_fonts/bold_italics_font = ExtResource("3_apdgu")
+theme_override_fonts/bold_font = ExtResource("3_apdgu")
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Rules:"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -638.0
+offset_top = -70.0
+offset_right = -538.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_apdgu")
+theme_override_fonts/mono_font = ExtResource("3_apdgu")
+theme_override_fonts/italics_font = ExtResource("3_apdgu")
+theme_override_fonts/bold_italics_font = ExtResource("3_apdgu")
+theme_override_fonts/bold_font = ExtResource("3_apdgu")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "Move left and right to collect 20 food items and win."
+fit_content = true
+vertical_alignment = 1
+
 [connection signal="area_entered" from="DestroyFoodArea" to="." method="_on_destroy_food_area_area_entered"]

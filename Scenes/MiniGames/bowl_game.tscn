@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://c20p8joxtowld"]
+[gd_scene load_steps=16 format=4 uid="uid://c20p8joxtowld"]
 
 [ext_resource type="Script" uid="uid://s2yn8a2cxww1" path="res://Scripts/MiniGames/bowl_game.gd" id="1_dx0e0"]
 [ext_resource type="Texture2D" uid="uid://bmw8xdgbwtdh1" path="res://Assets/bowl.png" id="2_u1is8"]
+[ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="3_q6egj"]
 
 [sub_resource type="Image" id="Image_dx0e0"]
 data = {
@@ -1113,3 +1114,59 @@ hframes = 6
 libraries = {
 &"": SubResource("AnimationLibrary_527qa")
 }
+
+[node name="Label" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -635.0
+offset_top = -104.0
+offset_right = -535.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_q6egj")
+theme_override_fonts/mono_font = ExtResource("3_q6egj")
+theme_override_fonts/italics_font = ExtResource("3_q6egj")
+theme_override_fonts/bold_italics_font = ExtResource("3_q6egj")
+theme_override_fonts/bold_font = ExtResource("3_q6egj")
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "Rules:"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -636.0
+offset_top = -69.0
+offset_right = -536.0
+offset_bottom = -29.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_q6egj")
+theme_override_fonts/mono_font = ExtResource("3_q6egj")
+theme_override_fonts/italics_font = ExtResource("3_q6egj")
+theme_override_fonts/bold_italics_font = ExtResource("3_q6egj")
+theme_override_fonts/bold_font = ExtResource("3_q6egj")
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+bbcode_enabled = true
+text = "Spam press [SPACE] to mix the cake"
+fit_content = true
+vertical_alignment = 1
