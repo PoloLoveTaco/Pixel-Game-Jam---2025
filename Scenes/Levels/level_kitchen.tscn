@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://ubumonpyt0p6"]
+[gd_scene load_steps=33 format=4 uid="uid://ubumonpyt0p6"]
 
 [ext_resource type="Script" uid="uid://gbhy5ogsm7gj" path="res://Scripts/level_kitchen.gd" id="1_50cth"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="1_oek50"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wsbupqp5fixv" path="res://Scenes/wife.tscn" id="5_50cth"]
 [ext_resource type="PackedScene" uid="uid://chpi88hew1obk" path="res://Scenes/interaction_area.tscn" id="6_vvp7s"]
 [ext_resource type="Texture2D" uid="uid://bqv0ocjfibqpp" path="res://Assets/MovieFilm.png" id="7_rhn2y"]
+[ext_resource type="AudioStream" uid="uid://dn1dos4c85356" path="res://Assets/Music/kitchen.mp3" id="8_oj6pe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oj6pe"]
 texture = ExtResource("1_oek50")
@@ -943,3 +944,9 @@ libraries = {
 [node name="SpawnCake" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(527, -65)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_oj6pe")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
