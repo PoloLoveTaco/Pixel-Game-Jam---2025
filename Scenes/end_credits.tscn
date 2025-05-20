@@ -127,7 +127,7 @@ offset_right = 49.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "cac  of the heart"
+text = "Mourning of the heart"
 label_settings = SubResource("LabelSettings_aggjr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
