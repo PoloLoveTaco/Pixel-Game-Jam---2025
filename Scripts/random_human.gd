@@ -15,22 +15,22 @@ var player_in_area = false
 var anim: AnimationPlayer
 var sprite: Sprite2D
 
-var color_possibility: Array[Color] = [
-	Color(0.0, 0.937, 0.997),
-	Color(0.903, 0.765, 1.0),
-	Color(1.0, 0.758, 0.748),
-	Color(0.996, 0.803, 0.165),
-	Color(0.0, 1.0, 0.118)
+var assets_possiblility: Array[Texture2D] = [
+	preload("res://Assets/random_human_1.png"),
+	preload("res://Assets/random_human_2.png"),
+	preload("res://Assets/random_human_3.png"),
+	preload("res://Assets/random_human_4.png"),
+	preload("res://Assets/random_human_5.png"),
 ]
 
 func _ready() -> void:
 	anim = $AnimationPlayer
 	sprite = $Sprite2D
 	
-	var random_index = randi() % 4;
+	var random_index = randi() % 5;
 	
-	sprite.self_modulate = color_possibility[random_index]
-	#anim.play("walk_up")
+	sprite.texture = assets_possiblility[random_index]
+	anim.play("walk_up")
 
 func _physics_process(delta: float) -> void:
 	if is_dodging:
