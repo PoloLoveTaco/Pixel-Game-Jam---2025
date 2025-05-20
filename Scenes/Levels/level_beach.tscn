@@ -88,6 +88,7 @@ texture_region_size = Vector2i(32, 32)
 14:0/0 = 0
 15:0/0 = 0
 16:0/0 = 0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, 15, -12, 1, 14, 1, 14, 15)
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -111,6 +112,7 @@ texture_region_size = Vector2i(32, 32)
 5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
+7:2/0/y_sort_origin = -30
 8:2/0 = 0
 9:2/0 = 0
 10:2/0 = 0
@@ -119,10 +121,13 @@ texture_region_size = Vector2i(32, 32)
 13:2/0 = 0
 14:2/0 = 0
 15:2/0 = 0
+15:2/0/y_sort_origin = -30
 16:2/0 = 0
+16:2/0/y_sort_origin = -30
 
 [sub_resource type="TileSet" id="TileSet_ebsdy"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_orsv8")
 
 [node name="LevelBeach" type="Node2D"]
@@ -130,6 +135,7 @@ y_sort_enabled = true
 script = ExtResource("1_hf8t5")
 
 [node name="Layers" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="CameraLockLayer" type="TileMapLayer" parent="Layers"]
 z_index = -1
@@ -142,6 +148,7 @@ tile_map_data = PackedByteArray("AAAyAAAAAAAQAAEAAAAyAAEAAAAQAAEAAAAyAAIAAAAQAAE
 tile_set = SubResource("TileSet_i8swp")
 
 [node name="GroundObject" type="TileMapLayer" parent="Layers"]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AABlABoAAAAHAAEAAABlABsAAAAHAAIAAABkABwAAAAPAAIAAABjABwAAAAQAAIAAABkABsAAAAQAAAAAAA=")
 tile_set = SubResource("TileSet_ebsdy")
 
