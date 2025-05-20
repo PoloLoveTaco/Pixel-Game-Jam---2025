@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept"):
-		slider.value += 1
+		slider.value += 70 * delta
 	else:
-		slider.value -= 1
+		slider.value -= 70 * delta
 		
 	if slider.value > 35.0 and slider.value < 65.0:
 		in_the_zone = true
@@ -24,9 +24,9 @@ func _process(delta: float) -> void:
 		in_the_zone = false
 		
 	if in_the_zone:
-		progress_bar.value += 0.5
+		progress_bar.value += 35 * delta
 	else:
-		progress_bar.value -= 1
+		progress_bar.value -= 100 * delta
 		
 	if progress_bar.value >= 100.0:
 		game_is_win()
