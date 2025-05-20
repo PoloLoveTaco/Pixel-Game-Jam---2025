@@ -704,7 +704,7 @@ var dialogs = {
 		{
 			"speaker" : "Marie",
 			"color" : "blue",
-			"text" : "Pretty funny, come on ! Watch with us !d           ",
+			"text" : "Pretty funny, come on ! Watch with us !",
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
