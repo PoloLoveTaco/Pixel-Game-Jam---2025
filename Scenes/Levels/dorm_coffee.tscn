@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dg2s15cw46ysm" path="res://Scripts/dorm_coffee.gd" id="1_xlr4o"]
 [ext_resource type="Texture2D" uid="uid://dqly0c6jsm2ju" path="res://Assets/Tileset_001.png" id="2_xlr4o"]
 [ext_resource type="Texture2D" uid="uid://bn4umqwp07ssl" path="res://Assets/Tileset_005.png" id="3_1ukp4"]
-[ext_resource type="PackedScene" uid="uid://ce4nv1d1c5bnl" path="res://Scenes/barman.tscn" id="5_1ukp4"]
+[ext_resource type="PackedScene" uid="uid://di38x12lt7sa4" path="res://Scenes/barman.tscn" id="5_1ukp4"]
 [ext_resource type="AudioStream" uid="uid://duyfiydiavs1n" path="res://Assets/Music/Music_Coffee_001.mp3" id="6_lweja"]
 [ext_resource type="Texture2D" uid="uid://ccrytap02gt2n" path="res://Assets/npc_caffee_001.png" id="6_nexh2"]
 [ext_resource type="Texture2D" uid="uid://yggxsr7jlamv" path="res://Assets/Nemo.png" id="7_07axh"]
@@ -982,15 +982,15 @@ position = Vector2(1056, 433)
 [node name="Barman" parent="NPC" instance=ExtResource("5_1ukp4")]
 position = Vector2(817.56, 223)
 
-[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+[node name="npc_1" type="Sprite2D" parent="NPC"]
 position = Vector2(720, 429)
 texture = ExtResource("6_nexh2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="NPC"]
+[node name="npc_2" type="Sprite2D" parent="NPC"]
 position = Vector2(817, 430)
 texture = ExtResource("7_hp72u")
 
-[node name="Sprite2D3" type="Sprite2D" parent="NPC"]
+[node name="npc_3" type="Sprite2D" parent="NPC"]
 position = Vector2(849, 435)
 texture = ExtResource("8_aprjd")
 
