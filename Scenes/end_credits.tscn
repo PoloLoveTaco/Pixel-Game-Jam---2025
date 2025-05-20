@@ -127,7 +127,7 @@ offset_right = 49.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Mourning of the heart"
+text = "Echoes of grief"
 label_settings = SubResource("LabelSettings_aggjr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
