@@ -11,6 +11,8 @@ const FOOD: PackedScene = preload("res://Scenes/MiniGames/food.tscn")
 const TOTAL_FOOD : int = 20
 const SPAWN_DELAY : float = 1.2
 
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+
 var current_player_food: int = 0
 
 func _ready() -> void:
@@ -29,6 +31,7 @@ func spawn_foods() -> void:
 
 func player_take_food():
 	current_player_food += 1
+	audio.play()
 	foods_label.text = str(current_player_food) + " / " + str(TOTAL_FOOD)
 	if current_player_food >= TOTAL_FOOD:
 		game_is_win()

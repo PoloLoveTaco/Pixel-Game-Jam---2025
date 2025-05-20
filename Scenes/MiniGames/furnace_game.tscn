@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv0bb7q5kf1ne"]
+[gd_scene load_steps=16 format=3 uid="uid://bv0bb7q5kf1ne"]
 
 [ext_resource type="Script" uid="uid://d2aer5v5o35s7" path="res://Scripts/MiniGames/furnace_game.gd" id="1_sabxr"]
 [ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="2_7aecr"]
 [ext_resource type="Texture2D" uid="uid://bothg6suegwit" path="res://Assets/MiniGame/void.png" id="3_fsmtc"]
 [ext_resource type="Texture2D" uid="uid://cefhk77sw6tja" path="res://Assets/MiniGame/grab.png" id="4_b0vqo"]
+[ext_resource type="Texture2D" uid="uid://cexeqyr6f1trb" path="res://Assets/MiniGame/furnace.png" id="5_7aecr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uqw8"]
 content_margin_left = 2.0
@@ -81,6 +82,43 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_h8d4t")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_t81to")
 HSlider/styles/slider = SubResource("StyleBoxFlat_527qa")
 
+[sub_resource type="Animation" id="Animation_fsmtc"]
+resource_name = "furnace"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.566667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_b0vqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sxxj"]
+_data = {
+&"RESET": SubResource("Animation_b0vqo"),
+&"furnace": SubResource("Animation_fsmtc")
+}
+
 [node name="FurnaceGame" type="Node"]
 script = ExtResource("1_sabxr")
 
@@ -124,3 +162,14 @@ grow_vertical = 0
 theme = SubResource("Theme_c2687")
 editable = false
 scrollable = false
+
+[node name="Furnace" type="Sprite2D" parent="."]
+position = Vector2(292, 165)
+scale = Vector2(3, 3)
+texture = ExtResource("5_7aecr")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Furnace"]
+libraries = {
+&"": SubResource("AnimationLibrary_4sxxj")
+}

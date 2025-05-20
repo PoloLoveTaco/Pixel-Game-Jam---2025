@@ -1,8 +1,10 @@
 extends Node
 
 @onready var progress_bar: ProgressBar = $ProgressBar
+@onready var anim: AnimationPlayer = $Bowl/AnimationPlayer
 
 func _ready() -> void:
+	anim.play("bowl")
 	decrease_progress_bar()
 
 

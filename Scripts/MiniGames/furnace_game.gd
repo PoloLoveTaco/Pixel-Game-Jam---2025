@@ -3,8 +3,13 @@ extends Node
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var slider: HSlider = $HSlider
 
+@onready var anim: AnimationPlayer = $Furnace/AnimationPlayer
+
 var in_the_zone: bool = false
 var can_loose: bool = false
+
+func _ready() -> void:
+	anim.play("furnace")
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept"):
