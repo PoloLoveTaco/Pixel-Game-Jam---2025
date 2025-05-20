@@ -4,9 +4,13 @@ extends Node2D
 @onready var music: AudioStreamPlayer = $Music
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_nemo: AnimationPlayer = $Nemo/AnimationPlayer
+@onready var animation_player_npc: AnimationPlayer = $NPC/AnimationPlayerNPC
 
 
 func _ready() -> void:
+	animation_player_npc.play("sleeping_girl")
+	animation_player_npc.play("spin_guy")
+	
 	music.play()
 	cinematic()
 
