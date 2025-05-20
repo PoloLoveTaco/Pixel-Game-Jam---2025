@@ -11,6 +11,8 @@ extends Node2D
 @onready var spawn_beach: Node2D = $SpawnBeach
 @onready var spawn_kitchen: Node2D = $SpawnKitchen
 
+@onready var wife: Wife = $Wife
+
 const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
@@ -19,6 +21,9 @@ func _ready() -> void:
 	leaveHouse.interact = Callable(self, "leave_house")
 	go_upstairs.interact = Callable(self, "_go_upstairs")
 	phone.interact = Callable(self, "to_phone_scene")
+	
+	if SaveManager.get_nb_quest_finished() == SaveManager.data["quests"]["total"]:
+		wife.queue_free()
 	
 	if SaveManager.get_nb_quest_finished() == (SaveManager.data["quests"]["total"] - 1):
 		SceneTransition.change_scene_slide("res://Scenes/Levels/final_goodbye.tscn")

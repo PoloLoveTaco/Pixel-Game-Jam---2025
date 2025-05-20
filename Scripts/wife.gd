@@ -25,13 +25,14 @@ func _ready() -> void:
 
 func interact():
 	if (get_tree().current_scene.name == "LobbyHouse"):
-		lobby_house_interact()
+		house()
 	elif (get_tree().current_scene.name == "LevelBeach"):
 		beach_quest()
 	elif (get_tree().current_scene.name == "Level_kitchen"):
 		kitchen_quest()
 	elif (get_tree().current_scene.name == "Final goodbye"):
 		final_goodbye_interact()
+
 
 
 func shell_founded():
@@ -116,6 +117,9 @@ func kitchen_quest():
 		SaveManager.data["quests"]["kitchen"]["finished"] = true
 		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.END
 
+
+func house():
+	Dialog.launch_dialog(Dialog.WIFE);
 
 func final_goodbye_interact():
 	Dialog.launch_dialog(Dialog.FINAL_GOODBYE)

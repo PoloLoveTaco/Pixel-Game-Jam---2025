@@ -24,6 +24,7 @@ enum {
 	BABY_BOX,
 	CANT_LEAVE_HOUSE,
 	PHONE,
+	WIFE,
 	
 	# Kitchen
 	KITCHEN_WIFE_ASK_CAKE,
@@ -708,6 +709,20 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop.wav"
 		}
 	],
+	WIFE : [
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "Try checking the objects in the house,",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "you might remember something.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	]
 }
 
 func launch_dialog(index):
