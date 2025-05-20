@@ -24,10 +24,14 @@ func _ready() -> void:
 
 
 func interact():
-	if (get_tree().current_scene.name == "LevelBeach"):
+	if (get_tree().current_scene.name == "LobbyHouse"):
+		lobby_house_interact()
+	elif (get_tree().current_scene.name == "LevelBeach"):
 		beach_quest()
 	elif (get_tree().current_scene.name == "Level_kitchen"):
 		kitchen_quest()
+	elif (get_tree().current_scene.name == "Final goodbye"):
+		final_goodbye_interact()
 
 
 func shell_founded():
@@ -77,6 +81,10 @@ func on_fade_finished() -> void:
 	queue_free() 
 
 
+func lobby_house_interact():
+	print("meow")
+
+
 func beach_quest():
 	if SaveManager.data["quests"]["beach"]["status"] == SaveManager.beach_status.START:
 		Dialog.launch_dialog(Dialog.BEACH_WIFE_BEFORE_SHELL)
@@ -107,3 +115,7 @@ func kitchen_quest():
 		Dialog.launch_dialog(Dialog.KITCHEN_WIFE_HAVE_CAKE)
 		SaveManager.data["quests"]["kitchen"]["finished"] = true
 		SaveManager.data["quests"]["kitchen"]["status"] = SaveManager.kitchen_status.END
+
+
+func final_goodbye_interact():
+	Dialog.launch_dialog(Dialog.FINAL_GOODBYE)

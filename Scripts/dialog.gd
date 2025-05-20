@@ -35,6 +35,9 @@ enum {
 	NN_FRIDGE,
 	NN_BOWL,
 	
+	#END
+	FINAL_GOODBYE,
+	
 	#CAFFEE
 	CAFFEE_1,
 	CAFFEE_2
@@ -583,6 +586,88 @@ var dialogs = {
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 	],
+	
+	FINAL_GOODBYE : [
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Nemo. . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "My love. . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "We write a beautiful story.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Surely with down and up, but a beatiful one.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "I never stop loving you.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "I will stay here for a while.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Go meet people, live your life and be happy.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "That's all i want.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Honey I-",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "Nemo !",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "I will allways be with you.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "I love you. . .",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Wife",
+			"color" : "pink",
+			"text" : "I know.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+	],
+	
 	CAFFEE_1 : [
 		{
 			"speaker" : "Adrien",

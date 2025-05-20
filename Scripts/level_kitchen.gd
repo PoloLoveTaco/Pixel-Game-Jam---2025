@@ -20,7 +20,7 @@ const FRIDGE_GAME = preload("res://Scenes/MiniGames/fridge_game.tscn")
 const BOWL_GAME = preload("res://Scenes/MiniGames/bowl_game.tscn")
 const FURNACE_GAME = preload("res://Scenes/MiniGames/furnace_game.tscn")
 
-var player_instance
+var player_instance: Player
 var cake_spawned = false
 
 func _ready() -> void:
@@ -47,8 +47,8 @@ func _ready() -> void:
 		await get_tree().process_frame
 	
 	mini_game.hide()
-	
-	
+
+
 func _process(delta: float) -> void:
 	if SaveManager.data["quests"]["kitchen"]["status"] == SaveManager.kitchen_status.END and not cake_spawned:
 		cake_spawned = true
@@ -79,13 +79,14 @@ func use_bowl():
 		launch_mini_game()
 	elif not GlobalVariables.is_in_mini_game:
 		Dialog.launch_dialog(Dialog.NN_BOWL)
-	
+
 
 func launch_mini_game():
 	mini_game.show()
 	GlobalVariables.is_in_mini_game = true
 	animation_player_minigame.play("launch_mini_game")
 	await animation_player_minigame.animation_finished
+
 
 func quit_mini_game():
 	animation_player_minigame.play("quit_mini_game")
