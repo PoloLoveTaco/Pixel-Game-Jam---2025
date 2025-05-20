@@ -604,25 +604,61 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
+			"text" : "It is hard, I know.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "Loosing a loved one,",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "must bring you such sorrows...",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "But you need to understand...",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "I will not come back from the dead...",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
 			"text" : "We wrote a beautiful story.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "Surely with up and downs, but a beautiful one.",
+			"text" : "Surely with ups and downs, but a beautiful one.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Nemo",
+			"color" : "gray",
+			"text" : "Please... I can't live without you...",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "I will never stop loving you.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "I will never stop loving you. ",
-			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
-		},
-		{
-			"speaker" : "Vanessa",
-			"color" : "pink",
-			"text" : "I will have to stay here for a while.",
+			"text" : "But, you need to let go...",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
@@ -652,7 +688,7 @@ var dialogs = {
 		{
 			"speaker" : "Vanessa",
 			"color" : "pink",
-			"text" : "I will always be with you.",
+			"text" : "I will always be with you, in your heart.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 		{
@@ -665,6 +701,24 @@ var dialogs = {
 			"speaker" : "Vanessa",
 			"color" : "pink",
 			"text" : "I know.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "Now go see your friends, they must be in Dorms Coffee as usual.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "I will stay here now... Let go of your grief, but remember about our good times.",
+			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
+		},
+		{
+			"speaker" : "Vanessa",
+			"color" : "pink",
+			"text" : "I will always be with you.",
 			"voice_path" : "res://Assets/Music/SE_bop_wife.wav"
 		},
 	],
