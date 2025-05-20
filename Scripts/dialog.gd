@@ -67,7 +67,7 @@ var dialogs = {
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "Come at the usual bar close to the office.",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
@@ -79,7 +79,7 @@ var dialogs = {
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "Our usual Friday Coffee !",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
