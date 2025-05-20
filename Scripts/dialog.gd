@@ -688,25 +688,25 @@ var dialogs = {
 			"speaker" : "Jules",
 			"color" : "green",
 			"text" : "Good to see you man.",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_Jules.wav"
 		},
 		{
 			"speaker" : "Jules",
 			"color" : "green",
 			"text" : "Grab a drink and join us !",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_Jules.wav"
 		},
 		{
 			"speaker" : "Marie",
 			"color" : "blue",
 			"text" : "We were watching Mr.Ector's video, he designed a new building !",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_Marie.wav"
 		},
 		{
 			"speaker" : "Marie",
 			"color" : "blue",
 			"text" : "Pretty funny, come on ! Watch with us !",
-			"voice_path" : "res://Assets/Music/SE_bop.wav"
+			"voice_path" : "res://Assets/Music/SE_bop_Marie.wav"
 		}
 	],
 	WIFE : [
