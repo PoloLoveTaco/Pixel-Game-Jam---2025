@@ -5,10 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bciskf45su0m5" path="res://Assets/Fonts/yoster.ttf" id="3_5wi6m"]
 [ext_resource type="PackedScene" uid="uid://d4b541h6jucfu" path="res://Scenes/Menus/option_menu.tscn" id="3_penys"]
 [ext_resource type="AudioStream" uid="uid://e8vlvw4gj6w1" path="res://Assets/Music/Intro.wav" id="4_aur2u"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5wi6m"]
-font = ExtResource("3_5wi6m")
-font_size = 32
+[ext_resource type="Texture2D" uid="uid://cbe66t0dkaldd" path="res://Assets/logo.png" id="6_chkef"]
 
 [sub_resource type="Animation" id="Animation_aur2u"]
 length = 0.001
@@ -51,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(200, 60), Vector2(200, 35), Vector2(200, 60)]
+"values": [Vector2(200, 90), Vector2(200, 75), Vector2(200, 90)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -63,7 +60,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(260, 120), Vector2(260, 95), Vector2(260, 120)]
+"values": [Vector2(260, 150), Vector2(260, 135), Vector2(260, 150)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5wi6m"]
@@ -150,18 +147,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_pha2q")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -134.5
-offset_top = 60.0
-offset_right = 134.5
-offset_bottom = 93.0
-grow_horizontal = 2
-text = "Echoes of grief"
-label_settings = SubResource("LabelSettings_5wi6m")
-
 [node name="AllButtons" type="HBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -240,6 +225,11 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_aur2u")
 bus = &"Music"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(313, 114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_chkef")
 
 [connection signal="pressed" from="AllButtons/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="AllButtons/NewGameButton" to="." method="_on_new_game_button_pressed"]
