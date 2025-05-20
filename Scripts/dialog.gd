@@ -61,25 +61,25 @@ var dialogs = {
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "Hey bro !",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "Come a the bar close to the office.",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "I am with Jules and Marie.",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "Friday coffee !",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
@@ -91,7 +91,7 @@ var dialogs = {
 		},
 		{
 			"speaker": "Adrien",
-			"color": "gray",
+			"color": "orange",
 			"text": "Come on man . . .",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},

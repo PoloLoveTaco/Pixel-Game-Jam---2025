@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://ctikrvyifxpac"]
+[gd_scene load_steps=46 format=4 uid="uid://ctikrvyifxpac"]
 
 [ext_resource type="Shader" uid="uid://ldc8a0d3m2mf" path="res://Shaders/black_white.gdshader" id="1_ntcow"]
 [ext_resource type="Script" uid="uid://dg2s15cw46ysm" path="res://Scripts/dorm_coffee.gd" id="1_xlr4o"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://yggxsr7jlamv" path="res://Assets/Nemo.png" id="7_07axh"]
 [ext_resource type="Texture2D" uid="uid://cnutycjvnuvom" path="res://Assets/npc_caffee_002.png" id="7_hp72u"]
 [ext_resource type="Texture2D" uid="uid://6n854tidnv0j" path="res://Assets/npc_caffee_003.png" id="8_aprjd"]
+[ext_resource type="Texture2D" uid="uid://t3241g2fomet" path="res://Assets/Adrien.png" id="9_hp72u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8610c"]
 shader = ExtResource("1_ntcow")
@@ -993,6 +994,14 @@ texture = ExtResource("7_hp72u")
 [node name="npc_3" type="Sprite2D" parent="NPC"]
 position = Vector2(849, 435)
 texture = ExtResource("8_aprjd")
+
+[node name="Adrien" type="Sprite2D" parent="NPC"]
+z_index = 1
+position = Vector2(1094, 174)
+texture = ExtResource("9_hp72u")
+hframes = 2
+vframes = 2
+frame = 2
 
 [node name="Nemo" type="Node2D" parent="."]
 position = Vector2(1057, 466)
