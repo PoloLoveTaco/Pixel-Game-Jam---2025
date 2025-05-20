@@ -2,18 +2,28 @@ extends Node2D
 
 @onready var spawn_point: Node2D = $SpawnPoint
 @onready var music: AudioStreamPlayer = $Music
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var player: Player = $Player
 
-const PLAYER = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
-	if not get_tree().root.has_node("Player"):
-		var player_instance = PLAYER.instantiate()
-		player_instance.global_position = spawn_point.global_position
-		add_child(player_instance)
-	else:
-		var player_instance = get_tree().root.get_node("Player")
-		player_instance.get_parent().remove_child(player_instance)
-		add_child(player_instance)
-		player_instance.global_position = spawn_point.global_position
-	
 	music.play()
+	cinematic()
+
+
+func cinematic():
+	animation_player.play("ending_1")
+	await animation_player.animation_finished
+	Dialog.launch_dialog(Dialog.CAFFEE_1)
+	while GlobalVariables.is_speaking:
+		await get_tree().process_frame
+	animation_player.play("ending_2")
+	await animation_player.animation_finished
+	Dialog.launch_dialog(Dialog.CAFFEE_2)
+	while GlobalVariables.is_speaking:
+		await get_tree().process_frame
+	animation_player.play("ending_3")
+	await animation_player.animation_finished
+
+
+	SceneTransition.change_without_animation_or_saving("res://Scenes/end_credits.tscn")

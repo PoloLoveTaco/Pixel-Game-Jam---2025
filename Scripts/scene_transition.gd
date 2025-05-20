@@ -15,10 +15,12 @@ func change_scene_slide(target: String):
 	change_to(target)
 	animation_player.play("slide 2")
 
+
 func load_scene_from_save(target: String):
 	get_tree().change_scene_to_file(target)
 	SaveManager.charge_saved_scene(target)
 	animation_player.play("slide 2")
+
 
 func change_scene_slide_only_exit(target: String):
 	change_to(target)
@@ -30,7 +32,12 @@ func change_scene_very_low_fade_in(target: String):
 	await animation_player.animation_finished
 	change_to(target)
 	animation_player.play("RESET")
-	
+
+
+func change_without_animation_or_saving(target: String):
+	get_tree().change_scene_to_file(target)
+
+
 func change_to(path: String) -> void:
 	var current = get_tree().current_scene
 	if current:

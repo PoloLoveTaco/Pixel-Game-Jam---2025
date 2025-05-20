@@ -35,6 +35,9 @@ enum {
 	NN_FRIDGE,
 	NN_BOWL,
 	
+	#CAFFEE
+	CAFFEE_1,
+	CAFFEE_2
 }
 
 # dialog template
@@ -579,8 +582,47 @@ var dialogs = {
 			"text": "Give us your location, we'll be right there!",
 			"voice_path" : "res://Assets/Music/SE_bop_adrien.wav"
 		},
-		
-	]
+	],
+	CAFFEE_1 : [
+		{
+			"speaker" : "Adrien",
+			"color" : "pink",
+			"text" : "Nemo ??",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Adrien",
+			"color" : "pink",
+			"text" : "Come here !",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
+	CAFFEE_2 : [
+		{
+			"speaker" : "Jules",
+			"color" : "green",
+			"text" : "Good to see you man.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Jules",
+			"color" : "green",
+			"text" : "Grab a drink and join us.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Marie",
+			"color" : "blue",
+			"text" : "We was watching Mr.Ector video when he design the new building.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		},
+		{
+			"speaker" : "Marie",
+			"color" : "blue",
+			"text" : "Pretty funny.",
+			"voice_path" : "res://Assets/Music/SE_bop.wav"
+		}
+	],
 }
 
 func launch_dialog(index):

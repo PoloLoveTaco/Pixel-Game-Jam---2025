@@ -30,6 +30,7 @@ func get_half_viewport() -> Vector2:
 	var px_size : Vector2 = get_viewport().get_visible_rect().size
 	return px_size * 0.5 * cam.zoom
 
+
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
